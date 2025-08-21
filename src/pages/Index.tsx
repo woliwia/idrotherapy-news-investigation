@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import heroImage from "@/assets/hero-clinical-lab.jpg";
 import productImage from "@/assets/product-main.jpg";
 import beforeAfterImage from "@/assets/before-after.jpg";
@@ -5,6 +6,27 @@ import dermatologistImage from "@/assets/dermatologist-expert.jpg";
 import womanApplyingImage from "@/assets/woman-applying-cream.jpg";
 
 const Index = () => {
+  const [showStickyCTA, setShowStickyCTA] = useState(false);
+  const [orderCount, setOrderCount] = useState(137);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowStickyCTA(window.scrollY > 500);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    // Simulate live counter updates
+    const interval = setInterval(() => {
+      setOrderCount(prev => prev + Math.floor(Math.random() * 3));
+    }, 45000);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Breaking News Header */}
@@ -34,8 +56,15 @@ const Index = () => {
           </div>
         </div>
 
+        {/* Live FOMO Counter */}
+        <div className="text-center mb-8">
+          <div className="fomo-counter mx-auto">
+            ⚡ {orderCount} readers ordered today
+          </div>
+        </div>
+
         {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12 max-w-none mx-auto px-4">
           
           {/* Main Article Column */}
           <div className="lg:col-span-2">
@@ -51,9 +80,14 @@ const Index = () => {
               </p>
 
               <div className="editorial-cta inline-block mb-6">
-                <a href="#order" className="editorial-cta">
-                  Editor's Pick: Try iDrotherapy Cream Here →
+                <a href="#order" className="editorial-cta-large">
+                  Editor's Pick: Try iDrotherapy Cream Before It's Gone →
                 </a>
+              </div>
+
+              <div className="fomo-box">
+                <p className="text-sm font-semibold mb-2">⚠️ Stock Alert</p>
+                <p className="text-sm">Only 2 jars per customer due to overwhelming demand. Just restocked after 3 sellouts this year.</p>
               </div>
 
               <p className="news-body text-lg mb-6">
@@ -92,9 +126,15 @@ const Index = () => {
                 iDrotherapy takes a different approach. Its Matrixyl 3000 + Renovage peptide complex targets aging at the cellular level, boosting skin's natural repair cycle and prolonging the lifespan of tissues.
               </p>
 
-              <div className="pull-quote">
+              <div className="pull-quote-large">
                 "Think of it as retinol's younger, smarter, gentler sibling"
-                <div className="text-sm text-news-muted mt-2">– Leading Cosmetic Chemist</div>
+                <div className="text-lg text-news-muted mt-2 not-italic">– Leading Cosmetic Chemist</div>
+              </div>
+
+              <div className="text-center mb-6">
+                <a href="#order" className="editorial-cta">
+                  Readers Are Calling This 'Nature's Botox' →
+                </a>
               </div>
 
               <p className="news-body text-lg mb-4">
@@ -146,22 +186,33 @@ const Index = () => {
                 👉 That means no more cluttered bathroom shelves, no more 5-step routines. Just one cream that does it all.
               </p>
 
+              <div className="scarcity-alert mb-6">
+                <p className="font-semibold mb-2">⏰ Limited Time: Special Editorial Pricing</p>
+                <p className="text-sm">Our readers get exclusive access to discounted pricing - but only while supplies last.</p>
+              </div>
+
               <div className="editorial-cta inline-block mb-6">
-                <a href="#order" className="editorial-cta">
+                <a href="#order" className="editorial-cta-large">
                   See Before & After Photos →
                 </a>
               </div>
             </div>
 
             {/* Before After Image */}
-            <div className="mb-8">
+            <div className="comparison-box">
+              <h3 className="text-xl font-bold mb-4 text-center">Dramatic Results in Just 4 Weeks</h3>
               <img 
                 src={beforeAfterImage} 
                 alt="Before and after comparison showing dramatic skin improvement" 
-                className="w-full h-auto rounded-lg shadow-md"
+                className="w-full h-auto rounded-lg shadow-md mb-4"
                 loading="lazy"
               />
-              <p className="text-sm text-news-muted mt-2 italic">Clinical documentation shows dramatic improvements in skin texture and firmness after 4 weeks of use</p>
+              <p className="text-sm text-news-muted italic text-center">Clinical study participants showed visible improvements in fine lines, skin texture, and overall radiance</p>
+              <div className="text-center mt-4">
+                <a href="#order" className="editorial-cta">
+                  Check Today's Stock (Limited Supply) →
+                </a>
+              </div>
             </div>
 
             {/* Real Women Section */}
@@ -169,20 +220,26 @@ const Index = () => {
               <h2 className="news-headline text-3xl font-bold mb-4">Real Women Are Raving</h2>
               
               <div className="space-y-6 mb-8">
-                <div className="testimonial-card">
-                  <p className="text-lg mb-2">💬 "I was skeptical, but within 2 weeks, my under-eye circles faded and my skin felt plumper. I actually stopped buying my $150 serum."</p>
-                  <p className="text-sm text-news-muted">– Susan, 52</p>
+                <div className="testimonial-enhanced">
+                  <p className="text-lg mb-2 font-medium">I was skeptical, but within 2 weeks, my under-eye circles faded and my skin felt plumper. I actually stopped buying my $150 serum.</p>
+                  <p className="text-sm text-news-muted font-semibold">– Susan, 52, verified buyer</p>
                 </div>
                 
-                <div className="testimonial-card">
-                  <p className="text-lg mb-2">💬 "My neck lines were deep and noticeable. After a month with iDrotherapy, they're barely visible. This cream is my holy grail."</p>
-                  <p className="text-sm text-news-muted">– Maria, 48</p>
+                <div className="testimonial-enhanced">
+                  <p className="text-lg mb-2 font-medium">My neck lines were deep and noticeable. After a month with iDrotherapy, they're barely visible. This cream is my holy grail.</p>
+                  <p className="text-sm text-news-muted font-semibold">– Maria, 48, verified buyer</p>
                 </div>
                 
-                <div className="testimonial-card">
-                  <p className="text-lg mb-2">💬 "It's like Photoshop in a jar. I use it morning and night and my skin has never looked more even."</p>
-                  <p className="text-sm text-news-muted">– Claire, 56</p>
+                <div className="testimonial-enhanced">
+                  <p className="text-lg mb-2 font-medium">It's like Photoshop in a jar. I use it morning and night and my skin has never looked more even.</p>
+                  <p className="text-sm text-news-muted font-semibold">– Claire, 56, verified buyer</p>
                 </div>
+              </div>
+
+              <div className="text-center mb-8">
+                <a href="#order" className="editorial-cta-large">
+                  Join 10,000+ Happy Customers →
+                </a>
               </div>
             </div>
 
@@ -236,9 +293,14 @@ const Index = () => {
                 <p className="text-base">Due to overwhelming demand, new customers are limited to 2 jars per order. Once this batch is gone, shipping delays may last several weeks.</p>
               </div>
 
+              <div className="fomo-box text-center">
+                <p className="font-semibold text-lg mb-2">🔥 Exclusive Reader Discount</p>
+                <p className="text-sm mb-4">Fox Lifestyle readers save 40% - but only for the next 24 hours!</p>
+              </div>
+
               <div className="text-center">
-                <a href="#order" className="editorial-cta text-lg px-8 py-4">
-                  👉 Click here to claim your jar of iDrotherapy before stock runs out
+                <a href="#order" className="editorial-cta-large text-xl px-10 py-5">
+                  👉 Claim Your Exclusive Discount Now
                 </a>
               </div>
 
@@ -304,9 +366,21 @@ const Index = () => {
             {/* Limited Stock Widget */}
             <div className="sidebar-widget bg-red-50 border-red-200">
               <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">⚠️ Stock Alert</h3>
+              <div className="fomo-counter mb-3">
+                ⚡ {orderCount} orders today
+              </div>
               <p className="text-sm mb-4">Less than 200 units remaining for this month. New shipments delayed until next quarter.</p>
               <a href="#order" className="editorial-cta bg-red-600 hover:bg-red-700 w-full justify-center">
                 Order Before It's Gone →
+              </a>
+            </div>
+
+            {/* Urgency Widget */}
+            <div className="sidebar-widget bg-yellow-50 border-yellow-200">
+              <h3 className="news-subhead text-xl font-bold mb-4 text-yellow-700">⏰ 24-Hour Flash Sale</h3>
+              <p className="text-sm mb-4">Editorial readers get 40% off, but this deal expires at midnight!</p>
+              <a href="#order" className="editorial-cta bg-yellow-600 hover:bg-yellow-700 w-full justify-center">
+                Claim Flash Discount →
               </a>
             </div>
 
@@ -339,6 +413,19 @@ const Index = () => {
           <p className="text-xs text-news-muted text-center">
             <strong>Editorial Disclaimer:</strong> This article is for informational purposes and represents the editorial opinion of Fox Lifestyle. Individual results may vary. This content has not been evaluated by the FDA. The product is not intended to diagnose, treat, cure, or prevent any disease. Always consult with a healthcare professional before starting any new skincare regimen.
           </p>
+        </div>
+
+        {/* Sticky Mobile CTA */}
+        <div className={`sticky-cta ${showStickyCTA ? 'show' : ''} md:hidden`}>
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="font-semibold">Limited Stock Alert!</p>
+              <p className="text-sm opacity-90">Claim your jar before it's gone</p>
+            </div>
+            <a href="#order" className="bg-white text-blue-600 px-4 py-2 rounded font-semibold">
+              Order Now
+            </a>
+          </div>
         </div>
 
       </div>

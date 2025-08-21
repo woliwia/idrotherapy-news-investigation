@@ -111,4 +111,46 @@
   .sidebar-widget {
     @apply mb-8 p-6 bg-gray-50 border border-gray-200 rounded-lg;
   }
+  
+  /* FOMO & CTA Enhancements */
+  .fomo-box {
+    @apply p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg mb-6;
+  }
+  
+  .fomo-counter {
+    @apply inline-flex items-center gap-2 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium;
+  }
+  
+  .scarcity-alert {
+    @apply p-4 bg-red-50 border border-red-200 rounded-lg text-red-800;
+  }
+  
+  .testimonial-enhanced {
+    @apply p-6 bg-white border border-gray-200 rounded-lg shadow-sm mb-6 relative;
+  }
+  
+  .testimonial-enhanced::before {
+    content: '"';
+    @apply absolute -top-2 -left-2 text-6xl text-blue-200 font-serif;
+  }
+  
+  .comparison-box {
+    @apply bg-gradient-to-r from-red-50 to-green-50 p-6 rounded-lg border border-gray-200 mb-8;
+  }
+  
+  .sticky-cta {
+    @apply fixed bottom-0 left-0 right-0 z-50 bg-blue-600 text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300;
+  }
+  
+  .sticky-cta.show {
+    @apply translate-y-0;
+  }
+  
+  .editorial-cta-large {
+    @apply inline-flex items-center px-8 py-4 text-lg font-medium text-white bg-blue-600 border border-transparent rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors shadow-lg;
+  }
+  
+  .pull-quote-large {
+    @apply border-l-4 border-blue-600 pl-8 my-8 text-2xl italic text-gray-700 font-serif;
+  }
 }
