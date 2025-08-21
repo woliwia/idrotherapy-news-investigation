@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import heroImage from "@/assets/hero-clinical-lab.jpg";
-import productJarWithBox from "@/assets/product-jar-with-box-new.jpg";
-import womanHoldingProduct from "@/assets/woman-holding-product-new.jpg";
-import productSingleJar from "@/assets/product-single-jar-new.jpg";
-import productSixJars from "@/assets/product-six-jars-new.jpg";
-import womanWithCream from "@/assets/woman-with-cream-new.jpg";
 import dermatologistRealistic from "@/assets/dermatologist-realistic.jpg";
-import beforeAfterRealistic from "@/assets/before-after-realistic.jpg";
 
 const Index = () => {
   const [showStickyCTA, setShowStickyCTA] = useState(false);
   const [orderCount, setOrderCount] = useState(137);
+  const [currentTickerIndex, setCurrentTickerIndex] = useState(0);
+  
+  const tickerMessages = [
+    "BREAKING: Dermatologists Stunned by This One-Step Cream",
+    "TRENDING: Beauty Forums Exploding With Reviews",
+    "ALERT: iDrotherapy Cream Sells Out in 72 Hours",
+    "URGENT: Major Breakthrough in Anti-Aging Science",
+    "EXCLUSIVE: Revolutionary Formula Replacing 5 Products"
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,18 +27,26 @@ const Index = () => {
       setOrderCount(prev => prev + Math.floor(Math.random() * 3));
     }, 45000);
     
+    // Rotate ticker messages
+    const tickerInterval = setInterval(() => {
+      setCurrentTickerIndex(prev => (prev + 1) % tickerMessages.length);
+    }, 4000);
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
       clearInterval(interval);
+      clearInterval(tickerInterval);
     };
   }, []);
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Breaking News Header */}
-      <div className="bg-breaking-red text-white py-2 px-4">
+      {/* Breaking News Ticker */}
+      <div className="breaking-ticker">
         <div className="max-w-6xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-wide">BREAKING NEWS</span>
+          <div className="ticker-content">
+            <span className="ticker-item">{tickerMessages[currentTickerIndex]}</span>
+          </div>
         </div>
       </div>
 
@@ -117,19 +128,19 @@ const Index = () => {
             </div>
 
             {/* Product Image with Caption */}
-            <div className="mb-8 text-center">
+            <div className="image-container">
               <img 
-                src={productJarWithBox} 
-                alt="iDrotherapy Cream luxury jar with elegant black packaging" 
-                className="product-image rounded-lg shadow-md"
+                src="/lovable-uploads/671dac0b-4492-4be8-ae3b-884fde280fc9.png" 
+                alt="iDrotherapy Cream luxury jar with elegant black packaging showing Wrinkle Reducer formula" 
+                className="image-responsive max-w-md"
                 loading="lazy"
-                width="400"
-                height="300"
+                width="600"
+                height="400"
               />
-              <p className="text-sm text-news-muted mt-2 italic text-center">The breakthrough iDrotherapy Cream that's selling out nationwide</p>
+              <p className="text-sm text-news-muted mt-3 italic">The breakthrough iDrotherapy Wrinkle Reducer that's selling out nationwide</p>
               
               {/* Inline CTA */}
-              <div className="mt-4">
+              <div className="mt-6">
                 <a href="#order" className="editorial-cta">
                   Try Risk-Free Today →
                 </a>
@@ -231,17 +242,19 @@ const Index = () => {
 
             {/* Before After Image */}
             <div className="comparison-box">
-              <h3 className="text-xl font-bold mb-4 text-center">Dramatic Results in Just 4 Weeks</h3>
-              <img 
-                src={beforeAfterRealistic} 
-                alt="Before and after comparison showing dramatic skin improvement" 
-                className="w-full h-auto rounded-lg shadow-md mb-4"
-                loading="lazy"
-                width="1000"
-                height="600"
-              />
-              <p className="text-sm text-news-muted italic text-center">Clinical study participants showed visible improvements in fine lines, skin texture, and overall radiance</p>
-              <div className="text-center mt-4">
+              <h3 className="text-xl font-bold mb-6 text-center">Dramatic Results in Just 4 Weeks</h3>
+              <div className="image-container">
+                <img 
+                  src="/lovable-uploads/288a5583-3575-4da5-b1dd-97b04308bc44.png" 
+                  alt="Before and after comparison showing dramatic reduction in fine lines and wrinkles around the eyes" 
+                  className="image-responsive max-w-2xl"
+                  loading="lazy"
+                  width="800"
+                  height="400"
+                />
+                <p className="text-sm text-news-muted italic mt-3">Real results: Dramatic improvement in fine lines and skin texture after 4 weeks of daily use</p>
+              </div>
+              <div className="text-center mt-6">
                 <a href="#order" className="editorial-cta-urgent">
                   ⚡ Limited Stock - Order Before It's Gone →
                 </a>
@@ -276,20 +289,22 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Woman Applying Image */}
-            <div className="mb-8">
-              <img 
-                src={womanHoldingProduct} 
-                alt="Beautiful woman with radiant skin proudly displaying iDrotherapy cream" 
-                className="lifestyle-image w-full h-auto rounded-lg shadow-md"
-                loading="lazy"
-                width="800"
-                height="1000"
-              />
-              <p className="text-sm text-news-muted mt-2 italic">Maria, 32, credits iDrotherapy with transforming her confidence and simplifying her skincare routine</p>
+            {/* Woman with Product Image */}
+            <div className="content-section">
+              <div className="image-container">
+                <img 
+                  src="/lovable-uploads/ca66e615-6b53-470a-b542-1020dc49a3d8.png" 
+                  alt="Happy woman proudly displaying her iDrotherapy Wrinkle Reducer cream with confident smile" 
+                  className="image-responsive max-w-lg"
+                  loading="lazy"
+                  width="600"
+                  height="700"
+                />
+                <p className="text-sm text-news-muted mt-3 italic">Sarah, 34, says iDrotherapy transformed her confidence and simplified her entire skincare routine</p>
+              </div>
               
               {/* Another CTA */}
-              <div className="text-center mt-6">
+              <div className="text-center mt-8">
                 <a href="#order" className="editorial-cta-large">
                   🌟 Transform Your Skin Today →
                 </a>
@@ -374,14 +389,14 @@ const Index = () => {
             <div className="sidebar-widget text-center">
               <div className="editor-pick mb-4">Trending Now</div>
               <img 
-                src={productSingleJar} 
-                alt="iDrotherapy Cream product" 
-                className="product-image rounded-lg shadow-md mb-4"
+                src="/lovable-uploads/ff2aee7a-de72-4c36-aa5c-9a46a571308c.png" 
+                alt="iDrotherapy Wrinkle Reducer cream jar with luxury packaging" 
+                className="image-responsive max-w-xs mb-4"
                 loading="lazy"
                 width="300"
                 height="300"
               />
-              <h4 className="font-bold mb-2">iDrotherapy Cream</h4>
+              <h4 className="font-bold mb-2">iDrotherapy Wrinkle Reducer</h4>
               <p className="text-sm text-news-muted mb-4">The breakthrough formula dermatologists recommend</p>
               <a href="#order" className="editorial-cta w-full justify-center mb-3">
                 Check Availability →
@@ -439,24 +454,28 @@ const Index = () => {
           <h2 className="news-headline text-4xl font-bold mb-4">Where to Buy iDrotherapy Cream Before It's Gone</h2>
           <p className="news-body text-xl mb-6">Exclusive online availability - Limited to 2 jars per customer</p>
           
-          <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
-            <img 
-              src={womanWithCream} 
-              alt="Happy customer with iDrotherapy Cream results" 
-              className="w-32 h-32 mx-auto mb-4 rounded-lg object-cover"
-              loading="lazy"
-              width="128"
-              height="128"
-            />
-            <h3 className="text-xl font-bold mb-2">iDrotherapy Cream</h3>
-            <p className="text-lg font-semibold text-blue-600 mb-4">Special Editorial Price - 40% Off!</p>
-            <a href="#" className="editorial-cta-large text-xl px-8 py-4 w-full justify-center mb-3">
-              CLAIM YOUR JAR NOW →
-            </a>
-            <a href="#" className="editorial-cta-urgent w-full justify-center">
-              ⚡ Only 2 Hours Left - Order Now! →
-            </a>
-            <p className="text-xs text-news-muted mt-4">*This editorial pricing is available for a limited time only</p>
+          <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <div className="image-container mb-6">
+              <img 
+                src="/lovable-uploads/8b78a4f6-6b4f-4883-9246-ffc0a706f5e4.png" 
+                alt="Radiant woman holding iDrotherapy Wrinkle Reducer cream with beautiful results" 
+                className="w-32 h-32 mx-auto rounded-lg object-cover"
+                loading="lazy"
+                width="128"
+                height="128"
+              />
+            </div>
+            <h3 className="text-xl font-bold mb-2">iDrotherapy Wrinkle Reducer</h3>
+            <p className="text-lg font-semibold text-red-600 mb-6">Special Editorial Price - 40% Off!</p>
+            <div className="space-y-4">
+              <a href="#" className="editorial-cta-large text-xl px-8 py-4 w-full justify-center">
+                CLAIM YOUR JAR NOW →
+              </a>
+              <a href="#" className="editorial-cta-urgent w-full justify-center">
+                ⚡ Only 2 Hours Left - Order Now! →
+              </a>
+            </div>
+            <p className="text-xs text-news-muted mt-6">*This editorial pricing is available for a limited time only</p>
           </div>
         </div>
 
@@ -469,15 +488,15 @@ const Index = () => {
 
         {/* Sticky Mobile CTA */}
         <div className={`sticky-cta ${showStickyCTA ? 'show' : ''} md:hidden`}>
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="font-semibold">Limited Stock Alert!</p>
-              <p className="text-sm opacity-90">Claim your jar before it's gone</p>
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="font-semibold">Limited Stock Alert!</p>
+                <p className="text-sm opacity-90">Claim your jar before it's gone</p>
+              </div>
+              <a href="#order" className="bg-white text-red-600 px-4 py-2 rounded font-semibold">
+                Order Now
+              </a>
             </div>
-            <a href="#order" className="bg-white text-blue-600 px-4 py-2 rounded font-semibold">
-              Order Now
-            </a>
-          </div>
         </div>
 
       </div>
