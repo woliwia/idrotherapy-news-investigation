@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import heroImage from "@/assets/hero-clinical-lab.jpg";
-import productJarWithBox from "@/assets/product-jar-with-box.jpg";
-import womanHoldingProduct from "@/assets/woman-holding-product.jpg";
-import productSingleJar from "@/assets/product-single-jar.jpg";
-import productSixJars from "@/assets/product-six-jars.jpg";
-import womanWithCream from "@/assets/woman-with-cream.jpg";
+import productJarWithBox from "@/assets/product-jar-with-box-new.jpg";
+import womanHoldingProduct from "@/assets/woman-holding-product-new.jpg";
+import productSingleJar from "@/assets/product-single-jar-new.jpg";
+import productSixJars from "@/assets/product-six-jars-new.jpg";
+import womanWithCream from "@/assets/woman-with-cream-new.jpg";
 import dermatologistRealistic from "@/assets/dermatologist-realistic.jpg";
 import beforeAfterRealistic from "@/assets/before-after-realistic.jpg";
 

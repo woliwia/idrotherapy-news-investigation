@@ -114,7 +114,8 @@
   }
   
   .editorial-cta-urgent {
-    @apply inline-flex items-center px-6 py-3 text-sm font-bold text-white bg-gradient-to-r from-red-600 to-red-700 border border-transparent rounded-lg hover:from-red-700 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 animate-pulse;
+    @apply inline-flex items-center px-6 py-3 text-sm font-bold text-white bg-gradient-to-r from-red-600 to-red-700 border border-transparent rounded-lg hover:from-red-700 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+    animation: slow-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
   
   .editorial-cta-success {
@@ -163,6 +164,16 @@
     @apply border-l-4 border-blue-600 pl-8 my-8 text-2xl italic text-gray-700 font-serif;
   }
   
+  
+  /* Custom Slow Pulse Animation */
+  @keyframes slow-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
   
   /* Mobile-First Responsive Design */
   @media (max-width: 768px) {
