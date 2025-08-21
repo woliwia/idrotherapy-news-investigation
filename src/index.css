@@ -104,8 +104,21 @@
     @apply p-4 bg-white border border-gray-200 rounded-lg shadow-sm;
   }
   
+  /* Enhanced Button Styling */
   .editorial-cta {
-    @apply inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors;
+    @apply inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-blue-700 border border-transparent rounded-lg hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+  
+  .editorial-cta-large {
+    @apply inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 border border-transparent rounded-xl hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-3 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1;
+  }
+  
+  .editorial-cta-urgent {
+    @apply inline-flex items-center px-6 py-3 text-sm font-bold text-white bg-gradient-to-r from-red-600 to-red-700 border border-transparent rounded-lg hover:from-red-700 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 animate-pulse;
+  }
+  
+  .editorial-cta-success {
+    @apply inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-green-600 to-green-700 border border-transparent rounded-lg hover:from-green-700 hover:to-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
   }
   
   .sidebar-widget {
@@ -150,7 +163,57 @@
     @apply inline-flex items-center px-8 py-4 text-lg font-medium text-white bg-blue-600 border border-transparent rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors shadow-lg;
   }
   
-  .pull-quote-large {
-    @apply border-l-4 border-blue-600 pl-8 my-8 text-2xl italic text-gray-700 font-serif;
+  
+  /* Mobile-First Responsive Design */
+  @media (max-width: 768px) {
+    .news-headline {
+      @apply text-2xl leading-tight;
+    }
+    
+    .news-subhead {
+      @apply text-lg;
+    }
+    
+    .sidebar-widget {
+      @apply mb-6 p-4;
+    }
+    
+    .editorial-cta, 
+    .editorial-cta-large {
+      @apply w-full justify-center text-center;
+    }
+    
+    .testimonial-enhanced {
+      @apply p-4;
+    }
+    
+    .pull-quote-large {
+      @apply text-xl pl-4 border-l-2;
+    }
+  }
+  
+  /* Image Optimization */
+  img {
+    @apply max-w-full h-auto;
+  }
+  
+  .hero-image {
+    @apply w-full h-auto object-cover;
+    aspect-ratio: 16/9;
+  }
+  
+  .product-image {
+    @apply w-full max-w-sm mx-auto h-auto object-contain;
+  }
+  
+  .lifestyle-image {
+    @apply w-full h-auto object-cover rounded-lg;
+    aspect-ratio: 4/5;
+  }
+  
+  @media (max-width: 640px) {
+    .lifestyle-image {
+      aspect-ratio: 1/1;
+    }
   }
 }

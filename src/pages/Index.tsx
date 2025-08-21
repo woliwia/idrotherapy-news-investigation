@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import heroImage from "@/assets/hero-clinical-lab.jpg";
-import productImage from "@/assets/product-main.jpg";
-import beforeAfterImage from "@/assets/before-after.jpg";
-import dermatologistImage from "@/assets/dermatologist-expert.jpg";
-import womanApplyingImage from "@/assets/woman-applying-cream.jpg";
+import productJarWithBox from "@/assets/product-jar-with-box.jpg";
+import womanHoldingProduct from "@/assets/woman-holding-product.jpg";
+import productSingleJar from "@/assets/product-single-jar.jpg";
+import productSixJars from "@/assets/product-six-jars.jpg";
+import womanWithCream from "@/assets/woman-with-cream.jpg";
+import dermatologistRealistic from "@/assets/dermatologist-realistic.jpg";
+import beforeAfterRealistic from "@/assets/before-after-realistic.jpg";
 
 const Index = () => {
   const [showStickyCTA, setShowStickyCTA] = useState(false);
@@ -49,10 +52,20 @@ const Index = () => {
             <img 
               src={heroImage} 
               alt="Clinical laboratory researchers examining breakthrough skincare formula" 
-              className="w-full h-auto rounded-lg shadow-lg"
+              className="hero-image rounded-lg shadow-lg"
               fetchPriority="high"
+              loading="eager"
+              width="1200"
+              height="675"
             />
             <p className="text-sm text-news-muted mt-2 italic">Clinical researchers examine the breakthrough peptide formula that's revolutionizing skincare routines nationwide</p>
+          </div>
+
+          {/* First CTA */}
+          <div className="text-center mt-6">
+            <a href="#order" className="editorial-cta-large">
+              🔥 Get Your Breakthrough Cream Now →
+            </a>
           </div>
         </div>
 
@@ -104,14 +117,23 @@ const Index = () => {
             </div>
 
             {/* Product Image with Caption */}
-            <div className="mb-8">
+            <div className="mb-8 text-center">
               <img 
-                src={productImage} 
-                alt="iDrotherapy Cream luxury jar on marble surface" 
-                className="w-full max-w-md mx-auto h-auto rounded-lg shadow-md"
+                src={productJarWithBox} 
+                alt="iDrotherapy Cream luxury jar with elegant black packaging" 
+                className="product-image rounded-lg shadow-md"
                 loading="lazy"
+                width="400"
+                height="300"
               />
               <p className="text-sm text-news-muted mt-2 italic text-center">The breakthrough iDrotherapy Cream that's selling out nationwide</p>
+              
+              {/* Inline CTA */}
+              <div className="mt-4">
+                <a href="#order" className="editorial-cta">
+                  Try Risk-Free Today →
+                </a>
+              </div>
             </div>
 
             {/* Why Experts Section */}
@@ -145,12 +167,21 @@ const Index = () => {
             {/* Dermatologist Image */}
             <div className="mb-8">
               <img 
-                src={dermatologistImage} 
+                src={dermatologistRealistic} 
                 alt="Professional dermatologist examining skincare products in clinical setting" 
                 className="w-full h-auto rounded-lg shadow-md"
                 loading="lazy"
+                width="1000"
+                height="600"
               />
               <p className="text-sm text-news-muted mt-2 italic">Dr. Sarah Mitchell examines the breakthrough peptide formula in her Beverly Hills clinic</p>
+              
+              {/* Mid-article CTA */}
+              <div className="text-center mt-6 mb-8">
+                <a href="#order" className="editorial-cta-success">
+                  ✅ Dermatologist Recommended - Order Now →
+                </a>
+              </div>
             </div>
 
             {/* Morning Night Section */}
@@ -202,15 +233,17 @@ const Index = () => {
             <div className="comparison-box">
               <h3 className="text-xl font-bold mb-4 text-center">Dramatic Results in Just 4 Weeks</h3>
               <img 
-                src={beforeAfterImage} 
+                src={beforeAfterRealistic} 
                 alt="Before and after comparison showing dramatic skin improvement" 
                 className="w-full h-auto rounded-lg shadow-md mb-4"
                 loading="lazy"
+                width="1000"
+                height="600"
               />
               <p className="text-sm text-news-muted italic text-center">Clinical study participants showed visible improvements in fine lines, skin texture, and overall radiance</p>
               <div className="text-center mt-4">
-                <a href="#order" className="editorial-cta">
-                  Check Today's Stock (Limited Supply) →
+                <a href="#order" className="editorial-cta-urgent">
+                  ⚡ Limited Stock - Order Before It's Gone →
                 </a>
               </div>
             </div>
@@ -246,12 +279,21 @@ const Index = () => {
             {/* Woman Applying Image */}
             <div className="mb-8">
               <img 
-                src={womanApplyingImage} 
-                alt="Elegant mature woman applying iDrotherapy cream with confidence" 
-                className="w-full h-auto rounded-lg shadow-md"
+                src={womanHoldingProduct} 
+                alt="Beautiful woman with radiant skin proudly displaying iDrotherapy cream" 
+                className="lifestyle-image w-full h-auto rounded-lg shadow-md"
                 loading="lazy"
+                width="800"
+                height="1000"
               />
-              <p className="text-sm text-news-muted mt-2 italic">Maria, 52, credits iDrotherapy with transforming her confidence and simplifying her skincare routine</p>
+              <p className="text-sm text-news-muted mt-2 italic">Maria, 32, credits iDrotherapy with transforming her confidence and simplifying her skincare routine</p>
+              
+              {/* Another CTA */}
+              <div className="text-center mt-6">
+                <a href="#order" className="editorial-cta-large">
+                  🌟 Transform Your Skin Today →
+                </a>
+              </div>
             </div>
 
             {/* Why It's Different */}
@@ -332,15 +374,20 @@ const Index = () => {
             <div className="sidebar-widget text-center">
               <div className="editor-pick mb-4">Trending Now</div>
               <img 
-                src={productImage} 
+                src={productSingleJar} 
                 alt="iDrotherapy Cream product" 
-                className="w-full h-auto rounded-lg shadow-md mb-4"
+                className="product-image rounded-lg shadow-md mb-4"
                 loading="lazy"
+                width="300"
+                height="300"
               />
               <h4 className="font-bold mb-2">iDrotherapy Cream</h4>
               <p className="text-sm text-news-muted mb-4">The breakthrough formula dermatologists recommend</p>
-              <a href="#order" className="editorial-cta w-full justify-center">
+              <a href="#order" className="editorial-cta w-full justify-center mb-3">
                 Check Availability →
+              </a>
+              <a href="#order" className="editorial-cta-urgent w-full justify-center">
+                🔥 Flash Sale - 40% Off →
               </a>
             </div>
 
@@ -394,15 +441,20 @@ const Index = () => {
           
           <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
             <img 
-              src={productImage} 
-              alt="iDrotherapy Cream - Order now" 
-              className="w-32 h-32 mx-auto mb-4 rounded-lg"
+              src={womanWithCream} 
+              alt="Happy customer with iDrotherapy Cream results" 
+              className="w-32 h-32 mx-auto mb-4 rounded-lg object-cover"
               loading="lazy"
+              width="128"
+              height="128"
             />
             <h3 className="text-xl font-bold mb-2">iDrotherapy Cream</h3>
-            <p className="text-lg font-semibold text-blue-600 mb-4">Special Editorial Price</p>
-            <a href="#" className="editorial-cta text-xl px-8 py-4 w-full justify-center">
+            <p className="text-lg font-semibold text-blue-600 mb-4">Special Editorial Price - 40% Off!</p>
+            <a href="#" className="editorial-cta-large text-xl px-8 py-4 w-full justify-center mb-3">
               CLAIM YOUR JAR NOW →
+            </a>
+            <a href="#" className="editorial-cta-urgent w-full justify-center">
+              ⚡ Only 2 Hours Left - Order Now! →
             </a>
             <p className="text-xs text-news-muted mt-4">*This editorial pricing is available for a limited time only</p>
           </div>
