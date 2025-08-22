@@ -245,8 +245,8 @@ const Index = () => {
               <h3 className="text-xl font-bold mb-6 text-center">Dramatic Results in Just 4 Weeks</h3>
               <div className="image-container">
                 <img 
-                  src="/lovable-uploads/288a5583-3575-4da5-b1dd-97b04308bc44.png" 
-                  alt="Before and after comparison showing dramatic reduction in fine lines and wrinkles around the eyes" 
+                  src="/lovable-uploads/579730e5-27da-484a-8c7d-60a7043bf40c.png" 
+                  alt="Before and after comparison showing dramatic reduction in fine lines, wrinkles, and skin texture improvement" 
                   className="image-responsive max-w-2xl"
                   loading="lazy"
                   width="800"
@@ -437,11 +437,46 @@ const Index = () => {
               </a>
             </div>
 
-            {/* Urgency Widget */}
-            <div className="sidebar-widget bg-yellow-50 border-yellow-200">
-              <h3 className="news-subhead text-xl font-bold mb-4 text-yellow-700">⏰ 24-Hour Flash Sale</h3>
+            {/* Related Articles Widget */}
+            <div className="sidebar-widget">
+              <h3 className="news-subhead text-xl font-bold mb-4">Related Stories</h3>
+              
+              {/* CaviArgan Article */}
+              <div className="border-b border-gray-200 pb-4 mb-4">
+                <img 
+                  src="/lovable-uploads/1554c539-cd88-45fd-a732-3a457ca6ea44.png" 
+                  alt="Woman holding CaviArgan cream with radiant skin" 
+                  className="w-full h-32 object-cover rounded mb-2"
+                />
+                <h4 className="font-semibold text-sm mb-2 leading-tight">
+                  <a href="#" className="hover:text-red-600 transition-colors">
+                    SHOCKING: This $39 CaviArgan Cream Outperforms $300 Luxury Brands
+                  </a>
+                </h4>
+                <p className="text-xs text-news-muted">Celebrity makeup artists reveal the affordable secret behind Hollywood's glow...</p>
+              </div>
+              
+              {/* Essence of Argan Article */}
+              <div>
+                <img 
+                  src="/lovable-uploads/88a7dfa9-88af-4d1b-92b2-d1515ac28421.png" 
+                  alt="Woman applying Essence of Argan oil with glowing skin" 
+                  className="w-full h-32 object-cover rounded mb-2"
+                />
+                <h4 className="font-semibold text-sm mb-2 leading-tight">
+                  <a href="#" className="hover:text-red-600 transition-colors">
+                    EXCLUSIVE: Moroccan Argan Oil Secret That's Making Botox Obsolete
+                  </a>
+                </h4>
+                <p className="text-xs text-news-muted">Beauty insiders scramble to get their hands on this ancient anti-aging formula...</p>
+              </div>
+            </div>
+
+            {/* Urgency Widget - Updated to Red Theme */}
+            <div className="sidebar-widget bg-red-50 border-red-200">
+              <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">⏰ 24-Hour Flash Sale</h3>
               <p className="text-sm mb-4">Editorial readers get 40% off, but this deal expires at midnight!</p>
-              <a href="#order" className="editorial-cta bg-yellow-600 hover:bg-yellow-700 w-full justify-center">
+              <a href="#order" className="editorial-cta w-full justify-center">
                 Claim Flash Discount →
               </a>
             </div>
