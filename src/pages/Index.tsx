@@ -43,10 +43,14 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Breaking News Ticker */}
       <div className="breaking-ticker">
-        <div className="max-w-6xl mx-auto">
-          <div className="ticker-content">
-            <span className="ticker-item">{tickerMessages[currentTickerIndex]}</span>
-          </div>
+        <div className="ticker-content">
+          {tickerMessages.map((message, index) => (
+            <span key={index} className="ticker-item">{message}</span>
+          ))}
+          {/* Duplicate for seamless loop */}
+          {tickerMessages.map((message, index) => (
+            <span key={`dup-${index}`} className="ticker-item">{message}</span>
+          ))}
         </div>
       </div>
 
@@ -439,37 +443,132 @@ const Index = () => {
 
             {/* Related Articles Widget */}
             <div className="sidebar-widget">
-              <h3 className="news-subhead text-xl font-bold mb-4">Related Stories</h3>
+              <h3 className="news-subhead text-xl font-bold mb-6">Related Stories</h3>
               
               {/* CaviArgan Article */}
-              <div className="border-b border-gray-200 pb-4 mb-4">
+              <div className="border-b border-gray-200 pb-6 mb-6">
                 <img 
                   src="/lovable-uploads/1554c539-cd88-45fd-a732-3a457ca6ea44.png" 
                   alt="Woman holding CaviArgan cream with radiant skin" 
-                  className="w-full h-32 object-cover rounded mb-2"
+                  className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
                 />
-                <h4 className="font-semibold text-sm mb-2 leading-tight">
+                <h4 className="font-semibold text-base mb-3 leading-tight">
                   <a href="#" className="hover:text-red-600 transition-colors">
                     SHOCKING: This $39 CaviArgan Cream Outperforms $300 Luxury Brands
                   </a>
                 </h4>
-                <p className="text-xs text-news-muted">Celebrity makeup artists reveal the affordable secret behind Hollywood's glow...</p>
+                <p className="text-sm text-news-muted mb-2">Celebrity makeup artists reveal the affordable secret behind Hollywood's glow that's causing luxury brands to panic...</p>
+                <div className="text-xs text-red-600 font-semibold">TRENDING NOW • 2 min read</div>
               </div>
               
               {/* Essence of Argan Article */}
-              <div>
+              <div className="border-b border-gray-200 pb-6 mb-6">
                 <img 
                   src="/lovable-uploads/88a7dfa9-88af-4d1b-92b2-d1515ac28421.png" 
                   alt="Woman applying Essence of Argan oil with glowing skin" 
-                  className="w-full h-32 object-cover rounded mb-2"
+                  className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
                 />
-                <h4 className="font-semibold text-sm mb-2 leading-tight">
+                <h4 className="font-semibold text-base mb-3 leading-tight">
                   <a href="#" className="hover:text-red-600 transition-colors">
                     EXCLUSIVE: Moroccan Argan Oil Secret That's Making Botox Obsolete
                   </a>
                 </h4>
-                <p className="text-xs text-news-muted">Beauty insiders scramble to get their hands on this ancient anti-aging formula...</p>
+                <p className="text-sm text-news-muted mb-2">Beauty insiders scramble to get their hands on this ancient anti-aging formula that's leaving dermatologists speechless...</p>
+                <div className="text-xs text-red-600 font-semibold">BREAKING • 3 min read</div>
               </div>
+
+              {/* Additional Article 1 */}
+              <div className="border-b border-gray-200 pb-6 mb-6">
+                <img 
+                  src="/lovable-uploads/ca66e615-6b53-470a-b542-1020dc49a3d8.png" 
+                  alt="Woman with perfect skin results" 
+                  className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
+                />
+                <h4 className="font-semibold text-base mb-3 leading-tight">
+                  <a href="#" className="hover:text-red-600 transition-colors">
+                    VIRAL: 58-Year-Old Mom Looks 35 After Using This 1 Simple Trick
+                  </a>
+                </h4>
+                <p className="text-sm text-news-muted mb-2">Plastic surgeons hate her! Local mom discovers fountain of youth that costs less than your morning coffee...</p>
+                <div className="text-xs text-red-600 font-semibold">VIRAL • 4 min read</div>
+              </div>
+
+              {/* Additional Article 2 */}
+              <div className="border-b border-gray-200 pb-6 mb-6">
+                <img 
+                  src="/lovable-uploads/ff2aee7a-de72-4c36-aa5c-9a46a571308c.png" 
+                  alt="Premium skincare product results" 
+                  className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
+                />
+                <h4 className="font-semibold text-base mb-3 leading-tight">
+                  <a href="#" className="hover:text-red-600 transition-colors">
+                    EXPOSED: The $15 Anti-Aging Cream That Billionaires Don't Want You to Know About
+                  </a>
+                </h4>
+                <p className="text-sm text-news-muted mb-2">Silicon Valley insider leaks the secret formula that tech moguls have been hiding from the public...</p>
+                <div className="text-xs text-red-600 font-semibold">EXCLUSIVE • 5 min read</div>
+              </div>
+
+              {/* Additional Article 3 */}
+              <div>
+                <img 
+                  src="/lovable-uploads/579730e5-27da-484a-8c7d-60a7043bf40c.png" 
+                  alt="Amazing before after transformation" 
+                  className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
+                />
+                <h4 className="font-semibold text-base mb-3 leading-tight">
+                  <a href="#" className="hover:text-red-600 transition-colors">
+                    MIRACLE: Before & After Photos That Will Make You Believe in Anti-Aging Science
+                  </a>
+                </h4>
+                <p className="text-sm text-news-muted mb-2">These shocking transformation photos are proof that age is just a number when you know the right secrets...</p>
+                <div className="text-xs text-red-600 font-semibold">MUST SEE • 3 min read</div>
+              </div>
+            </div>
+
+            {/* Additional Sidebar Content */}
+            <div className="sidebar-widget">
+              <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">🔥 What's Hot Right Now</h3>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
+                  <span className="text-2xl">📈</span>
+                  <div>
+                    <h4 className="font-semibold text-sm">Anti-Aging Market Explodes</h4>
+                    <p className="text-xs text-news-muted">Peptide creams see 400% surge in demand</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
+                  <span className="text-2xl">🧪</span>
+                  <div>
+                    <h4 className="font-semibold text-sm">Lab Results Shock Scientists</h4>
+                    <p className="text-xs text-news-muted">New formula shows unprecedented results</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
+                  <span className="text-2xl">👩‍⚕️</span>
+                  <div>
+                    <h4 className="font-semibold text-sm">Dermatologists Recommend</h4>
+                    <p className="text-xs text-news-muted">94% of experts endorse peptide therapy</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Newsletter Signup Widget */}
+            <div className="sidebar-widget bg-gradient-to-br from-red-50 to-pink-50 border-red-200">
+              <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">📧 Beauty Insider Alerts</h3>
+              <p className="text-sm mb-4">Get exclusive access to breakthrough beauty discoveries before they go viral!</p>
+              <div className="space-y-3">
+                <input 
+                  type="email" 
+                  placeholder="Enter your email..." 
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                />
+                <button className="w-full bg-red-600 text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-red-700 transition-colors">
+                  Get Free Beauty Alerts →
+                </button>
+              </div>
+              <p className="text-xs text-gray-500 mt-2">Join 50,000+ beauty insiders. Unsubscribe anytime.</p>
             </div>
 
             {/* Urgency Widget - Updated to Red Theme */}

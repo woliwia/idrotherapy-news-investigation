@@ -94,20 +94,20 @@
   }
   
   .ticker-content {
-    @apply flex items-center gap-8 animate-ticker;
+    @apply flex items-center gap-16 animate-ticker;
   }
   
   .ticker-item {
-    @apply whitespace-nowrap text-sm font-bold uppercase tracking-wide;
+    @apply whitespace-nowrap text-sm font-bold uppercase tracking-wide flex-shrink-0;
   }
   
   @keyframes ticker {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
   
   .animate-ticker {
-    animation: ticker 20s linear infinite;
+    animation: ticker 40s linear infinite;
   }
   
   .editor-pick {
@@ -126,22 +126,22 @@
     @apply p-4 bg-white border border-gray-200 rounded-lg shadow-sm;
   }
   
-  /* Enhanced Button Styling - Unified Red Theme */
+  /* Enhanced Button Styling - Simplified Red Theme */
   .editorial-cta {
-    @apply inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-red-600 to-red-700 rounded-lg hover:from-red-700 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+    @apply inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors duration-200;
   }
   
   .editorial-cta-large {
-    @apply inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 rounded-xl hover:from-red-700 hover:to-red-800 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-red-500 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1;
+    @apply inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-red-600 rounded-xl hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors duration-200;
   }
   
   .editorial-cta-urgent {
-    @apply inline-flex items-center px-6 py-3 text-sm font-bold text-white bg-gradient-to-r from-red-600 to-red-700 rounded-lg hover:from-red-700 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+    @apply inline-flex items-center px-6 py-3 text-sm font-bold text-white bg-red-600 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors duration-200;
     animation: slow-pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
   
   .editorial-cta-success {
-    @apply inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-red-600 to-red-700 rounded-lg hover:from-red-700 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+    @apply inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors duration-200;
   }
   
   .sidebar-widget {
