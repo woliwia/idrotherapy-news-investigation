@@ -14,6 +14,8 @@ const Index = () => {
   const sidebarRef = useRef<HTMLDivElement>(null);
   const orderSectionRef = useRef<HTMLDivElement>(null);
   const [stickyStyles, setStickyStyles] = useState<CSSProperties>({});
+  const [isSticky, setIsSticky] = useState(false);
+  const [sidebarHeight, setSidebarHeight] = useState(0);
   
   const tickerMessages = [
     "BREAKING: Dermatologists Stunned by This One-Step Cream",
@@ -50,15 +52,21 @@ const Index = () => {
         sidebarRect.bottom <= window.innerHeight &&
         orderRect.top > window.innerHeight;
 
-      if (shouldStick) {
+      if (sidebarHeight !== sidebarRect.height) {
+        setSidebarHeight(sidebarRect.height);
+      }
+
+      if (shouldStick && !isSticky) {
         setStickyStyles({
           position: "fixed",
           bottom: 0,
           left: `${sidebarRect.left}px`,
           width: `${sidebarRect.width}px`
         });
-      } else {
+        setIsSticky(true);
+      } else if (!shouldStick && isSticky) {
         setStickyStyles({});
+        setIsSticky(false);
       }
     };
 
@@ -69,7 +77,7 @@ const Index = () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
-  }, []);
+  }, [isSticky, sidebarHeight]);
 
   return (
     <div className="min-h-screen bg-background pb-20">
@@ -405,7 +413,7 @@ const Index = () => {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1" style={{ minHeight: sidebarHeight }}>
             <div ref={sidebarRef} style={stickyStyles}>
 
             {/* Quick Facts Widget */}
@@ -425,7 +433,7 @@ const Index = () => {
           {/* Newsletter Signup Widget */}
           <div className="sidebar-widget bg-gradient-to-br from-red-50 to-pink-50 border-red-200">
             <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">📧 Beauty Insider Alerts</h3>
-            <p className="text-sm mb-4">Get exclusive access to breakthrough beauty discoveries before they go viral!</p>
+            <p className="text-sm mb-2">Get exclusive access to breakthrough beauty discoveries before they go viral!</p>
             <div className="klaviyo-form-TaTjsW"></div>
             <p className="text-xs text-news-muted mt-2">Join 50,000+ beauty insiders. Unsubscribe anytime.</p>
           </div>
@@ -598,7 +606,7 @@ const Index = () => {
             {/* Newsletter Signup Widget */}
             <div className="sidebar-widget bg-gradient-to-br from-red-50 to-pink-50 border-red-200">
               <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">📧 Beauty Insider Alerts</h3>
-              <p className="text-sm mb-4">Get exclusive access to breakthrough beauty discoveries before they go viral!</p>
+              <p className="text-sm mb-2">Get exclusive access to breakthrough beauty discoveries before they go viral!</p>
               <div className="klaviyo-form-TaTjsW"></div>
               <p className="text-xs text-news-muted mt-2">Join 50,000+ beauty insiders. Unsubscribe anytime.</p>
             </div>

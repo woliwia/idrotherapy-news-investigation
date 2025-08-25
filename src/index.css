@@ -264,7 +264,7 @@
   }
   /* Klaviyo form styling */
   .klaviyo-form-TaTjsW form {
-    @apply flex flex-col gap-2 m-0;
+    @apply flex flex-col gap-1 m-0;
   }
 
   .klaviyo-form-TaTjsW form > div {
