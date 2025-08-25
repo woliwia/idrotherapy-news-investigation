@@ -3,7 +3,6 @@ import heroImage from "@/assets/hero-clinical-lab.jpg";
 import dermatologistRealistic from "@/assets/dermatologist-realistic.jpg";
 
 const Index = () => {
-  const [showStickyCTA, setShowStickyCTA] = useState(false);
   const [orderCount, setOrderCount] = useState(137);
   const [currentTickerIndex, setCurrentTickerIndex] = useState(0);
   
@@ -16,11 +15,6 @@ const Index = () => {
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShowStickyCTA(window.scrollY > 500);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
     
     // Simulate live counter updates
     const interval = setInterval(() => {
@@ -33,7 +27,6 @@ const Index = () => {
     }, 4000);
     
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       clearInterval(interval);
       clearInterval(tickerInterval);
     };
@@ -373,7 +366,8 @@ const Index = () => {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 lg:self-start lg:h-fit">
+            <div className="lg:sticky lg:bottom-0">
             
             {/* Quick Facts Widget */}
             <div className="sidebar-widget">
@@ -582,6 +576,8 @@ const Index = () => {
 
           </div>
         </div>
+      </div>
+        <div className="h-8"></div>
 
         {/* Final Order Section */}
         <div id="order" className="mt-16 text-center bg-gray-50 p-8 rounded-lg">
@@ -620,18 +616,6 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Sticky Mobile CTA */}
-        <div className={`sticky-cta ${showStickyCTA ? 'show' : ''} md:hidden`}>
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="font-semibold">Limited Stock Alert!</p>
-                <p className="text-sm opacity-90">Claim your jar before it's gone</p>
-              </div>
-              <a href="#order" className="bg-white text-red-600 px-4 py-2 rounded font-semibold">
-                Order Now
-              </a>
-            </div>
-        </div>
 
       </div>
     </div>
