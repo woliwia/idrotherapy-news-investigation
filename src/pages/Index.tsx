@@ -1,10 +1,19 @@
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties
+} from "react";
 import heroImage from "@/assets/hero-clinical-lab.jpg";
 import dermatologistRealistic from "@/assets/dermatologist-realistic.jpg";
 
 const Index = () => {
   const [orderCount, setOrderCount] = useState(137);
   const [currentTickerIndex, setCurrentTickerIndex] = useState(0);
+
+  const sidebarRef = useRef<HTMLDivElement>(null);
+  const orderSectionRef = useRef<HTMLDivElement>(null);
+  const [stickyStyles, setStickyStyles] = useState<CSSProperties>({});
   
   const tickerMessages = [
     "BREAKING: Dermatologists Stunned by This One-Step Cream",
@@ -30,6 +39,37 @@ const Index = () => {
       clearInterval(tickerInterval);
     };
   }, [tickerMessages.length]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sidebarRef.current || !orderSectionRef.current) return;
+      const sidebarRect = sidebarRef.current.getBoundingClientRect();
+      const orderRect = orderSectionRef.current.getBoundingClientRect();
+      const shouldStick =
+        window.innerWidth >= 1024 &&
+        sidebarRect.bottom <= window.innerHeight &&
+        orderRect.top > window.innerHeight;
+
+      if (shouldStick) {
+        setStickyStyles({
+          position: "fixed",
+          bottom: 0,
+          left: `${sidebarRect.left}px`,
+          width: `${sidebarRect.width}px`
+        });
+      } else {
+        setStickyStyles({});
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    handleScroll();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-background pb-20">
@@ -366,7 +406,8 @@ const Index = () => {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            
+            <div ref={sidebarRef} style={stickyStyles}>
+
             {/* Quick Facts Widget */}
             <div className="sidebar-widget">
             <div className="editor-pick mb-4">Editor's Pick</div>
@@ -570,12 +611,12 @@ const Index = () => {
                 Claim Flash Discount →
               </a>
             </div>
-
+            </div>
           </div>
         </div>
 
         {/* Final Order Section */}
-        <div id="order" className="mt-16 text-center bg-gray-50 p-8 rounded-lg">
+        <div id="order" ref={orderSectionRef} className="mt-16 text-center bg-gray-50 p-8 rounded-lg">
           <h2 className="news-headline text-4xl font-bold mb-4">Where to Buy iDrotherapy Cream Before It's Gone</h2>
           <p className="news-body text-xl mb-6">Exclusive online availability - Limited to 2 jars per customer</p>
           
@@ -610,6 +651,39 @@ const Index = () => {
             <strong>Editorial Disclaimer:</strong> This article is for informational purposes and represents the editorial opinion of Fox Lifestyle. Individual results may vary. This content has not been evaluated by the FDA. The product is not intended to diagnose, treat, cure, or prevent any disease. Always consult with a healthcare professional before starting any new skincare regimen.
           </p>
         </div>
+
+        {/* Footer Links */}
+        <footer className="mt-4 text-center text-xs text-news-muted">
+          <div className="flex flex-wrap justify-center gap-x-2 gap-y-1">
+            <a href="https://idrotherapylove.com/contact" className="hover:text-red-600">
+              Contact Us
+            </a>
+            <span>|</span>
+            <a href="https://idrotherapylove.com/terms" className="hover:text-red-600">
+              Terms and Conditions
+            </a>
+            <span>|</span>
+            <a href="https://idrotherapylove.com/privacy" className="hover:text-red-600">
+              Privacy Policy
+            </a>
+            <span>|</span>
+            <a href="https://idrotherapylove.com/refund" className="hover:text-red-600">
+              Refund Policy
+            </a>
+            <span>|</span>
+            <a href="https://idrotherapylove.com/shipping" className="hover:text-red-600">
+              Shipping Policy
+            </a>
+            <span>|</span>
+            <a
+              href="https://streamline.everflowclient.io/affiliate/signup"
+              className="hover:text-red-600"
+            >
+              AFFILIATE SIGN UP
+            </a>
+          </div>
+          <div className="mt-1">© 2025 Idrotherapy. All Rights Reserved</div>
+        </footer>
 
         {/* Floating Order Button */}
         <a
