@@ -262,4 +262,16 @@
       aspect-ratio: 1/1;
     }
   }
+  /* Klaviyo form styling */
+  .klaviyo-form-TaTjsW form {
+    @apply flex flex-col gap-2;
+  }
+
+  .klaviyo-form-TaTjsW input[type="email"] {
+    @apply w-full px-3 py-2 border border-gray-300 rounded;
+  }
+
+  .klaviyo-form-TaTjsW button[type="submit"] {
+    @apply w-full px-6 py-2 text-sm font-semibold text-white bg-red-600 rounded hover:bg-red-700 transition-colors;
+  }
 }

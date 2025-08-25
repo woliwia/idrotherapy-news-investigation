@@ -369,22 +369,30 @@ const Index = () => {
             
             {/* Quick Facts Widget */}
             <div className="sidebar-widget">
-              <div className="editor-pick mb-4">Editor's Pick</div>
-              <h3 className="news-subhead text-xl font-bold mb-4">Quick Facts</h3>
-              <ul className="space-y-3 text-sm">
-                <li><strong>Formula:</strong> Matrixyl 3000 + Renovage Peptides</li>
-                <li><strong>Results:</strong> Visible in 2-4 weeks</li>
-                <li><strong>Use:</strong> Morning & Night</li>
-                <li><strong>Safe for:</strong> All skin types</li>
-                <li><strong>No:</strong> Harsh retinol, parabens, sulfates</li>
-                <li><strong>Targets:</strong> Face, neck, hands</li>
-              </ul>
-            </div>
+            <div className="editor-pick mb-4">Editor's Pick</div>
+            <h3 className="news-subhead text-xl font-bold mb-4">Quick Facts</h3>
+            <ul className="space-y-3 text-sm">
+              <li><strong>Formula:</strong> Matrixyl 3000 + Renovage Peptides</li>
+              <li><strong>Results:</strong> Visible in 2-4 weeks</li>
+              <li><strong>Use:</strong> Morning & Night</li>
+              <li><strong>Safe for:</strong> All skin types</li>
+              <li><strong>No:</strong> Harsh retinol, parabens, sulfates</li>
+              <li><strong>Targets:</strong> Face, neck, hands</li>
+            </ul>
+          </div>
 
-            {/* Product Image Widget */}
-            <div className="sidebar-widget text-center">
-              <div className="editor-pick mb-4">Trending Now</div>
-              <img 
+          {/* Newsletter Signup Widget */}
+          <div className="sidebar-widget bg-gradient-to-br from-red-50 to-pink-50 border-red-200">
+            <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">📧 Beauty Insider Alerts</h3>
+            <p className="text-sm mb-4">Get exclusive access to breakthrough beauty discoveries before they go viral!</p>
+            <div className="klaviyo-form-TaTjsW"></div>
+            <p className="text-xs text-news-muted mt-2">Join 50,000+ beauty insiders. Unsubscribe anytime.</p>
+          </div>
+
+          {/* Product Image Widget */}
+          <div className="sidebar-widget text-center">
+            <div className="editor-pick mb-4">Trending Now</div>
+            <img
                 src="/lovable-uploads/ff2aee7a-de72-4c36-aa5c-9a46a571308c.png" 
                 alt="iDrotherapy Wrinkle Reducer cream jar with luxury packaging" 
                 className="image-responsive max-w-xs mb-4"
@@ -551,6 +559,7 @@ const Index = () => {
               <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">📧 Beauty Insider Alerts</h3>
               <p className="text-sm mb-4">Get exclusive access to breakthrough beauty discoveries before they go viral!</p>
               <div className="klaviyo-form-TaTjsW"></div>
+              <p className="text-xs text-news-muted mt-2">Join 50,000+ beauty insiders. Unsubscribe anytime.</p>
             </div>
 
             {/* Urgency Widget - Updated to Red Theme */}
