@@ -550,17 +550,7 @@ const Index = () => {
             <div className="sidebar-widget bg-gradient-to-br from-red-50 to-pink-50 border-red-200">
               <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">📧 Beauty Insider Alerts</h3>
               <p className="text-sm mb-4">Get exclusive access to breakthrough beauty discoveries before they go viral!</p>
-              <div className="space-y-3">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email..." 
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                />
-                <button className="w-full bg-red-600 text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-red-700 transition-colors">
-                  Get Free Beauty Alerts →
-                </button>
-              </div>
-              <p className="text-xs text-gray-500 mt-2">Join 50,000+ beauty insiders. Unsubscribe anytime.</p>
+              <div className="klaviyo-form-TaTjsW"></div>
             </div>
 
             {/* Urgency Widget - Updated to Red Theme */}
