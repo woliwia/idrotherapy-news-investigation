@@ -1,9 +1,4 @@
-import {
-  useEffect,
-  useRef,
-  useState,
-  type CSSProperties
-} from "react";
+import { useEffect, useState } from "react";
 import heroImage from "@/assets/hero-clinical-lab.jpg";
 import dermatologistRealistic from "@/assets/dermatologist-realistic.jpg";
 
@@ -11,11 +6,7 @@ const Index = () => {
   const [orderCount, setOrderCount] = useState(137);
   const [currentTickerIndex, setCurrentTickerIndex] = useState(0);
 
-  const sidebarRef = useRef<HTMLDivElement>(null);
-  const orderSectionRef = useRef<HTMLDivElement>(null);
-  const [stickyStyles, setStickyStyles] = useState<CSSProperties>({});
-  const [isSticky, setIsSticky] = useState(false);
-  const [sidebarHeight, setSidebarHeight] = useState(0);
+  // CSS handles sticky behavior; no refs or manual styles needed
   
   const tickerMessages = [
     "BREAKING: Dermatologists Stunned by This One-Step Cream",
@@ -42,42 +33,7 @@ const Index = () => {
     };
   }, [tickerMessages.length]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sidebarRef.current || !orderSectionRef.current) return;
-      const sidebarRect = sidebarRef.current.getBoundingClientRect();
-      const orderRect = orderSectionRef.current.getBoundingClientRect();
-      const shouldStick =
-        window.innerWidth >= 1024 &&
-        sidebarRect.bottom <= window.innerHeight &&
-        orderRect.top > window.innerHeight;
-
-      if (sidebarHeight !== sidebarRect.height) {
-        setSidebarHeight(sidebarRect.height);
-      }
-
-      if (shouldStick && !isSticky) {
-        setStickyStyles({
-          position: "fixed",
-          bottom: 0,
-          left: `${sidebarRect.left}px`,
-          width: `${sidebarRect.width}px`
-        });
-        setIsSticky(true);
-      } else if (!shouldStick && isSticky) {
-        setStickyStyles({});
-        setIsSticky(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll);
-    handleScroll();
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, [isSticky, sidebarHeight]);
+  // Sticky sidebar handled via CSS; no scroll listeners required
 
   return (
     <div className="min-h-screen bg-background pb-20">
@@ -413,8 +369,8 @@ const Index = () => {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-1" style={{ minHeight: sidebarHeight }}>
-            <div ref={sidebarRef} style={stickyStyles}>
+          <div className="lg:col-span-1">
+            <div className="lg:sticky lg:bottom-0">
 
             {/* Quick Facts Widget */}
             <div className="sidebar-widget">
@@ -624,7 +580,7 @@ const Index = () => {
         </div>
 
         {/* Final Order Section */}
-        <div id="order" ref={orderSectionRef} className="mt-16 text-center bg-gray-50 p-8 rounded-lg">
+        <div id="order" className="mt-16 text-center bg-gray-50 p-8 rounded-lg">
           <h2 className="news-headline text-4xl font-bold mb-4">Where to Buy iDrotherapy Cream Before It's Gone</h2>
           <p className="news-body text-xl mb-6">Exclusive online availability - Limited to 2 jars per customer</p>
           
