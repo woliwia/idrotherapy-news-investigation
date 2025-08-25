@@ -3,7 +3,6 @@ import heroImage from "@/assets/hero-clinical-lab.jpg";
 import dermatologistRealistic from "@/assets/dermatologist-realistic.jpg";
 
 const Index = () => {
-  const [showStickyCTA, setShowStickyCTA] = useState(false);
   const [orderCount, setOrderCount] = useState(137);
   const [currentTickerIndex, setCurrentTickerIndex] = useState(0);
   
@@ -16,12 +15,6 @@ const Index = () => {
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShowStickyCTA(window.scrollY > 500);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    
     // Simulate live counter updates
     const interval = setInterval(() => {
       setOrderCount(prev => prev + Math.floor(Math.random() * 3));
@@ -33,14 +26,13 @@ const Index = () => {
     }, 4000);
     
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       clearInterval(interval);
       clearInterval(tickerInterval);
     };
-  }, []);
+  }, [tickerMessages.length]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20">
       {/* Breaking News Ticker */}
       <div className="breaking-ticker">
         <div className="ticker-content">
@@ -620,17 +612,14 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Sticky Mobile CTA */}
-        <div className={`sticky-cta ${showStickyCTA ? 'show' : ''} md:hidden`}>
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="font-semibold">Limited Stock Alert!</p>
-                <p className="text-sm opacity-90">Claim your jar before it's gone</p>
-              </div>
-              <a href="#order" className="bg-white text-red-600 px-4 py-2 rounded font-semibold">
-                Order Now
-              </a>
-            </div>
+        {/* Floating Order Button */}
+        <div className="fixed bottom-0 left-0 right-0 z-50">
+          <a
+            href="#order"
+            className="block w-full text-center text-white font-semibold py-3 bg-[#DC3636]"
+          >
+            ORDER NOW - Up to 75% OFF + FREE Gua sha set! ($70 value)
+          </a>
         </div>
 
       </div>
