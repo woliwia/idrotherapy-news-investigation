@@ -173,19 +173,110 @@ const Index = () => {
                 The result? Skin that looks visibly younger, firmer, and more radiant—without the irritation.
               </p>
             </div>
+            {/* Clinical Results */}
+            <section className="mb-8">
+              <h2 className="news-headline text-3xl font-bold text-center text-red-600 mb-2">
+                Clinical Before & After Results
+              </h2>
+              <p className="text-center text-news-muted mb-6">
+                Independent clinical studies document the remarkable transformation achieved in just 28 days of use.
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {[
+                  {
+                    title: 'Eye Area',
+                    stat: "67% reduction in crow's feet",
+                    img: 'https://idro.vouue.com/lovable-uploads/82a086d7-78a5-438b-944c-2c5a90641034.png',
+                    alt: "Before and after of eye area showing fewer crow's feet",
+                  },
+                  {
+                    title: 'Nasolabial Folds',
+                    stat: '58% reduction in smile lines',
+                    img: 'https://idro.vouue.com/lovable-uploads/61df6848-20ff-4902-8965-e92df230b702.png',
+                    alt: 'Before and after of nasolabial folds',
+                  },
+                  {
+                    title: "Crow's Feet",
+                    stat: '59% reduction in fine lines',
+                    img: 'https://idro.vouue.com/lovable-uploads/962d3867-0231-4910-aa28-05f9644d96e3.png',
+                    alt: "Closeup showing crow's feet improvement",
+                  },
+                  {
+                    title: 'Overall Complexion',
+                    stat: '73% improvement in skin tone',
+                    img: 'https://idro.vouue.com/lovable-uploads/76e19f87-0866-485a-af6c-ea5b259e69ec.png',
+                    alt: 'Face showing overall complexion improvement',
+                  },
+                  {
+                    title: 'Facial Radiance',
+                    stat: '65% improvement in brightness',
+                    img: 'https://idro.vouue.com/lovable-uploads/234c02bd-e749-482b-88ab-afc4e01f84d0.png',
+                    alt: 'Before and after of facial radiance',
+                  },
+                  {
+                    title: 'Neck & Jawline',
+                    stat: '58% reduction in neck lines',
+                    img: 'https://idro.vouue.com/lovable-uploads/a477b904-f3b7-4f83-ba4f-1a96f86f3907.png',
+                    alt: 'Neck and jawline showing smoother skin',
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="border-2 border-red-600 rounded-lg bg-white flex flex-col overflow-hidden"
+                  >
+                    <div className="p-4 text-center">
+                      <h3 className="text-xl font-bold text-red-600 mb-1">{item.title}</h3>
+                      <p className="text-sm text-news-muted">{item.stat}</p>
+                    </div>
+                    <img
+                      src={item.img}
+                      alt={item.alt}
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
+                    <div className="p-2 text-center">
+                      <span className="inline-block bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">
+                        Clinical Study Result
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-red-50 rounded-lg p-6 mt-8">
+                <h3 className="text-2xl font-bold text-center text-red-600 mb-4">
+                  PEER-REVIEWED CLINICAL EVIDENCE
+                </h3>
+                <p className="text-center text-news-muted mb-6">
+                  These results have been published in the International Journal of Cosmetic Science and verified by independent
+                  dermatological assessment.
+                </p>
+                <div className="grid gap-4 sm:grid-cols-3">
+                  {[
+                    { stat: '28', label: 'Days to Results' },
+                    { stat: '120', label: 'Study Participants' },
+                    { stat: '98%', label: 'Showed Improvement' },
+                  ].map((d) => (
+                    <div key={d.label} className="bg-white rounded-lg p-4 text-center shadow">
+                      <div className="text-3xl font-bold text-red-600">{d.stat}</div>
+                      <div className="text-sm text-news-muted">{d.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
 
             {/* Dermatologist Image */}
             <div className="mb-8">
-              <img 
-                src={dermatologistRealistic} 
-                alt="Professional dermatologist examining skincare products in clinical setting" 
+              <img
+                src={dermatologistRealistic}
+                alt="Professional dermatologist examining skincare products in clinical setting"
                 className="w-full h-auto rounded-lg shadow-md"
                 loading="lazy"
                 width="1000"
                 height="600"
               />
               <p className="text-sm text-news-muted mt-2 italic">Dr. Sarah Mitchell examines the breakthrough peptide formula in her Beverly Hills clinic</p>
-              
+
               {/* Mid-article CTA */}
               <div className="text-center mt-6 mb-8">
                 <a href="https://www.idrotherapylove.com" className="editorial-cta-success">
