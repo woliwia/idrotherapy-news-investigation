@@ -1,11 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import heroImage from "@/assets/hero-clinical-lab.jpg";
 import dermatologistRealistic from "@/assets/dermatologist-realistic.jpg";
 
 const Index = () => {
-  const [showStickyCTA, setShowStickyCTA] = useState(false);
   const [orderCount, setOrderCount] = useState(137);
   const [currentTickerIndex, setCurrentTickerIndex] = useState(0);
+
+  // Sidebar sticky management
+  const sidebarRef = useRef<HTMLDivElement>(null);
+  const bottomSentinelRef = useRef<HTMLDivElement>(null);
+  const orderSectionRef = useRef<HTMLDivElement>(null);
+  const [isSticky, setIsSticky] = useState(false);
+  const [sidebarRect, setSidebarRect] = useState({ height: 0, width: 0, left: 0 });
+  const [orderVisible, setOrderVisible] = useState(false);
   
   const tickerMessages = [
     "BREAKING: Dermatologists Stunned by This One-Step Cream",
@@ -16,12 +23,6 @@ const Index = () => {
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShowStickyCTA(window.scrollY > 500);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    
     // Simulate live counter updates
     const interval = setInterval(() => {
       setOrderCount(prev => prev + Math.floor(Math.random() * 3));
@@ -33,14 +34,51 @@ const Index = () => {
     }, 4000);
     
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       clearInterval(interval);
       clearInterval(tickerInterval);
     };
+  }, [tickerMessages.length]);
+
+  // Track order section visibility
+  useEffect(() => {
+    const orderEl = orderSectionRef.current;
+    if (!orderEl) return;
+
+    const observer = new IntersectionObserver(entries => {
+      setOrderVisible(entries[0].isIntersecting);
+    });
+
+    observer.observe(orderEl);
+    return () => observer.disconnect();
   }, []);
 
+  // Measure sidebar dimensions
+  useEffect(() => {
+    const measure = () => {
+      const rect = sidebarRef.current?.getBoundingClientRect();
+      if (rect) setSidebarRect({ height: rect.height, width: rect.width, left: rect.left });
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
+  // Sticky sidebar using IntersectionObserver
+  useEffect(() => {
+    const sentinel = bottomSentinelRef.current;
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(entries => {
+      const entry = entries[0];
+      setIsSticky(entry.isIntersecting && !orderVisible);
+    });
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [orderVisible]);
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20">
       {/* Breaking News Ticker */}
       <div className="breaking-ticker">
         <div className="ticker-content">
@@ -78,7 +116,7 @@ const Index = () => {
 
           {/* First CTA */}
           <div className="text-center mt-6">
-            <a href="#order" className="editorial-cta-large">
+            <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
               🔥 Get Your Breakthrough Cream Now →
             </a>
           </div>
@@ -108,7 +146,7 @@ const Index = () => {
               </p>
 
               <div className="editorial-cta inline-block mb-6">
-                <a href="#order" className="editorial-cta-large">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
                   Editor's Pick: Try iDrotherapy Cream Before It's Gone →
                 </a>
               </div>
@@ -145,7 +183,7 @@ const Index = () => {
               
               {/* Inline CTA */}
               <div className="mt-6">
-                <a href="#order" className="editorial-cta">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta">
                   Try Risk-Free Today →
                 </a>
               </div>
@@ -169,7 +207,7 @@ const Index = () => {
               </div>
 
               <div className="text-center mb-6">
-                <a href="#order" className="editorial-cta">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta">
                   Readers Are Calling This 'Nature's Botox' →
                 </a>
               </div>
@@ -193,7 +231,7 @@ const Index = () => {
               
               {/* Mid-article CTA */}
               <div className="text-center mt-6 mb-8">
-                <a href="#order" className="editorial-cta-success">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-success">
                   ✅ Dermatologist Recommended - Order Now →
                 </a>
               </div>
@@ -238,7 +276,7 @@ const Index = () => {
               </div>
 
               <div className="editorial-cta inline-block mb-6">
-                <a href="#order" className="editorial-cta-large">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
                   See Before & After Photos →
                 </a>
               </div>
@@ -259,7 +297,7 @@ const Index = () => {
                 <p className="text-sm text-news-muted italic mt-3">Real results: Dramatic improvement in fine lines and skin texture after 4 weeks of daily use</p>
               </div>
               <div className="text-center mt-6">
-                <a href="#order" className="editorial-cta-urgent">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-urgent">
                   ⚡ Limited Stock - Order Before It's Gone →
                 </a>
               </div>
@@ -286,10 +324,50 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="text-center mb-8">
-                <a href="#order" className="editorial-cta-large">
+            <div className="text-center mb-8">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
                   Join 10,000+ Happy Customers →
                 </a>
+              </div>
+            </div>
+
+            {/* Beauty Revolution Section */}
+            <div className="mb-8">
+              <h2 className="news-headline text-3xl font-bold text-center mb-4">
+                Join The Beauty Revolution
+              </h2>
+              <p className="news-body text-lg text-center mb-6">
+                Thousands of women worldwide have discovered the transformative power of iDrotherapy's revolutionary formula. See the confidence in their faces.
+              </p>
+              <div className="image-container">
+                <img
+                  src="https://idro.vouue.com/lovable-uploads/8da99380-b785-4a85-961c-2b5f761d611e.png"
+                  alt="Collage of women holding iDrotherapy cream"
+                  className="image-responsive"
+                  loading="lazy"
+                  width="975"
+                  height="199"
+                />
+              </div>
+              <div className="p-6 rounded-lg bg-pink-100 text-center">
+                <h3 className="news-headline text-2xl mb-4">The Results Speak For Themselves</h3>
+                <p className="news-body text-lg mb-6">
+                  These women represent just a fraction of our 50,000+ satisfied customers who have experienced the life-changing benefits of RenuV8® and Renovage® technology.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div>
+                    <p className="text-4xl font-bold text-red-600 mb-2">94%</p>
+                    <p className="text-sm text-news-muted">Visible improvement in 2 weeks</p>
+                  </div>
+                  <div>
+                    <p className="text-4xl font-bold text-red-600 mb-2">98%</p>
+                    <p className="text-sm text-news-muted">Would recommend to friends</p>
+                  </div>
+                  <div>
+                    <p className="text-4xl font-bold text-red-600 mb-2">91%</p>
+                    <p className="text-sm text-news-muted">Plan to repurchase</p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -309,7 +387,7 @@ const Index = () => {
               
               {/* Another CTA */}
               <div className="text-center mt-8">
-                <a href="#order" className="editorial-cta-large">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
                   🌟 Transform Your Skin Today →
                 </a>
               </div>
@@ -360,7 +438,7 @@ const Index = () => {
               </div>
 
               <div className="text-center">
-                <a href="#order" className="editorial-cta-large text-xl px-10 py-5">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-large text-xl px-10 py-5">
                   👉 Claim Your Exclusive Discount Now
                 </a>
               </div>
@@ -374,217 +452,220 @@ const Index = () => {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            
-            {/* Quick Facts Widget */}
-            <div className="sidebar-widget">
-              <div className="editor-pick mb-4">Editor's Pick</div>
-              <h3 className="news-subhead text-xl font-bold mb-4">Quick Facts</h3>
-              <ul className="space-y-3 text-sm">
-                <li><strong>Formula:</strong> Matrixyl 3000 + Renovage Peptides</li>
-                <li><strong>Results:</strong> Visible in 2-4 weeks</li>
-                <li><strong>Use:</strong> Morning & Night</li>
-                <li><strong>Safe for:</strong> All skin types</li>
-                <li><strong>No:</strong> Harsh retinol, parabens, sulfates</li>
-                <li><strong>Targets:</strong> Face, neck, hands</li>
-              </ul>
-            </div>
-
-            {/* Product Image Widget */}
-            <div className="sidebar-widget text-center">
-              <div className="editor-pick mb-4">Trending Now</div>
-              <img 
-                src="/lovable-uploads/ff2aee7a-de72-4c36-aa5c-9a46a571308c.png" 
-                alt="iDrotherapy Wrinkle Reducer cream jar with luxury packaging" 
-                className="image-responsive max-w-xs mb-4"
-                loading="lazy"
-                width="300"
-                height="300"
-              />
-              <h4 className="font-bold mb-2">iDrotherapy Wrinkle Reducer</h4>
-              <p className="text-sm text-news-muted mb-4">The breakthrough formula dermatologists recommend</p>
-              <a href="#order" className="editorial-cta w-full justify-center mb-3">
-                Check Availability →
-              </a>
-              <a href="#order" className="editorial-cta-urgent w-full justify-center">
-                🔥 Flash Sale - 40% Off →
-              </a>
-            </div>
-
-            {/* FAQ Widget */}
-            <div className="sidebar-widget">
-              <h3 className="news-subhead text-xl font-bold mb-4">Frequently Asked</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">Is it safe for sensitive skin?</h4>
-                  <p className="text-sm text-news-muted">Yes, formulated without harsh retinol or irritating chemicals.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">When will I see results?</h4>
-                  <p className="text-sm text-news-muted">Most users notice improvements within 2-4 weeks of consistent use.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">Can I use it with other products?</h4>
-                  <p className="text-sm text-news-muted">Yes, but many find they can replace multiple products with just this one.</p>
-                </div>
+            {isSticky && <div style={{ height: sidebarRect.height }} aria-hidden="true" />}
+            <div
+              ref={sidebarRef}
+              className={isSticky ? "fixed bottom-0" : ""}
+              style={isSticky ? { width: sidebarRect.width, left: sidebarRect.left } : undefined}
+            >
+              {/* Quick Facts Widget */}
+              <div className="sidebar-widget">
+                <div className="editor-pick mb-4">Editor's Pick</div>
+                <h3 className="news-subhead text-xl font-bold mb-4">Quick Facts</h3>
+                <ul className="space-y-3 text-sm">
+                  <li><strong>Formula:</strong> Matrixyl 3000 + Renovage Peptides</li>
+                  <li><strong>Results:</strong> Visible in 2-4 weeks</li>
+                  <li><strong>Use:</strong> Morning & Night</li>
+                  <li><strong>Safe for:</strong> All skin types</li>
+                  <li><strong>No:</strong> Harsh retinol, parabens, sulfates</li>
+                  <li><strong>Targets:</strong> Face, neck, hands</li>
+                </ul>
               </div>
-            </div>
 
-            {/* Limited Stock Widget */}
-            <div className="sidebar-widget bg-red-50 border-red-200">
-              <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">⚠️ Stock Alert</h3>
-              <div className="fomo-counter mb-3">
-                ⚡ {orderCount} orders today
+              {/* Newsletter Signup Widget */}
+              <div className="sidebar-widget bg-gradient-to-br from-red-50 to-pink-50 border-red-200">
+                <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">📧 Beauty Insider Alerts</h3>
+                <p className="text-sm mb-2">Get exclusive access to breakthrough beauty discoveries before they go viral!</p>
+                <div className="klaviyo-form-TaTjsW"></div>
+                <p className="text-xs text-news-muted mt-2">Join 50,000+ beauty insiders. Unsubscribe anytime.</p>
               </div>
-              <p className="text-sm mb-4">Less than 200 units remaining for this month. New shipments delayed until next quarter.</p>
-              <a href="#order" className="editorial-cta bg-red-600 hover:bg-red-700 w-full justify-center">
-                Order Before It's Gone →
-              </a>
-            </div>
 
-            {/* Related Articles Widget */}
-            <div className="sidebar-widget">
-              <h3 className="news-subhead text-xl font-bold mb-6">Related Stories</h3>
-              
-              {/* CaviArgan Article */}
-              <div className="border-b border-gray-200 pb-6 mb-6">
-                <img 
-                  src="/lovable-uploads/1554c539-cd88-45fd-a732-3a457ca6ea44.png" 
-                  alt="Woman holding CaviArgan cream with radiant skin" 
-                  className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
+              {/* Product Image Widget */}
+              <div className="sidebar-widget text-center">
+                <div className="editor-pick mb-4">Trending Now</div>
+                <img
+                  src="/lovable-uploads/ff2aee7a-de72-4c36-aa5c-9a46a571308c.png"
+                  alt="iDrotherapy Wrinkle Reducer cream jar with luxury packaging"
+                  className="image-responsive max-w-xs mb-4"
+                  loading="lazy"
+                  width="300"
+                  height="300"
                 />
-                <h4 className="font-semibold text-base mb-3 leading-tight">
-                  <a href="#" className="hover:text-red-600 transition-colors">
-                    SHOCKING: This $39 CaviArgan Cream Outperforms $300 Luxury Brands
-                  </a>
-                </h4>
-                <p className="text-sm text-news-muted mb-2">Celebrity makeup artists reveal the affordable secret behind Hollywood's glow that's causing luxury brands to panic...</p>
-                <div className="text-xs text-red-600 font-semibold">TRENDING NOW • 2 min read</div>
-              </div>
-              
-              {/* Essence of Argan Article */}
-              <div className="border-b border-gray-200 pb-6 mb-6">
-                <img 
-                  src="/lovable-uploads/88a7dfa9-88af-4d1b-92b2-d1515ac28421.png" 
-                  alt="Woman applying Essence of Argan oil with glowing skin" 
-                  className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
-                />
-                <h4 className="font-semibold text-base mb-3 leading-tight">
-                  <a href="#" className="hover:text-red-600 transition-colors">
-                    EXCLUSIVE: Moroccan Argan Oil Secret That's Making Botox Obsolete
-                  </a>
-                </h4>
-                <p className="text-sm text-news-muted mb-2">Beauty insiders scramble to get their hands on this ancient anti-aging formula that's leaving dermatologists speechless...</p>
-                <div className="text-xs text-red-600 font-semibold">BREAKING • 3 min read</div>
+                <h4 className="font-bold mb-2">iDrotherapy Wrinkle Reducer</h4>
+                <p className="text-sm text-news-muted mb-4">The breakthrough formula dermatologists recommend</p>
+                <a href="https://www.idrotherapylove.com" className="editorial-cta w-full justify-center mb-3">
+                  Check Availability →
+                </a>
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-urgent w-full justify-center">
+                  🔥 Flash Sale - 40% Off →
+                </a>
               </div>
 
-              {/* Additional Article 1 */}
-              <div className="border-b border-gray-200 pb-6 mb-6">
-                <img 
-                  src="/lovable-uploads/ca66e615-6b53-470a-b542-1020dc49a3d8.png" 
-                  alt="Woman with perfect skin results" 
-                  className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
-                />
-                <h4 className="font-semibold text-base mb-3 leading-tight">
-                  <a href="#" className="hover:text-red-600 transition-colors">
-                    VIRAL: 58-Year-Old Mom Looks 35 After Using This 1 Simple Trick
-                  </a>
-                </h4>
-                <p className="text-sm text-news-muted mb-2">Plastic surgeons hate her! Local mom discovers fountain of youth that costs less than your morning coffee...</p>
-                <div className="text-xs text-red-600 font-semibold">VIRAL • 4 min read</div>
-              </div>
-
-              {/* Additional Article 2 */}
-              <div className="border-b border-gray-200 pb-6 mb-6">
-                <img 
-                  src="/lovable-uploads/ff2aee7a-de72-4c36-aa5c-9a46a571308c.png" 
-                  alt="Premium skincare product results" 
-                  className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
-                />
-                <h4 className="font-semibold text-base mb-3 leading-tight">
-                  <a href="#" className="hover:text-red-600 transition-colors">
-                    EXPOSED: The $15 Anti-Aging Cream That Billionaires Don't Want You to Know About
-                  </a>
-                </h4>
-                <p className="text-sm text-news-muted mb-2">Silicon Valley insider leaks the secret formula that tech moguls have been hiding from the public...</p>
-                <div className="text-xs text-red-600 font-semibold">EXCLUSIVE • 5 min read</div>
-              </div>
-
-              {/* Additional Article 3 */}
-              <div>
-                <img 
-                  src="/lovable-uploads/579730e5-27da-484a-8c7d-60a7043bf40c.png" 
-                  alt="Amazing before after transformation" 
-                  className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
-                />
-                <h4 className="font-semibold text-base mb-3 leading-tight">
-                  <a href="#" className="hover:text-red-600 transition-colors">
-                    MIRACLE: Before & After Photos That Will Make You Believe in Anti-Aging Science
-                  </a>
-                </h4>
-                <p className="text-sm text-news-muted mb-2">These shocking transformation photos are proof that age is just a number when you know the right secrets...</p>
-                <div className="text-xs text-red-600 font-semibold">MUST SEE • 3 min read</div>
-              </div>
-            </div>
-
-            {/* Additional Sidebar Content */}
-            <div className="sidebar-widget">
-              <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">🔥 What's Hot Right Now</h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
-                  <span className="text-2xl">📈</span>
+              {/* FAQ Widget */}
+              <div className="sidebar-widget">
+                <h3 className="news-subhead text-xl font-bold mb-4">Frequently Asked</h3>
+                <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-sm">Anti-Aging Market Explodes</h4>
-                    <p className="text-xs text-news-muted">Peptide creams see 400% surge in demand</p>
+                    <h4 className="font-semibold text-sm mb-1">Is it safe for sensitive skin?</h4>
+                    <p className="text-sm text-news-muted">Yes, formulated without harsh retinol or irritating chemicals.</p>
                   </div>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
-                  <span className="text-2xl">🧪</span>
                   <div>
-                    <h4 className="font-semibold text-sm">Lab Results Shock Scientists</h4>
-                    <p className="text-xs text-news-muted">New formula shows unprecedented results</p>
+                    <h4 className="font-semibold text-sm mb-1">When will I see results?</h4>
+                    <p className="text-sm text-news-muted">Most users notice improvements within 2-4 weeks of consistent use.</p>
                   </div>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
-                  <span className="text-2xl">👩‍⚕️</span>
                   <div>
-                    <h4 className="font-semibold text-sm">Dermatologists Recommend</h4>
-                    <p className="text-xs text-news-muted">94% of experts endorse peptide therapy</p>
+                    <h4 className="font-semibold text-sm mb-1">Can I use it with other products?</h4>
+                    <p className="text-sm text-news-muted">Yes, but many find they can replace multiple products with just this one.</p>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Newsletter Signup Widget */}
-            <div className="sidebar-widget bg-gradient-to-br from-red-50 to-pink-50 border-red-200">
-              <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">📧 Beauty Insider Alerts</h3>
-              <p className="text-sm mb-4">Get exclusive access to breakthrough beauty discoveries before they go viral!</p>
-              <div className="space-y-3">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email..." 
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                />
-                <button className="w-full bg-red-600 text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-red-700 transition-colors">
-                  Get Free Beauty Alerts →
-                </button>
+              {/* Limited Stock Widget */}
+              <div className="sidebar-widget bg-red-50 border-red-200">
+                <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">⚠️ Stock Alert</h3>
+                <div className="fomo-counter mb-3">⚡ {orderCount} orders today</div>
+                <p className="text-sm mb-4">Less than 200 units remaining for this month. New shipments delayed until next quarter.</p>
+                <a href="https://www.idrotherapylove.com" className="editorial-cta bg-red-600 hover:bg-red-700 w-full justify-center">
+                  Order Before It's Gone →
+                </a>
               </div>
-              <p className="text-xs text-gray-500 mt-2">Join 50,000+ beauty insiders. Unsubscribe anytime.</p>
-            </div>
 
-            {/* Urgency Widget - Updated to Red Theme */}
-            <div className="sidebar-widget bg-red-50 border-red-200">
-              <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">⏰ 24-Hour Flash Sale</h3>
-              <p className="text-sm mb-4">Editorial readers get 40% off, but this deal expires at midnight!</p>
-              <a href="#order" className="editorial-cta w-full justify-center">
-                Claim Flash Discount →
-              </a>
-            </div>
+              {/* Related Articles Widget */}
+              <div className="sidebar-widget">
+                <h3 className="news-subhead text-xl font-bold mb-6">Related Stories</h3>
 
+                {/* CaviArgan Article */}
+                <div className="border-b border-gray-200 pb-6 mb-6">
+                  <img
+                    src="/lovable-uploads/1554c539-cd88-45fd-a732-3a457ca6ea44.png"
+                    alt="Woman holding CaviArgan cream with radiant skin"
+                    className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
+                  />
+                  <h4 className="font-semibold text-base mb-3 leading-tight">
+                    <a href="https://www.idrotherapylove.com" className="hover:text-red-600 transition-colors">
+                      SHOCKING: This $39 CaviArgan Cream Outperforms $300 Luxury Brands
+                    </a>
+                  </h4>
+                  <p className="text-sm text-news-muted mb-2">Celebrity makeup artists reveal the affordable secret behind Hollywood's glow that's causing luxury brands to panic...</p>
+                  <div className="text-xs text-red-600 font-semibold">TRENDING NOW • 2 min read</div>
+                </div>
+
+                {/* Essence of Argan Article */}
+                <div className="border-b border-gray-200 pb-6 mb-6">
+                  <img
+                    src="/lovable-uploads/88a7dfa9-88af-4d1b-92b2-d1515ac28421.png"
+                    alt="Woman applying Essence of Argan oil with glowing skin"
+                    className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
+                  />
+                  <h4 className="font-semibold text-base mb-3 leading-tight">
+                    <a href="https://www.idrotherapylove.com" className="hover:text-red-600 transition-colors">
+                      EXCLUSIVE: Moroccan Argan Oil Secret That's Making Botox Obsolete
+                    </a>
+                  </h4>
+                  <p className="text-sm text-news-muted mb-2">Beauty insiders scramble to get their hands on this ancient anti-aging formula that's leaving dermatologists speechless...</p>
+                  <div className="text-xs text-red-600 font-semibold">BREAKING • 3 min read</div>
+                </div>
+
+                {/* Additional Article 1 */}
+                <div className="border-b border-gray-200 pb-6 mb-6">
+                  <img
+                    src="/lovable-uploads/ca66e615-6b53-470a-b542-1020dc49a3d8.png"
+                    alt="Woman with perfect skin results"
+                    className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
+                  />
+                  <h4 className="font-semibold text-base mb-3 leading-tight">
+                    <a href="https://www.idrotherapylove.com" className="hover:text-red-600 transition-colors">
+                      VIRAL: 58-Year-Old Mom Looks 35 After Using This 1 Simple Trick
+                    </a>
+                  </h4>
+                  <p className="text-sm text-news-muted mb-2">Plastic surgeons hate her! Local mom discovers fountain of youth that costs less than your morning coffee...</p>
+                  <div className="text-xs text-red-600 font-semibold">VIRAL • 4 min read</div>
+                </div>
+
+                {/* Additional Article 2 */}
+                <div className="border-b border-gray-200 pb-6 mb-6">
+                  <img
+                    src="/lovable-uploads/ff2aee7a-de72-4c36-aa5c-9a46a571308c.png"
+                    alt="Premium skincare product results"
+                    className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
+                  />
+                  <h4 className="font-semibold text-base mb-3 leading-tight">
+                    <a href="https://www.idrotherapylove.com" className="hover:text-red-600 transition-colors">
+                      EXPOSED: The $15 Anti-Aging Cream That Billionaires Don't Want You to Know About
+                    </a>
+                  </h4>
+                  <p className="text-sm text-news-muted mb-2">Silicon Valley insider leaks the secret formula that tech moguls have been hiding from the public...</p>
+                  <div className="text-xs text-red-600 font-semibold">EXCLUSIVE • 5 min read</div>
+                </div>
+
+                {/* Additional Article 3 */}
+                <div>
+                  <img
+                    src="/lovable-uploads/579730e5-27da-484a-8c7d-60a7043bf40c.png"
+                    alt="Amazing before after transformation"
+                    className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
+                  />
+                  <h4 className="font-semibold text-base mb-3 leading-tight">
+                    <a href="https://www.idrotherapylove.com" className="hover:text-red-600 transition-colors">
+                      MIRACLE: Before & After Photos That Will Make You Believe in Anti-Aging Science
+                    </a>
+                  </h4>
+                  <p className="text-sm text-news-muted mb-2">These shocking transformation photos are proof that age is just a number when you know the right secrets...</p>
+                  <div className="text-xs text-red-600 font-semibold">MUST SEE • 3 min read</div>
+                </div>
+              </div>
+
+              {/* Additional Sidebar Content */}
+              <div className="sidebar-widget">
+                <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">🔥 What's Hot Right Now</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
+                    <span className="text-2xl">📈</span>
+                    <div>
+                      <h4 className="font-semibold text-sm">Anti-Aging Market Explodes</h4>
+                      <p className="text-xs text-news-muted">Peptide creams see 400% surge in demand</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
+                    <span className="text-2xl">🧪</span>
+                    <div>
+                      <h4 className="font-semibold text-sm">Lab Results Shock Scientists</h4>
+                      <p className="text-xs text-news-muted">New formula shows unprecedented results</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
+                    <span className="text-2xl">👩‍⚕️</span>
+                    <div>
+                      <h4 className="font-semibold text-sm">Dermatologists Recommend</h4>
+                      <p className="text-xs text-news-muted">94% of experts endorse peptide therapy</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Newsletter Signup Widget */}
+              <div className="sidebar-widget bg-gradient-to-br from-red-50 to-pink-50 border-red-200">
+                <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">📧 Beauty Insider Alerts</h3>
+                <p className="text-sm mb-2">Get exclusive access to breakthrough beauty discoveries before they go viral!</p>
+                <div className="klaviyo-form-TaTjsW"></div>
+                <p className="text-xs text-news-muted mt-2">Join 50,000+ beauty insiders. Unsubscribe anytime.</p>
+              </div>
+
+              {/* Urgency Widget - Updated to Red Theme */}
+              <div className="sidebar-widget bg-red-50 border-red-200">
+                <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">⏰ 24-Hour Flash Sale</h3>
+                <p className="text-sm mb-4">Editorial readers get 40% off, but this deal expires at midnight!</p>
+                <a href="https://www.idrotherapylove.com" className="editorial-cta w-full justify-center">
+                  Claim Flash Discount →
+                </a>
+              </div>
+            </div>
+            <div ref={bottomSentinelRef} />
           </div>
         </div>
 
         {/* Final Order Section */}
-        <div id="order" className="mt-16 text-center bg-gray-50 p-8 rounded-lg">
+        <div id="order" ref={orderSectionRef} className="mt-16 text-center bg-gray-50 p-8 rounded-lg">
           <h2 className="news-headline text-4xl font-bold mb-4">Where to Buy iDrotherapy Cream Before It's Gone</h2>
           <p className="news-body text-xl mb-6">Exclusive online availability - Limited to 2 jars per customer</p>
           
@@ -602,10 +683,10 @@ const Index = () => {
             <h3 className="text-xl font-bold mb-2">iDrotherapy Wrinkle Reducer</h3>
             <p className="text-lg font-semibold text-red-600 mb-6">Special Editorial Price - 40% Off!</p>
             <div className="space-y-4">
-              <a href="#" className="editorial-cta-large text-xl px-8 py-4 w-full justify-center">
+              <a href="https://www.idrotherapylove.com" className="editorial-cta-large text-xl px-8 py-4 w-full justify-center">
                 CLAIM YOUR JAR NOW →
               </a>
-              <a href="#" className="editorial-cta-urgent w-full justify-center">
+              <a href="https://www.idrotherapylove.com" className="editorial-cta-urgent w-full justify-center">
                 ⚡ Only 2 Hours Left - Order Now! →
               </a>
             </div>
@@ -620,18 +701,46 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Sticky Mobile CTA */}
-        <div className={`sticky-cta ${showStickyCTA ? 'show' : ''} md:hidden`}>
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="font-semibold">Limited Stock Alert!</p>
-                <p className="text-sm opacity-90">Claim your jar before it's gone</p>
-              </div>
-              <a href="#order" className="bg-white text-red-600 px-4 py-2 rounded font-semibold">
-                Order Now
-              </a>
-            </div>
-        </div>
+        {/* Footer Links */}
+        <footer className="mt-4 text-center text-xs text-news-muted">
+          <div className="flex flex-wrap justify-center gap-x-2 gap-y-1">
+            <a href="https://idrotherapylove.com/contact" className="hover:text-red-600">
+              Contact Us
+            </a>
+            <span>|</span>
+            <a href="https://idrotherapylove.com/terms" className="hover:text-red-600">
+              Terms and Conditions
+            </a>
+            <span>|</span>
+            <a href="https://idrotherapylove.com/privacy" className="hover:text-red-600">
+              Privacy Policy
+            </a>
+            <span>|</span>
+            <a href="https://idrotherapylove.com/refund" className="hover:text-red-600">
+              Refund Policy
+            </a>
+            <span>|</span>
+            <a href="https://idrotherapylove.com/shipping" className="hover:text-red-600">
+              Shipping Policy
+            </a>
+            <span>|</span>
+            <a
+              href="https://streamline.everflowclient.io/affiliate/signup"
+              className="hover:text-red-600"
+            >
+              AFFILIATE SIGN UP
+            </a>
+          </div>
+          <div className="mt-1">© 2025 Idrotherapy. All Rights Reserved</div>
+        </footer>
+
+        {/* Floating Order Button */}
+        <a
+          href="https://www.idrotherapylove.com"
+          className="fixed bottom-0 left-0 right-0 z-50 block w-full text-center text-white font-semibold py-3 bg-[#DC3636]"
+        >
+          ORDER NOW - Up to 75% OFF + FREE Gua sha set! ($70 value)
+        </a>
 
       </div>
     </div>
