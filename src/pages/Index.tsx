@@ -181,7 +181,7 @@ const Index = () => {
               <p className="text-center text-news-muted mb-6">
                 Independent clinical studies document the remarkable transformation achieved in just 28 days of use.
               </p>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 [grid-auto-rows:1fr]">
                 {[
                   {
                     title: 'Eye Area',
@@ -222,7 +222,7 @@ const Index = () => {
                 ].map((item) => (
                   <div
                     key={item.title}
-                    className="border-2 border-red-600 rounded-lg bg-white flex flex-col overflow-hidden"
+                    className="border-2 border-red-600 rounded-lg bg-white flex flex-col h-full overflow-hidden"
                   >
                     <div className="p-4 text-center">
                       <h3 className="text-xl font-bold text-red-600 mb-1">{item.title}</h3>
@@ -231,12 +231,13 @@ const Index = () => {
                     <img
                       src={item.img}
                       alt={item.alt}
-                      className="w-full h-auto"
+                      className="w-full h-40 object-cover"
                       loading="lazy"
                     />
-                    <div className="p-2 text-center">
-                      <span className="inline-block bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">
+                    <div className="p-2 text-center mt-auto">
+                      <span className="inline-block bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded leading-tight">
                         Clinical Study Result
+                        <span className="block text-[10px] font-normal">28-day treatment result</span>
                       </span>
                     </div>
                   </div>
