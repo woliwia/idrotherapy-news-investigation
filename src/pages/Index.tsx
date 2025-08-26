@@ -352,33 +352,89 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Real Women Section */}
-            <div className="mb-8">
-              <h2 className="news-headline text-3xl font-bold mb-4">Real Women Are Raving</h2>
-              
-              <div className="space-y-6 mb-8">
-                <div className="testimonial-enhanced">
-                  <p className="text-lg mb-2 font-medium">I was skeptical, but within 2 weeks, my under-eye circles faded and my skin felt plumper. I actually stopped buying my $150 serum.</p>
-                  <p className="text-sm text-news-muted font-semibold">– Susan, 52, verified buyer</p>
-                </div>
-                
-                <div className="testimonial-enhanced">
-                  <p className="text-lg mb-2 font-medium">My neck lines were deep and noticeable. After a month with iDrotherapy, they're barely visible. This cream is my holy grail.</p>
-                  <p className="text-sm text-news-muted font-semibold">– Maria, 48, verified buyer</p>
-                </div>
-                
-                <div className="testimonial-enhanced">
-                  <p className="text-lg mb-2 font-medium">It's like Photoshop in a jar. I use it morning and night and my skin has never looked more even.</p>
-                  <p className="text-sm text-news-muted font-semibold">– Claire, 56, verified buyer</p>
-                </div>
+            {/* Customer Reviews Section */}
+            <section className="mb-8">
+              <h2 className="news-headline text-3xl font-bold text-center text-red-600 mb-2">
+                Real Customer Reviews
+              </h2>
+              <p className="text-center text-news-muted mb-6">
+                See what our verified customers are saying about their iDrotherapy experience
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {[
+                  {
+                    name: "Sarah M.",
+                    info: "Age 42 • California",
+                    img: "https://idro.vouue.com/lovable-uploads/9530d609-ffde-4551-ae23-6229cc1d21f4.png",
+                    quote:
+                      "I can't believe the difference! People keep asking if I've had work done. This cream is absolutely amazing!",
+                  },
+                  {
+                    name: "Jennifer K.",
+                    info: "Age 39 • New York",
+                    img: "https://idro.vouue.com/lovable-uploads/7a13f339-f5ca-4551-a35e-a8ece21151e7.png",
+                    quote:
+                      "The texture is incredible and my skin feels so much firmer. I'm seeing results after just 2 weeks!",
+                  },
+                  {
+                    name: "Maria L.",
+                    info: "Age 45 • Florida",
+                    img: "https://idro.vouue.com/lovable-uploads/fb2adcf7-d948-4a38-bf2c-83c5e14960f9.png",
+                    quote:
+                      "I finally found something that works. My confidence is through the roof—my skin looks ten years younger!",
+                  },
+                  {
+                    name: "Lisa R.",
+                    info: "Age 51 • Texas",
+                    img: "https://idro.vouue.com/lovable-uploads/4d1b5466-0136-4052-9d86-4c4f902b9a11.png",
+                    quote:
+                      "Everyone's asking about my glowing, even skin now. This product is my secret weapon!",
+                  },
+                  {
+                    name: "Rachel W.",
+                    info: "Age 41 • Illinois",
+                    img: "https://idro.vouue.com/lovable-uploads/043d2e7e-6d08-4240-9e73-ddd439d79c0d.png",
+                    quote:
+                      "Not even my retinol worked! My skin has never looked this good—wrinkles vanished!",
+                  },
+                  {
+                    name: "Amanda S.",
+                    info: "Age 47 • Oregon",
+                    img: "https://idro.vouue.com/lovable-uploads/de927a92-871d-4d92-b61b-71f777c9bf6d.png",
+                    quote:
+                      "Wrinkles where? I wish I'd found this sooner—my skin has completely transformed!",
+                  },
+                ].map(review => (
+                  <div
+                    key={review.name}
+                    className="p-4 border border-red-200 rounded-lg bg-white flex flex-col h-full"
+                  >
+                    <div className="flex items-center mb-4">
+                      <img
+                        src={review.img}
+                        alt={`${review.name} holding iDrotherapy cream`}
+                        className="w-16 h-16 rounded-full object-cover mr-4"
+                        loading="lazy"
+                      />
+                      <div>
+                        <p className="font-semibold">{review.name}</p>
+                        <p className="text-sm text-news-muted">{review.info}</p>
+                        <span className="inline-block mt-1 bg-red-600 text-white text-xs px-2 py-1 rounded">
+                          ✓ Verified Purchase
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-sm flex-grow">{review.quote}</p>
+                    <div className="text-yellow-400 mt-4">★★★★★</div>
+                  </div>
+                ))}
               </div>
-
-            <div className="text-center mb-8">
+              <div className="text-center mt-8">
                 <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
                   Join 10,000+ Happy Customers →
                 </a>
               </div>
-            </div>
+            </section>
 
             {/* Beauty Revolution Section */}
             <div className="mb-8">
