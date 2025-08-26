@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import heroImage from "@/assets/hero-clinical-lab.jpg";
 import dermatologistRealistic from "@/assets/dermatologist-realistic.jpg";
 
@@ -6,13 +6,7 @@ const Index = () => {
   const [orderCount, setOrderCount] = useState(137);
   const [currentTickerIndex, setCurrentTickerIndex] = useState(0);
 
-  // Sidebar sticky management
-  const sidebarRef = useRef<HTMLDivElement>(null);
-  const bottomSentinelRef = useRef<HTMLDivElement>(null);
-  const orderSectionRef = useRef<HTMLDivElement>(null);
-  const [isSticky, setIsSticky] = useState(false);
-  const [sidebarRect, setSidebarRect] = useState({ height: 0, width: 0, left: 0 });
-  const [orderVisible, setOrderVisible] = useState(false);
+  // Sidebar sticky management handled via CSS
   
   const tickerMessages = [
     "BREAKING: Dermatologists Stunned by This One-Step Cream",
@@ -39,43 +33,6 @@ const Index = () => {
     };
   }, [tickerMessages.length]);
 
-  // Track order section visibility
-  useEffect(() => {
-    const orderEl = orderSectionRef.current;
-    if (!orderEl) return;
-
-    const observer = new IntersectionObserver(entries => {
-      setOrderVisible(entries[0].isIntersecting);
-    });
-
-    observer.observe(orderEl);
-    return () => observer.disconnect();
-  }, []);
-
-  // Measure sidebar dimensions
-  useEffect(() => {
-    const measure = () => {
-      const rect = sidebarRef.current?.getBoundingClientRect();
-      if (rect) setSidebarRect({ height: rect.height, width: rect.width, left: rect.left });
-    };
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, []);
-
-  // Sticky sidebar using IntersectionObserver
-  useEffect(() => {
-    const sentinel = bottomSentinelRef.current;
-    if (!sentinel) return;
-
-    const observer = new IntersectionObserver(entries => {
-      const entry = entries[0];
-      setIsSticky(entry.isIntersecting && !orderVisible);
-    });
-
-    observer.observe(sentinel);
-    return () => observer.disconnect();
-  }, [orderVisible]);
 
   return (
     <div className="min-h-screen bg-background pb-20">
@@ -451,13 +408,8 @@ const Index = () => {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-1">
-            {isSticky && <div style={{ height: sidebarRect.height }} aria-hidden="true" />}
-            <div
-              ref={sidebarRef}
-              className={isSticky ? "fixed bottom-0" : ""}
-              style={isSticky ? { width: sidebarRect.width, left: sidebarRect.left } : undefined}
-            >
+          <div className="lg:col-span-1 self-start">
+            <div className="lg:sticky lg:bottom-0">
               {/* Quick Facts Widget */}
               <div className="sidebar-widget">
                 <div className="editor-pick mb-4">Editor's Pick</div>
@@ -675,12 +627,11 @@ const Index = () => {
                 </a>
               </div>
             </div>
-            <div ref={bottomSentinelRef} />
           </div>
         </div>
 
         {/* Final Order Section */}
-        <div id="order" ref={orderSectionRef} className="mt-16 text-center bg-gray-50 p-8 rounded-lg">
+        <div id="order" className="mt-16 text-center bg-gray-50 p-8 rounded-lg">
           <h2 className="news-headline text-4xl font-bold mb-4">Where to Buy iDrotherapy Cream Before It's Gone</h2>
           <p className="news-body text-xl mb-6">Exclusive online availability - Limited to 2 jars per customer</p>
           
