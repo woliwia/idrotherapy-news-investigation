@@ -535,84 +535,99 @@ const Index = () => {
                 <h3 className="news-subhead text-xl font-bold mb-6">Related Stories</h3>
 
                 {/* CaviArgan Article */}
-                <div className="border-b border-gray-200 pb-6 mb-6">
+                <a
+                  href="https://www.beverlyhillsscoops.com"
+                  className="block border-b border-gray-200 pb-6 mb-6 group"
+                >
                   <img
                     src="/lovable-uploads/1554c539-cd88-45fd-a732-3a457ca6ea44.png"
                     alt="Woman holding CaviArgan cream with radiant skin"
                     className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
                   />
-                  <h4 className="font-semibold text-base mb-3 leading-tight">
-                    <a href="https://www.idrotherapylove.com" className="hover:text-red-600 transition-colors">
-                      SHOCKING: This $39 CaviArgan Cream Outperforms $300 Luxury Brands
-                    </a>
+                  <h4 className="font-semibold text-base mb-3 leading-tight transition-colors group-hover:text-red-600">
+                    SHOCKING: This $39 CaviArgan Cream Outperforms $300 Luxury Brands
                   </h4>
-                  <p className="text-sm text-news-muted mb-2">Celebrity makeup artists reveal the affordable secret behind Hollywood's glow that's causing luxury brands to panic...</p>
+                  <p className="text-sm text-news-muted mb-2">
+                    Celebrity makeup artists reveal the affordable secret behind Hollywood's glow that's causing luxury brands to panic...
+                  </p>
                   <div className="text-xs text-red-600 font-semibold">TRENDING NOW • 2 min read</div>
-                </div>
+                </a>
 
                 {/* Essence of Argan Article */}
-                <div className="border-b border-gray-200 pb-6 mb-6">
+                <a
+                  href="https://www.beverlyhillsscoops.com/argan"
+                  className="block border-b border-gray-200 pb-6 mb-6 group"
+                >
                   <img
                     src="/lovable-uploads/88a7dfa9-88af-4d1b-92b2-d1515ac28421.png"
                     alt="Woman applying Essence of Argan oil with glowing skin"
                     className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
                   />
-                  <h4 className="font-semibold text-base mb-3 leading-tight">
-                    <a href="https://www.idrotherapylove.com" className="hover:text-red-600 transition-colors">
-                      EXCLUSIVE: Moroccan Argan Oil Secret That's Making Botox Obsolete
-                    </a>
+                  <h4 className="font-semibold text-base mb-3 leading-tight transition-colors group-hover:text-red-600">
+                    EXCLUSIVE: Moroccan Argan Oil Secret That's Making Botox Obsolete
                   </h4>
-                  <p className="text-sm text-news-muted mb-2">Beauty insiders scramble to get their hands on this ancient anti-aging formula that's leaving dermatologists speechless...</p>
+                  <p className="text-sm text-news-muted mb-2">
+                    Beauty insiders scramble to get their hands on this ancient anti-aging formula that's leaving dermatologists speechless...
+                  </p>
                   <div className="text-xs text-red-600 font-semibold">BREAKING • 3 min read</div>
-                </div>
+                </a>
 
                 {/* Additional Article 1 */}
-                <div className="border-b border-gray-200 pb-6 mb-6">
+                <a
+                  href="https://idro.vouue.com/"
+                  className="block border-b border-gray-200 pb-6 mb-6 group"
+                >
                   <img
                     src="/lovable-uploads/ca66e615-6b53-470a-b542-1020dc49a3d8.png"
                     alt="Woman with perfect skin results"
                     className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
                   />
-                  <h4 className="font-semibold text-base mb-3 leading-tight">
-                    <a href="https://www.idrotherapylove.com" className="hover:text-red-600 transition-colors">
-                      VIRAL: 58-Year-Old Mom Looks 35 After Using This 1 Simple Trick
-                    </a>
+                  <h4 className="font-semibold text-base mb-3 leading-tight transition-colors group-hover:text-red-600">
+                    VIRAL: 58-Year-Old Mom Looks 35 After Using This 1 Simple Trick
                   </h4>
-                  <p className="text-sm text-news-muted mb-2">Plastic surgeons hate her! Local mom discovers fountain of youth that costs less than your morning coffee...</p>
+                  <p className="text-sm text-news-muted mb-2">
+                    Plastic surgeons hate her! Local mom discovers fountain of youth that costs less than your morning coffee...
+                  </p>
                   <div className="text-xs text-red-600 font-semibold">VIRAL • 4 min read</div>
-                </div>
+                </a>
 
                 {/* Additional Article 2 */}
-                <div className="border-b border-gray-200 pb-6 mb-6">
+                <a
+                  href="https://idro.vouue.com/"
+                  className="block border-b border-gray-200 pb-6 mb-6 group"
+                >
                   <img
                     src="/lovable-uploads/ff2aee7a-de72-4c36-aa5c-9a46a571308c.png"
                     alt="Premium skincare product results"
                     className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
                   />
-                  <h4 className="font-semibold text-base mb-3 leading-tight">
-                    <a href="https://www.idrotherapylove.com" className="hover:text-red-600 transition-colors">
-                      EXPOSED: The $15 Anti-Aging Cream That Billionaires Don't Want You to Know About
-                    </a>
+                  <h4 className="font-semibold text-base mb-3 leading-tight transition-colors group-hover:text-red-600">
+                    EXPOSED: The $15 Anti-Aging Cream That Billionaires Don't Want You to Know About
                   </h4>
-                  <p className="text-sm text-news-muted mb-2">Silicon Valley insider leaks the secret formula that tech moguls have been hiding from the public...</p>
+                  <p className="text-sm text-news-muted mb-2">
+                    Silicon Valley insider leaks the secret formula that tech moguls have been hiding from the public...
+                  </p>
                   <div className="text-xs text-red-600 font-semibold">EXCLUSIVE • 5 min read</div>
-                </div>
+                </a>
 
                 {/* Additional Article 3 */}
-                <div>
+                <a
+                  href="https://www.beverlyhillsscoops.com"
+                  className="block group"
+                >
                   <img
                     src="/lovable-uploads/579730e5-27da-484a-8c7d-60a7043bf40c.png"
                     alt="Amazing before after transformation"
                     className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
                   />
-                  <h4 className="font-semibold text-base mb-3 leading-tight">
-                    <a href="https://www.idrotherapylove.com" className="hover:text-red-600 transition-colors">
-                      MIRACLE: Before & After Photos That Will Make You Believe in Anti-Aging Science
-                    </a>
+                  <h4 className="font-semibold text-base mb-3 leading-tight transition-colors group-hover:text-red-600">
+                    MIRACLE: Before & After Photos That Will Make You Believe in Anti-Aging Science
                   </h4>
-                  <p className="text-sm text-news-muted mb-2">These shocking transformation photos are proof that age is just a number when you know the right secrets...</p>
+                  <p className="text-sm text-news-muted mb-2">
+                    These shocking transformation photos are proof that age is just a number when you know the right secrets...
+                  </p>
                   <div className="text-xs text-red-600 font-semibold">MUST SEE • 3 min read</div>
-                </div>
+                </a>
               </div>
 
               {/* Additional Sidebar Content */}
