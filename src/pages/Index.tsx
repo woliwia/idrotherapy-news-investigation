@@ -173,6 +173,21 @@ const Index = () => {
                 The result? Skin that looks visibly younger, firmer, and more radiant—without the irritation.
               </p>
             </div>
+            {/* Media Mentions */}
+            <section className="mb-8">
+              <div className="max-w-2xl mx-auto text-center border-2 border-[#DC3636] rounded-lg p-6">
+                <h3 className="text-[#DC3636] font-bold uppercase mb-1">AS FEATURED IN</h3>
+                <p className="text-news-muted mb-4">
+                  Leading publications worldwide are talking about this breakthrough
+                </p>
+                <img
+                  src="https://www.dropbox.com/scl/fi/cgx9mtxtk32oorvb3zmti/brag-bar.png?rlkey=xaemwoqabc4zuf8yint79h8v4&st=b2cq5bsi&dl=1"
+                  alt="Vogue, Elle, InStyle, and OK! logos"
+                  className="mx-auto"
+                  loading="lazy"
+                />
+              </div>
+            </section>
             {/* Clinical Results */}
             <section className="mb-8">
               <h2 className="news-headline text-3xl font-bold text-center text-red-600 mb-2">
