@@ -210,28 +210,73 @@ const Index = () => {
       {/* Full Width Sections Start Here */}
       <div className="w-full">
         {/* Ingredients Section - Full Width */}
-        <section className="bg-gradient-to-br from-red-50 to-red-100 py-12 md:py-16 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="news-headline text-2xl md:text-3xl font-bold mb-4">
-              The Science-Backed Ingredients
-            </h2>
-            <p className="text-news-muted mb-8">
-              iDrotherapy Cream combines the most potent anti-aging ingredients in one revolutionary formula
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="p-4 bg-white rounded-lg shadow-md">
-                <h3 className="font-semibold text-lg mb-2">Peptides</h3>
-                <p className="text-sm text-news-muted">Stimulate collagen production, reducing wrinkles and fine lines.</p>
+        <section className="bg-gradient-to-br from-red-50 to-red-100 py-8 md:py-12 lg:py-16 px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-6 md:mb-8 lg:mb-12">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-red-600 mb-3 md:mb-4 flex items-center justify-center gap-2 md:gap-4 flex-wrap">
+                🔥 THE "FOUNTAIN OF YOUTH" FORMULA DECODED 🔥
+              </h2>
+              <div className="inline-block bg-red-600 text-white px-3 md:px-4 lg:px-6 py-2 rounded-full font-semibold text-xs md:text-sm lg:text-base">
+                VALUED AT $25,000+ PER TREATMENT IN BEVERLY HILLS
               </div>
-              <div className="p-4 bg-white rounded-lg shadow-md">
-                <h3 className="font-semibold text-lg mb-2">Antioxidants</h3>
-                <p className="text-sm text-news-muted">Protect skin from environmental damage and promote a youthful glow.</p>
-              </div>
-              <div className="p-4 bg-white rounded-lg shadow-md">
-                <h3 className="font-semibold text-lg mb-2">Hyaluronic Acid</h3>
-                <p className="text-sm text-news-muted">Provides deep hydration, plumping the skin and reducing dryness.</p>
-              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-6 max-w-6xl mx-auto">
+              {[
+                {
+                  name: "Palmitoyl Pentapeptide-4",
+                  icon: "✨",
+                  description: "Stimulates collagen and elastin production for firmer skin",
+                  price: "CLINIC PRICE: $2,500+"
+                },
+                {
+                  name: "Sodium Hyaluronate",
+                  icon: "✨",
+                  description: "Holds 1000x its weight in water for deep hydration",
+                  price: "CLINIC PRICE: $2,500+"
+                },
+                {
+                  name: "Teprenone",
+                  icon: "✨",
+                  description: "Powerful antioxidant that protects against free radical damage",
+                  price: "CLINIC PRICE: $2,500+"
+                },
+                {
+                  name: "Boron Nitride",
+                  icon: "✨",
+                  description: "Creates an immediate smoothing effect and fills fine lines",
+                  price: "CLINIC PRICE: $2,500+"
+                },
+                {
+                  name: "Glycerin",
+                  icon: "✨",
+                  description: "Natural humectant that maintains skin moisture barrier",
+                  price: "CLINIC PRICE: $2,500+"
+                },
+                {
+                  name: "Iodopropynyl Butylcarbamate",
+                  icon: "✨",
+                  description: "Advanced preservative system that maintains formula purity and stability",
+                  price: "CLINIC PRICE: $2,500+"
+                }
+              ].map((ingredient) => (
+                <div
+                  key={ingredient.name}
+                  className="bg-white rounded-xl p-3 md:p-4 lg:p-6 shadow-lg border-2 border-red-200 hover:border-red-400 transition-all duration-300 relative overflow-hidden"
+                >
+                  <div className="absolute top-2 md:top-3 right-2 md:right-3 bg-gray-800 text-white px-2 md:px-3 py-1 rounded-full text-xs font-bold">
+                    CELEB FAVE
+                  </div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl mb-2 md:mb-3 lg:mb-4">{ingredient.icon}</div>
+                  <h3 className="font-bold text-sm md:text-base lg:text-lg mb-2 md:mb-3 text-gray-900 leading-tight">{ingredient.name}</h3>
+                  <div className="bg-gray-100 rounded-lg p-2 md:p-3 lg:p-4 mb-2 md:mb-3 lg:mb-4">
+                    <p className="text-xs md:text-sm text-gray-700 leading-relaxed">{ingredient.description}</p>
+                  </div>
+                  <div className="bg-red-600 text-white text-center py-2 rounded-lg font-semibold text-xs md:text-sm">
+                    {ingredient.price}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
