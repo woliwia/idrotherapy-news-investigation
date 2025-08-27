@@ -797,9 +797,9 @@ const Index = () => {
           
           <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
             <div className="image-container mb-6">
-              <img 
-                src="/lovable-uploads/8b78a4f6-6b4f-4883-9246-ffc0a706f5e4.png" 
-                alt="Radiant woman holding iDrotherapy Wrinkle Reducer cream with beautiful results" 
+              <img
+                src="https://idro.vouue.com/lovable-uploads/f4c5061f-3f21-4f5a-b454-3e778beea3ad.png"
+                alt="Radiant woman holding iDrotherapy Wrinkle Reducer cream with beautiful results"
                 className="w-32 h-32 mx-auto rounded-lg object-cover"
                 loading="lazy"
                 width="128"
