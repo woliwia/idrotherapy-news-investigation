@@ -297,13 +297,230 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Morning Night Section */}
+          </div>
+        </div>
+      </div>
+
+      {/* Full Width Sections Start Here */}
+      <div className="w-full">
+        {/* Ingredients Section - Full Width */}
+        <section className="bg-gradient-to-br from-red-50 to-red-100 py-12 md:py-16 px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-red-600 mb-4 flex items-center justify-center gap-2 md:gap-4 flex-wrap">
+                🔥 THE "FOUNTAIN OF YOUTH" FORMULA DECODED 🔥
+              </h2>
+              <div className="inline-block bg-red-600 text-white px-4 md:px-6 py-2 rounded-full font-semibold text-sm md:text-base">
+                VALUED AT $25,000+ PER TREATMENT IN BEVERLY HILLS
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
+              {[
+                {
+                  name: "Palmitoyl Pentapeptide-4",
+                  icon: "✨",
+                  description: "Stimulates collagen and elastin production for firmer skin",
+                  price: "CLINIC PRICE: $2,500+"
+                },
+                {
+                  name: "Sodium Hyaluronate",
+                  icon: "💧",
+                  description: "Holds 1000x its weight in water for deep hydration",
+                  price: "CLINIC PRICE: $2,500+"
+                },
+                {
+                  name: "Teprenone",
+                  icon: "🛡️",
+                  description: "Powerful antioxidant that protects against free radical damage",
+                  price: "CLINIC PRICE: $2,500+"
+                },
+                {
+                  name: "Boron Nitride",
+                  icon: "⚡",
+                  description: "Creates an immediate smoothing effect and fills fine lines",
+                  price: "CLINIC PRICE: $2,500+"
+                },
+                {
+                  name: "Glycerin",
+                  icon: "🌿",
+                  description: "Natural humectant that maintains skin moisture barrier",
+                  price: "CLINIC PRICE: $2,500+"
+                },
+                {
+                  name: "Iodopropynyl Butylcarbamate",
+                  icon: "🔬",
+                  description: "Advanced preservative system that maintains formula purity and stability",
+                  price: "CLINIC PRICE: $2,500+"
+                }
+              ].map((ingredient) => (
+                <div
+                  key={ingredient.name}
+                  className="bg-white rounded-xl p-4 md:p-6 shadow-lg border-2 border-red-200 hover:border-red-400 transition-all duration-300 relative overflow-hidden"
+                >
+                  <div className="absolute top-3 right-3 bg-gray-800 text-white px-2 md:px-3 py-1 rounded-full text-xs font-bold">
+                    CELEB FAVE
+                  </div>
+                  <div className="text-3xl md:text-4xl mb-3 md:mb-4">{ingredient.icon}</div>
+                  <h3 className="font-bold text-base md:text-lg mb-2 md:mb-3 text-gray-900">{ingredient.name}</h3>
+                  <div className="bg-gray-100 rounded-lg p-3 md:p-4 mb-3 md:mb-4">
+                    <p className="text-xs md:text-sm text-gray-700">{ingredient.description}</p>
+                  </div>
+                  <div className="bg-red-600 text-white text-center py-2 rounded-lg font-semibold text-xs md:text-sm">
+                    {ingredient.price}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Morning Night Section - Full Width */}
+        <section className="bg-white py-12 md:py-16 px-4">
+          <div className="max-w-4xl mx-auto">
             <div className="mb-8">
-              <h2 className="news-headline text-3xl font-bold mb-4">Morning. Night. Even On Your Hands.</h2>
+              <h2 className="news-headline text-2xl md:text-3xl font-bold mb-4">Morning. Night. Even On Your Hands.</h2>
+              
               
               <p className="news-body text-lg mb-4">
                 Unlike other creams designed for one area of the face, iDrotherapy is an all-in-one solution:
               </p>
+
+              <div className="space-y-4 mb-6">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">✨</span>
+                  <div>
+                    <strong>Morning Routine</strong> – Revitalizes skin for the day ahead, leaving a natural glow.
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">🌙</span>
+                  <div>
+                    <strong>Night Routine</strong> – Works while you sleep, delivering visible improvements in weeks.
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">💫</span>
+                  <div>
+                    <strong>Body Care</strong> – Targets age spots, crepey neck skin, and even dryness on arms or hands.
+                  </div>
+                </div>
+              </div>
+
+              <p className="news-body text-lg mb-6 font-semibold">
+                👉 That means no more cluttered bathroom shelves, no more 5-step routines. Just one cream that does it all.
+              </p>
+
+              <div className="scarcity-alert mb-6">
+                <p className="font-semibold mb-2">⏰ Limited Time: Special Editorial Pricing</p>
+                <p className="text-sm">Our readers get exclusive access to discounted pricing - but only while supplies last.</p>
+              </div>
+
+              <div className="editorial-cta inline-block mb-6">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
+                  See Before & After Photos →
+                </a>
+              </div>
+
+              {/* Before After Image */}
+              <div className="comparison-box">
+                <h3 className="text-xl font-bold mb-6 text-center">Dramatic Results in Just 4 Weeks</h3>
+                <div className="image-container">
+                  <img 
+                    src="/lovable-uploads/579730e5-27da-484a-8c7d-60a7043bf40c.png" 
+                    alt="Before and after comparison showing dramatic reduction in fine lines, wrinkles, and skin texture improvement" 
+                    className="image-responsive max-w-2xl"
+                    loading="lazy"
+                    width="800"
+                    height="400"
+                  />
+                  <p className="text-sm text-news-muted italic mt-3">Real results: Dramatic improvement in fine lines and skin texture after 4 weeks of daily use</p>
+                </div>
+                <div className="text-center mt-6">
+                  <a href="https://www.idrotherapylove.com" className="editorial-cta-urgent">
+                    ⚡ Limited Stock - Order Before It's Gone →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Customer Reviews - Full Width */}
+        <section className="bg-gray-50 py-12 md:py-16 px-4">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="news-headline text-2xl md:text-3xl font-bold text-center text-black mb-2">
+              Real Customer Reviews
+            </h2>
+            <p className="text-center text-news-muted mb-6">
+              See what our verified customers are saying about their iDrotherapy experience
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  name: "Sarah M.",
+                  info: "Age 42 • California",
+                  quote: "I've tried every cream on the market. iDrotherapy is the first that actually made my husband ask if I had 'work done.' My laugh lines are practically gone!",
+                },
+                {
+                  name: "Jennifer R.",
+                  info: "Age 38 • Texas", 
+                  quote: "Three weeks in and my co-workers keep asking what I'm using. My neck looks 10 years younger and my makeup goes on so much smoother now.",
+                },
+                {
+                  name: "Lisa K.",
+                  info: "Age 45 • New York",
+                  quote: "This cream replaced my entire nighttime routine. I use it morning and night, and it's like I have new skin. The peptides really work!",
+                }
+              ].map((review) => (
+                <div
+                  key={review.name}
+                  className="border border-red-200 rounded-lg p-4 bg-white shadow-sm"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
+                      <span className="text-red-600 font-semibold text-lg">
+                        {review.name.charAt(0)}
+                      </span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-sm">{review.name}</div>
+                      <div className="text-xs text-news-muted">{review.info}</div>
+                    </div>
+                  </div>
+                  <p className="text-sm">{review.quote}</p>
+                  <div className="text-yellow-400 mt-4">★★★★★</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA - Full Width */}
+        <section className="bg-red-600 text-white py-12 px-4 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">Transform Your Skin Today</h2>
+            <p className="text-lg md:text-xl mb-8">Join thousands who've discovered the secret to younger-looking skin</p>
+            <a 
+              href="https://www.idrotherapylove.com" 
+              className="bg-white text-red-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors inline-block"
+            >
+              ORDER NOW - Up to 75% OFF
+            </a>
+          </div>
+        </section>
+      </div>
+
+      {/* Floating Order Button */}
+      <a
+        href="https://www.idrotherapylove.com"
+        className="fixed bottom-0 left-0 right-0 z-50 block w-full text-center text-white font-semibold py-3 bg-[#DC3636]"
+      >
+        ORDER NOW - Up to 75% OFF + FREE Gua sha set! ($70 value)
+      </a>
+    </div>
+  );
+};
 
               <div className="space-y-4 mb-6">
                 <div className="flex items-center gap-3">
