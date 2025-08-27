@@ -339,6 +339,146 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Dramatic Results Section - Full Width */}
+        <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-12 md:py-16 px-4">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8">
+              Dramatic Results in Just 4 Weeks
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="space-y-6">
+                <div className="bg-white p-6 rounded-lg shadow-lg">
+                  <h3 className="text-xl font-bold text-blue-900 mb-3">Week 1-2</h3>
+                  <p className="text-gray-700">Skin feels smoother and more hydrated. Fine lines appear softer.</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-lg">
+                  <h3 className="text-xl font-bold text-blue-900 mb-3">Week 3-4</h3>
+                  <p className="text-gray-700">Visible reduction in wrinkles. Dark circles fade. Skin looks years younger.</p>
+                </div>
+              </div>
+              <div className="text-center">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0589/1428/1855/files/Before_After_1024x1024.jpg?v=1699388447"
+                  alt="Before and after results showing dramatic skin improvement"
+                  className="rounded-lg shadow-lg w-full max-w-md mx-auto"
+                />
+                <p className="text-sm text-gray-600 mt-2 italic">Actual customer results after 4 weeks of use</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Join The Beauty Revolution Section - Full Width */}
+        <section className="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-12 md:py-16 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Join The Beauty Revolution
+            </h2>
+            <p className="text-xl md:text-2xl mb-8 leading-relaxed">
+              Over 50,000 women have already discovered the secret to younger-looking skin. Don't wait – join them today!
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+                <h3 className="font-bold text-lg mb-3">💝 Free Shipping</h3>
+                <p className="text-sm">On all orders over $50</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+                <h3 className="font-bold text-lg mb-3">🔄 30-Day Guarantee</h3>
+                <p className="text-sm">Love it or your money back</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+                <h3 className="font-bold text-lg mb-3">⚡ Limited Stock</h3>
+                <p className="text-sm">Only 2 jars per customer</p>
+              </div>
+            </div>
+            <a 
+              href="https://www.idrotherapylove.com" 
+              className="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors inline-block shadow-lg"
+            >
+              CLAIM YOUR DISCOUNT NOW
+            </a>
+          </div>
+        </section>
+
+        {/* The Results Speak For Themselves Section - Full Width */}
+        <section className="bg-white py-12 md:py-16 px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+              The Results Speak For Themselves
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center p-6 bg-gray-50 rounded-lg">
+                <div className="text-4xl font-bold text-red-600 mb-2">92%</div>
+                <p className="text-sm text-gray-700">Reduction in wrinkle depth</p>
+              </div>
+              <div className="text-center p-6 bg-gray-50 rounded-lg">
+                <div className="text-4xl font-bold text-red-600 mb-2">87%</div>
+                <p className="text-sm text-gray-700">Decrease in dark circles</p>
+              </div>
+              <div className="text-center p-6 bg-gray-50 rounded-lg">
+                <div className="text-4xl font-bold text-red-600 mb-2">95%</div>
+                <p className="text-sm text-gray-700">Increase in skin hydration</p>
+              </div>
+              <div className="text-center p-6 bg-gray-50 rounded-lg">
+                <div className="text-4xl font-bold text-red-600 mb-2">98%</div>
+                <p className="text-sm text-gray-700">Customer satisfaction rate</p>
+              </div>
+            </div>
+            <div className="text-center mt-12">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0589/1428/1855/files/Customer_Results_1024x1024.jpg?v=1699388447"
+                alt="Multiple customer before and after results"
+                className="rounded-lg shadow-lg w-full max-w-4xl mx-auto"
+              />
+              <p className="text-sm text-gray-600 mt-4 italic">Real results from real customers - no filters, no editing</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Where to Buy Section - Full Width */}
+        <section className="bg-gradient-to-br from-red-100 to-red-200 py-12 md:py-16 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-red-800 mb-6">
+              Where to Buy iDrotherapy Cream Before It's Gone
+            </h2>
+            <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg mb-8">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <span className="text-2xl">⚠️</span>
+                <h3 className="text-xl font-bold text-red-600">STOCK ALERT</h3>
+                <span className="text-2xl">⚠️</span>
+              </div>
+              <p className="text-gray-700 mb-4">
+                Due to overwhelming demand and limited production capacity, iDrotherapy Cream is currently:
+              </p>
+              <ul className="text-left max-w-md mx-auto space-y-2 mb-6">
+                <li className="flex items-center gap-2">
+                  <span className="text-red-500">✗</span>
+                  <span>Sold out in most retail stores</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-red-500">✗</span>
+                  <span>Unavailable on Amazon (due to counterfeits)</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-green-500">✓</span>
+                  <span>Available ONLY on the official website</span>
+                </li>
+              </ul>
+              <div className="bg-red-50 p-4 rounded-lg border border-red-200 mb-6">
+                <p className="text-sm text-red-700">
+                  <strong>Beware of counterfeits!</strong> Only purchase from the official website to ensure you receive the genuine formula with the 30-day money-back guarantee.
+                </p>
+              </div>
+            </div>
+            <a 
+              href="https://www.idrotherapylove.com" 
+              className="bg-red-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-red-700 transition-colors inline-block shadow-lg"
+            >
+              🔐 SECURE YOUR ORDER - OFFICIAL WEBSITE ONLY
+            </a>
+          </div>
+        </section>
+
         {/* Final CTA - Full Width */}
         <section className="bg-red-600 text-white py-12 px-4 text-center">
           <div className="max-w-4xl mx-auto">
