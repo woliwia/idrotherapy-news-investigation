@@ -262,4 +262,25 @@
       aspect-ratio: 1/1;
     }
   }
+  /* Klaviyo form styling */
+  .klaviyo-form-TaTjsW form {
+    @apply flex flex-col gap-1 m-0;
+  }
+
+  .klaviyo-form-TaTjsW form > div {
+    @apply m-0 p-0;
+    min-height: 50px !important;
+  }
+
+  .klaviyo-form-TaTjsW label {
+    @apply hidden;
+  }
+
+  .klaviyo-form-TaTjsW input[type="email"] {
+    @apply m-0 w-full px-3 py-2 border border-gray-300 rounded;
+  }
+
+  .klaviyo-form-TaTjsW button[type="submit"] {
+    @apply m-0 w-full px-6 py-2 text-sm font-semibold text-white bg-red-600 rounded hover:bg-red-700 transition-colors;
+  }
 }
