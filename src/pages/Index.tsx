@@ -736,7 +736,7 @@ const Index = () => {
         </section>
 
         {/* Beauty Revolution Section */}
-        <div className="mb-8">
+        <section className="content-section">
           <h2 className="news-headline text-3xl font-bold text-center mb-4">
             Join The Beauty Revolution
           </h2>
@@ -773,7 +773,7 @@ const Index = () => {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Woman with Product Image */}
         <div className="content-section">
