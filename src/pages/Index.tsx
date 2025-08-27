@@ -363,69 +363,6 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Ingredients Section */}
-            <section className="mb-8">
-              <h2 className="news-headline text-3xl font-bold text-center text-red-600 mb-2">
-                🔥 The "Fountain of Youth" Formula Decoded
-              </h2>
-              <p className="text-center text-news-muted mb-6">
-                Valued at $25,000+ per treatment in Beverly Hills
-              </p>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {[
-                  {
-                    name: 'Palmitoyl Pentapeptide-4',
-                    desc: 'Stimulates collagen and elastin production for visibly firmer skin',
-                    price: '$850+',
-                  },
-                  {
-                    name: 'Sodium Hyaluronate',
-                    desc: 'Holds 1000x its weight in water for deep hydration',
-                    price: '$950+',
-                  },
-                  {
-                    name: 'Teprenone',
-                    desc: 'Powerful antioxidant that protects skin cells against radical damage',
-                    price: '$650+',
-                  },
-                  {
-                    name: 'Boron Nitride',
-                    desc: 'Creates an immediate softening effect and diffuses imperfections',
-                    price: '$750+',
-                  },
-                  {
-                    name: 'Glycerin',
-                    desc: 'Natural humectant that maintains skin moisture balance',
-                    price: '$300+',
-                  },
-                  {
-                    name: 'Iodopropynyl Butylcarbamate',
-                    desc: 'Advanced preservative system that maintains formula purity and stability',
-                    price: '$500+',
-                  },
-                ].map((ing) => (
-                  <div
-                    key={ing.name}
-                    className="relative border-2 border-red-600 rounded-lg p-4 bg-white flex flex-col justify-between"
-                  >
-                    <span className="absolute top-2 right-2 text-[10px] font-semibold bg-red-100 text-red-700 px-2 py-1 rounded-full">
-                      CELEB FAVE
-                    </span>
-                    <div className="mb-4 text-center">
-                      <div className="text-2xl mb-2">✨</div>
-                      <h3 className="text-lg font-bold text-red-600">{ing.name}</h3>
-                      <p className="text-sm text-news-muted mt-1">{ing.desc}</p>
-                    </div>
-                    <div className="text-center mt-auto">
-                      <span className="inline-block bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">
-                        CLINIC PRICE: {ing.price}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
           </div>
 
           {/* Sidebar */}
@@ -650,6 +587,69 @@ const Index = () => {
             </div>
           </div>
         </div>
+
+        {/* Ingredients Section */}
+        <section className="content-section">
+          <h2 className="news-headline text-3xl font-bold text-center text-red-600 mb-2">
+            🔥 The "Fountain of Youth" Formula Decoded
+          </h2>
+          <p className="text-center text-news-muted mb-6">
+            Valued at $25,000+ per treatment in Beverly Hills
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                name: 'Palmitoyl Pentapeptide-4',
+                desc: 'Stimulates collagen and elastin production for visibly firmer skin',
+                price: '$850+',
+              },
+              {
+                name: 'Sodium Hyaluronate',
+                desc: 'Holds 1000x its weight in water for deep hydration',
+                price: '$950+',
+              },
+              {
+                name: 'Teprenone',
+                desc: 'Powerful antioxidant that protects skin cells against radical damage',
+                price: '$650+',
+              },
+              {
+                name: 'Boron Nitride',
+                desc: 'Creates an immediate softening effect and diffuses imperfections',
+                price: '$750+',
+              },
+              {
+                name: 'Glycerin',
+                desc: 'Natural humectant that maintains skin moisture balance',
+                price: '$300+',
+              },
+              {
+                name: 'Iodopropynyl Butylcarbamate',
+                desc: 'Advanced preservative system that maintains formula purity and stability',
+                price: '$500+',
+              },
+            ].map((ing) => (
+              <div
+                key={ing.name}
+                className="relative border-2 border-red-600 rounded-lg p-4 bg-white flex flex-col justify-between"
+              >
+                <span className="absolute top-2 right-2 text-[10px] font-semibold bg-red-100 text-red-700 px-2 py-1 rounded-full">
+                  CELEB FAVE
+                </span>
+                <div className="mb-4 text-center">
+                  <div className="text-2xl mb-2">✨</div>
+                  <h3 className="text-lg font-bold text-red-600">{ing.name}</h3>
+                  <p className="text-sm text-news-muted mt-1">{ing.desc}</p>
+                </div>
+                <div className="text-center mt-auto">
+                  <span className="inline-block bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">
+                    CLINIC PRICE: {ing.price}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* Customer Reviews Section */}
         <section className="mt-16 mb-8">
