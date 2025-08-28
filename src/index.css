@@ -48,6 +48,22 @@
 }
 
 @layer base {
+  /* Global mobile optimization rules */
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
   * {
     @apply border-border;
   }
@@ -58,23 +74,26 @@
     line-height: 1.7;
   }
   
-  /* Editorial Typography Classes */
+  /* Editorial Typography Classes with Fluid Sizing */
   .news-headline {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-weight: var(--news-headline);
     line-height: 1.2;
+    font-size: clamp(24px, 5.5vw, 36px);
   }
   
   .news-subhead {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-weight: var(--news-subhead);
     line-height: 1.4;
+    font-size: clamp(20px, 4.8vw, 28px);
   }
   
   .news-body {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-weight: var(--news-body);
     line-height: 1.7;
+    font-size: clamp(14px, 3.9vw, 16px);
   }
   
   .news-sans {
@@ -148,17 +167,22 @@
     @apply mb-8 p-6 bg-gray-50 border border-gray-200 rounded-lg;
   }
   
-  /* Consistent Spacing */
+  /* Consistent Spacing - Mobile Optimized */
   .content-section {
-    @apply mb-12 px-4 w-full max-w-6xl mx-auto;
+    @apply mb-12 w-full;
   }
   
   .image-container {
-    @apply text-center mb-8 px-4;
+    @apply text-center mb-8;
   }
   
   .image-responsive {
     @apply w-full max-w-full h-auto mx-auto rounded-lg shadow-md;
+  }
+  
+  /* Container utilities */
+  .mobile-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
   
   /* FOMO & CTA Enhancements - Unified Red Theme */
@@ -211,22 +235,25 @@
   }
   
   /* Mobile-First Responsive Design */
+  @media (max-width: 430px) {
+    /* Ensure no element exceeds iPhone 14 width */
+    * {
+      max-width: 390px;
+    }
+    
+    .mobile-container {
+      @apply px-4;
+    }
+  }
+  
   @media (max-width: 768px) {
-    .news-headline {
-      @apply text-2xl leading-tight;
-    }
-    
-    .news-subhead {
-      @apply text-lg;
-    }
-    
     .sidebar-widget {
       @apply mb-6 p-4;
     }
     
     .editorial-cta, 
     .editorial-cta-large {
-      @apply w-full justify-center text-center;
+      @apply w-full justify-center text-center min-h-[48px] py-3 block;
     }
     
     .testimonial-enhanced {
@@ -235,6 +262,11 @@
     
     .pull-quote-large {
       @apply text-xl pl-4 border-l-2;
+    }
+    
+    /* Grid collapses on mobile */
+    .mobile-stack {
+      @apply grid-cols-1;
     }
   }
   
