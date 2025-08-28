@@ -177,6 +177,56 @@ const Index = () => {
                 The result? Skin that looks visibly younger, firmer, and more radiant—without the irritation.
               </p>
             </div>
+
+            {/* Morning Night Section - Left Column */}
+            <div className="mb-8">
+              <h2 className="news-headline font-bold mb-4">
+                Morning. Night. Even On Your Hands.
+              </h2>
+              
+              <p className="news-body mb-6 max-w-[65ch]">
+                Unlike other creams designed for one area of the face, iDrotherapy is an all-in-one solution:
+              </p>
+
+              <div className="space-y-4 mb-6">
+                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                  <span className="text-3xl sm:text-4xl flex-shrink-0">✨</span>
+                  <div className="min-w-0">
+                    <h3 className="font-bold news-subhead mb-2">Morning Routine</h3>
+                    <p className="news-body">Revitalizes skin for the day ahead, leaving a natural glow.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                  <span className="text-3xl sm:text-4xl flex-shrink-0">🌙</span>
+                  <div className="min-w-0">
+                    <h3 className="font-bold news-subhead mb-2">Night Routine</h3>
+                    <p className="news-body">Works while you sleep, delivering visible improvements in weeks.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                  <span className="text-3xl sm:text-4xl flex-shrink-0">💫</span>
+                  <div className="min-w-0">
+                    <h3 className="font-bold news-subhead mb-2">Body Care</h3>
+                    <p className="news-body">Targets age spots, crepey neck skin, and even dryness on arms or hands.</p>
+                  </div>
+                </div>
+              </div>
+
+              <p className="news-body mb-6 font-semibold max-w-[65ch]">
+                👉 That means no more cluttered bathroom shelves, no more 5-step routines. Just one cream that does it all.
+              </p>
+
+              <div className="scarcity-alert mb-6">
+                <p className="font-semibold mb-2">⏰ Limited Time: Special Editorial Pricing</p>
+                <p className="text-sm">Our readers get exclusive access to discounted pricing - but only while supplies last.</p>
+              </div>
+
+              <div className="mb-6">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
+                  See Before & After Photos →
+                </a>
+              </div>
+            </div>
             {/* Media Mentions */}
             <section className="mb-8">
               <div className="max-w-2xl mx-auto text-center">
@@ -335,19 +385,7 @@ const Index = () => {
                   <p className="text-sm text-news-muted mb-4">
                     Get exclusive access to breakthrough beauty discoveries before they go viral!
                   </p>
-                  <form className="space-y-3">
-                    <input
-                      type="email"
-                      placeholder="Email"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                    />
-                    <button
-                      type="submit"
-                      className="w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors text-sm"
-                    >
-                      Subscribe
-                    </button>
-                  </form>
+                  <div className="klaviyo-form-TaTjsW"></div>
                   <p className="text-xs text-gray-500 mt-2">
                     Join 50,000+ beauty insiders. Unsubscribe anytime.
                   </p>
@@ -574,63 +612,6 @@ const Index = () => {
 
         {/* Full Width Sections - Mobile Optimized */}
 
-        {/* Morning Night Section - Constrained Width */}
-        <section className="w-full py-8 bg-white">
-          <div className="mobile-container">
-            <div className="max-w-5xl mx-auto">
-              <h2 className="news-headline font-bold text-center mb-6">
-                Morning. Night. Even On Your Hands.
-              </h2>
-              
-              <div className="max-w-4xl mx-auto">
-                <p className="news-body text-center mb-6 max-w-[65ch] mx-auto">
-                  Unlike other creams designed for one area of the face, iDrotherapy is an all-in-one solution:
-                </p>
-
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                    <span className="text-3xl sm:text-4xl flex-shrink-0">✨</span>
-                    <div className="min-w-0">
-                      <h3 className="font-bold news-subhead mb-2">Morning Routine</h3>
-                      <p className="news-body">Revitalizes skin for the day ahead, leaving a natural glow.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                    <span className="text-3xl sm:text-4xl flex-shrink-0">🌙</span>
-                    <div className="min-w-0">
-                      <h3 className="font-bold news-subhead mb-2">Night Routine</h3>
-                      <p className="news-body">Works while you sleep, delivering visible improvements in weeks.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                    <span className="text-3xl sm:text-4xl flex-shrink-0">💫</span>
-                    <div className="min-w-0">
-                      <h3 className="font-bold news-subhead mb-2">Body Care</h3>
-                      <p className="news-body">Targets age spots, crepey neck skin, and even dryness on arms or hands.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-center">
-                  <p className="news-body mb-6 font-semibold max-w-[65ch] mx-auto">
-                    👉 That means no more cluttered bathroom shelves, no more 5-step routines. Just one cream that does it all.
-                  </p>
-
-                  <div className="scarcity-alert mb-6 max-w-md mx-auto">
-                    <p className="font-semibold mb-2">⏰ Limited Time: Special Editorial Pricing</p>
-                    <p className="text-sm">Our readers get exclusive access to discounted pricing - but only while supplies last.</p>
-                  </div>
-
-                  <div className="mb-6">
-                    <a href="https://www.idrotherapylove.com" className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
-                      See Before & After Photos →
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Dramatic Results Section - Constrained Width */}
         <section className="w-full py-8 bg-gradient-to-b from-red-50 to-white">
@@ -858,25 +839,10 @@ const Index = () => {
                 <p className="text-center text-news-muted mb-6">
                   Join 50,000+ women receiving insider secrets and exclusive discounts on breakthrough skincare
                 </p>
-                <div className="klaviyo-form-embed" data-testid="klaviyo-form-XkzAG7">
-                  <form className="flex flex-col sm:flex-row gap-3">
-                    <input
-                      type="email"
-                      placeholder="Enter your email address"
-                      className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                      required
-                    />
-                    <button
-                      type="submit"
-                      className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors min-h-[48px]"
-                    >
-                      Get My Tips
-                    </button>
-                  </form>
-                  <p className="text-xs text-gray-500 mt-3 text-center">
-                    We respect your privacy. Unsubscribe at any time.
-                  </p>
-                </div>
+                <div className="klaviyo-form-TaTjsW"></div>
+                <p className="text-xs text-gray-500 mt-3 text-center">
+                  We respect your privacy. Unsubscribe at any time.
+                </p>
               </div>
             </div>
           </div>
