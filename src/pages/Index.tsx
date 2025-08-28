@@ -59,15 +59,17 @@ const Index = () => {
             Fox Lifestyle – Special Investigation: Revolutionary peptide formula creating buzz across beauty forums for its ability to smooth wrinkles, fade dark circles, and deliver all-day hydration without harsh retinol
           </p>
           <div className="relative w-full max-w-4xl mx-auto">
-            <img 
-              src={heroImage} 
-              alt="Clinical laboratory researchers examining breakthrough skincare formula" 
-              className="w-full h-auto aspect-[16/9] md:aspect-auto object-cover rounded-lg shadow-lg"
-              fetchPriority="high"
-              loading="eager"
-              width="1200"
-              height="675"
-            />
+            <a href="https://www.idrotherapylove.com">
+              <img 
+                src={heroImage} 
+                alt="Clinical laboratory researchers examining breakthrough skincare formula" 
+                className="w-full h-auto aspect-[16/9] md:aspect-auto object-cover rounded-lg shadow-lg cursor-pointer hover:opacity-95 transition-opacity"
+                fetchPriority="high"
+                loading="eager"
+                width="1200"
+                height="675"
+              />
+            </a>
             <p className="text-sm text-news-muted mt-2 italic max-w-[65ch] mx-auto">Clinical researchers examine the breakthrough peptide formula that's revolutionizing skincare routines nationwide</p>
           </div>
 
@@ -128,14 +130,16 @@ const Index = () => {
 
             {/* Product Image with Caption */}
             <div className="image-container">
-              <img 
-                src="/lovable-uploads/671dac0b-4492-4be8-ae3b-884fde280fc9.png" 
-                alt="iDrotherapy Cream luxury jar with elegant black packaging showing Wrinkle Reducer formula" 
-                className="image-responsive max-w-md"
-                loading="lazy"
-                width="600"
-                height="400"
-              />
+              <a href="https://www.idrotherapylove.com">
+                <img 
+                  src="/lovable-uploads/671dac0b-4492-4be8-ae3b-884fde280fc9.png" 
+                  alt="iDrotherapy Cream luxury jar with elegant black packaging showing Wrinkle Reducer formula" 
+                  className="image-responsive max-w-md cursor-pointer hover:opacity-95 transition-opacity"
+                  loading="lazy"
+                  width="600"
+                  height="400"
+                />
+              </a>
               <p className="text-sm text-news-muted mt-3 italic">The breakthrough iDrotherapy Wrinkle Reducer that's selling out nationwide</p>
               
               {/* Inline CTA */}
@@ -279,14 +283,16 @@ const Index = () => {
 
             {/* Dermatologist Image */}
             <div className="mb-8">
+            <a href="https://www.idrotherapylove.com">
               <img
                 src={dermatologistRealistic}
                 alt="Professional dermatologist examining skincare products in clinical setting"
-                className="w-full h-auto rounded-lg shadow-md"
+                className="w-full h-auto rounded-lg shadow-md cursor-pointer hover:opacity-95 transition-opacity"
                 loading="lazy"
                 width="1000"
                 height="600"
               />
+            </a>
               <p className="text-sm text-news-muted mt-2 italic">Dr. Sarah Mitchell examines the breakthrough peptide formula in her Beverly Hills clinic</p>
 
               {/* Mid-article CTA */}
@@ -350,7 +356,9 @@ const Index = () => {
                 
                 {/* CaviArgan Article */}
                 <a
-                  href="https://idro.vouue.com/"
+                  href="https://beverlyhillsscoops.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block border-b border-gray-200 pb-6 mb-6 group"
                 >
                   <img
@@ -369,7 +377,9 @@ const Index = () => {
 
                 {/* Argan Oil Article */}
                 <a
-                  href="https://idro.vouue.com/"
+                  href="https://beverlyhillsscoops.com/argan"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block border-b border-gray-200 pb-6 mb-6 group"
                 >
                   <img
@@ -389,6 +399,8 @@ const Index = () => {
                 {/* Additional Article 1 */}
                 <a
                   href="https://idro.vouue.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block border-b border-gray-200 pb-6 mb-6 group"
                 >
                   <img
@@ -408,6 +420,8 @@ const Index = () => {
                 {/* Additional Article 2 */}
                 <a
                   href="https://idro.vouue.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block border-b border-gray-200 pb-6 mb-6 group"
                 >
                   <img
@@ -427,6 +441,8 @@ const Index = () => {
                 {/* Additional Article 3 */}
                 <a
                   href="https://www.beverlyhillsscoops.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block group"
                 >
                   <img
@@ -566,14 +582,16 @@ const Index = () => {
             
             <div className="comparison-box max-w-4xl mx-auto">
               <div className="image-container text-center">
-                <img 
-                  src="/lovable-uploads/579730e5-27da-484a-8c7d-60a7043bf40c.png" 
-                  alt="Before and after comparison showing dramatic reduction in fine lines, wrinkles, and skin texture improvement" 
-                  className="w-full max-w-3xl mx-auto rounded-lg shadow-lg"
-                  loading="lazy"
-                  width="800"
-                  height="400"
-                />
+                <a href="https://www.idrotherapylove.com">
+                  <img 
+                    src="/lovable-uploads/579730e5-27da-484a-8c7d-60a7043bf40c.png" 
+                    alt="Before and after comparison showing dramatic reduction in fine lines, wrinkles, and skin texture improvement" 
+                    className="w-full max-w-3xl mx-auto rounded-lg shadow-lg cursor-pointer hover:opacity-95 transition-opacity"
+                    loading="lazy"
+                    width="800"
+                    height="400"
+                  />
+                </a>
                 <p className="text-sm text-news-muted italic mt-4 max-w-2xl mx-auto">
                   Real results: Dramatic improvement in fine lines and skin texture after 4 weeks of daily use
                 </p>
@@ -664,14 +682,16 @@ const Index = () => {
             </p>
             
             <div className="text-center mb-8">
-              <img
-                src="https://idro.vouue.com/lovable-uploads/8da99380-b785-4a85-961c-2b5f761d611e.png"
-                alt="Collage of women holding iDrotherapy cream"
-                className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
-                loading="lazy"
-                width="975"
-                height="199"
-              />
+              <a href="https://www.idrotherapylove.com">
+                <img
+                  src="https://idro.vouue.com/lovable-uploads/8da99380-b785-4a85-961c-2b5f761d611e.png"
+                  alt="Collage of women holding iDrotherapy cream"
+                  className="w-full max-w-4xl mx-auto rounded-lg shadow-md cursor-pointer hover:opacity-95 transition-opacity"
+                  loading="lazy"
+                  width="975"
+                  height="199"
+                />
+              </a>
             </div>
             
             {/* The Results Speak For Themselves - Nested Section */}
@@ -700,14 +720,16 @@ const Index = () => {
 
             {/* Woman with Product Image */}
             <div className="text-center mt-12">
-              <img
-                src="/lovable-uploads/ca66e615-6b53-470a-b542-1020dc49a3d8.png"
-                alt="Happy woman proudly displaying her iDrotherapy Wrinkle Reducer cream with confident smile"
-                className="w-full max-w-lg mx-auto rounded-lg shadow-md"
-                loading="lazy"
-                width="600"
-                height="700"
-              />
+              <a href="https://www.idrotherapylove.com">
+                <img
+                  src="/lovable-uploads/ca66e615-6b53-470a-b542-1020dc49a3d8.png"
+                  alt="Happy woman proudly displaying her iDrotherapy Wrinkle Reducer cream with confident smile"
+                  className="w-full max-w-lg mx-auto rounded-lg shadow-md cursor-pointer hover:opacity-95 transition-opacity"
+                  loading="lazy"
+                  width="600"
+                  height="700"
+                />
+              </a>
               <p className="text-sm text-news-muted mt-4 italic max-w-md mx-auto">
                 Sarah, 34, says iDrotherapy transformed her confidence and simplified her entire skincare routine
               </p>
@@ -751,12 +773,56 @@ const Index = () => {
                   Claim Flash Discount →
                 </a>
               </div>
+
+              {/* Customer Testimonial Collage */}
+              <div className="text-center mt-12">
+                <img
+                  src="/lovable-uploads/customer-testimonials-collage.png"
+                  alt="Happy customers displaying their iDrotherapy cream with radiant, youthful skin results"
+                  className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
+                  loading="lazy"
+                  width="1200"
+                  height="300"
+                />
+                <p className="text-sm text-news-muted mt-4 italic max-w-2xl mx-auto">
+                  Real customers sharing their transformation stories with iDrotherapy's revolutionary anti-aging formula
+                </p>
+              </div>
+
+              {/* Email Subscription Section */}
+              <div className="bg-red-50 rounded-lg p-6 mt-12 max-w-2xl mx-auto">
+                <h3 className="text-xl font-bold text-center text-red-600 mb-4">
+                  Get Exclusive Beauty Tips & Special Offers
+                </h3>
+                <p className="text-center text-news-muted mb-6">
+                  Join 50,000+ women receiving insider secrets and exclusive discounts on breakthrough skincare
+                </p>
+                <div className="klaviyo-form-embed" data-testid="klaviyo-form-XkzAG7">
+                  <form className="flex flex-col sm:flex-row gap-3">
+                    <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                      required
+                    />
+                    <button
+                      type="submit"
+                      className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors min-h-[48px]"
+                    >
+                      Get My Tips
+                    </button>
+                  </form>
+                  <p className="text-xs text-gray-500 mt-3 text-center">
+                    We respect your privacy. Unsubscribe at any time.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Disclaimer */}
-        <div className="mt-12 pt-8 border-t border-news-border mobile-container">
+        <div className="mt-8 pt-8 border-t border-news-border mobile-container">
           <p className="text-xs text-news-muted text-center max-w-[65ch] mx-auto">
             <strong>Editorial Disclaimer:</strong> This article is for informational purposes and represents the editorial opinion of Fox Lifestyle. Individual results may vary. This content has not been evaluated by the FDA. The product is not intended to diagnose, treat, cure, or prevent any disease. Always consult with a healthcare professional before starting any new skincare regimen.
           </p>
