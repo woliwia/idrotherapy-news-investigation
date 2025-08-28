@@ -89,13 +89,13 @@ const Index = () => {
         </div>
 
         {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12 max-w-none mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8 max-w-none mx-auto">
           
           {/* Main Article Column */}
           <div className="lg:col-span-2">
             
             {/* Opening Story */}
-            <div className="mb-8">
+            <div className="mb-6">
               <p className="news-body mb-4 max-w-[65ch]">
                 For years, the beauty industry has convinced women they need five different products: an eye cream, a night cream, a neck cream, a wrinkle serum, and a spot corrector. But what if one single cream could replace them all?
               </p>
@@ -325,24 +325,74 @@ const Index = () => {
                 </a>
               </div>
 
+              {/* Beauty Insider Alerts Widget */}
+              <div className="sidebar-widget">
+                <div className="bg-red-50 rounded-lg p-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-red-600 text-lg">💡</span>
+                    <h3 className="text-lg font-bold text-red-600">Beauty Insider Alerts</h3>
+                  </div>
+                  <p className="text-sm text-news-muted mb-4">
+                    Get exclusive access to breakthrough beauty discoveries before they go viral!
+                  </p>
+                  <form className="space-y-3">
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                    />
+                    <button
+                      type="submit"
+                      className="w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors text-sm"
+                    >
+                      Subscribe
+                    </button>
+                  </form>
+                  <p className="text-xs text-gray-500 mt-2">
+                    Join 50,000+ beauty insiders. Unsubscribe anytime.
+                  </p>
+                </div>
+              </div>
+
+              {/* Stock Alert Widget */}
+              <div className="sidebar-widget">
+                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-orange-600 text-lg">⚠️</span>
+                    <h3 className="text-lg font-bold text-orange-600">Stock Alert</h3>
+                  </div>
+                  <div className="text-red-600 font-semibold text-sm mb-1">📈 137 orders today</div>
+                  <p className="text-sm text-news-muted mb-4">
+                    Less than 200 units remaining for this month. 
+                    New shipments delayed until next quarter.
+                  </p>
+                  <a 
+                    href="https://www.idrotherapylove.com" 
+                    className="block w-full bg-red-600 text-white py-2 text-center rounded-lg font-semibold hover:bg-red-700 transition-colors text-sm"
+                  >
+                    Order Before It's Gone →
+                  </a>
+                </div>
+              </div>
+
               {/* Breaking News Widget */}
               <div className="sidebar-widget">
                 <h3 className="news-subhead text-xl font-bold mb-4">🔥 Breaking Beauty News</h3>
                 <div className="space-y-4 text-sm">
                   <div className="border-b pb-3">
-                    <a href="#" className="font-semibold hover:text-red-600">
+                    <a href="https://www.beverlyhillsscoops.com" target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-red-600">
                       Sephora Insider Reveals: This $15 Cream Outsells $300 Serums
                     </a>
                     <p className="text-news-muted text-xs mt-1">10 min ago</p>
                   </div>
                   <div className="border-b pb-3">
-                    <a href="#" className="font-semibold hover:text-red-600">
+                    <a href="https://www.beverlyhillsscoops.com" target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-red-600">
                       Beverly Hills Dermatologist: "I Recommend This Over Botox"
                     </a>
                     <p className="text-news-muted text-xs mt-1">22 min ago</p>
                   </div>
                   <div>
-                    <a href="#" className="font-semibold hover:text-red-600">
+                    <a href="https://www.beverlyhillsscoops.com" target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-red-600">
                       Lab Analysis: Why Peptides Are The New Anti-Aging Gold Standard
                     </a>
                     <p className="text-news-muted text-xs mt-1">1 hour ago</p>
@@ -489,25 +539,32 @@ const Index = () => {
               </div>
 
               <div className="sidebar-widget">
-                <h3 className="news-subhead text-xl font-bold mb-4">Trending Now</h3>
-                <div className="space-y-4 text-sm">
-                  <div className="border-b pb-3">
-                    <a href="https://www.idrotherapylove.com" className="font-semibold hover:text-red-600">
-                      "This Changed My Life" - Mom's $15 Anti-Aging Discovery
-                    </a>
-                    <p className="text-news-muted text-xs mt-1">2,847 shares</p>
+                <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                  <div className="bg-red-600 text-white px-3 py-1 text-sm font-bold">
+                    Trending Now
                   </div>
-                  <div className="border-b pb-3">
-                    <a href="https://www.idrotherapylove.com" className="font-semibold hover:text-red-600">
-                      Beauty Editors Can't Stop Talking About This Cream
+                  <div className="p-4">
+                    <img
+                      src="/lovable-uploads/671dac0b-4492-4be8-ae3b-884fde280fc9.png"
+                      alt="iDrotherapy Wrinkle Reducer cream"
+                      className="w-full h-32 object-cover rounded-lg mb-3"
+                    />
+                    <h4 className="font-bold text-base mb-2">iDrotherapy Wrinkle Reducer</h4>
+                    <p className="text-sm text-news-muted mb-4">
+                      The breakthrough formula dermatologists recommend
+                    </p>
+                    <a 
+                      href="https://www.idrotherapylove.com"
+                      className="block w-full bg-red-600 text-white py-2 text-center rounded-lg font-semibold hover:bg-red-700 transition-colors text-sm mb-2"
+                    >
+                      Check Availability →
                     </a>
-                    <p className="text-news-muted text-xs mt-1">1,923 shares</p>
-                  </div>
-                  <div>
-                    <a href="https://www.idrotherapylove.com" className="font-semibold hover:text-red-600">
-                      Why Dermatologists Are Recommending Peptides Over Retinol
+                    <a 
+                      href="https://www.idrotherapylove.com"
+                      className="block w-full bg-yellow-500 text-white py-2 text-center rounded-lg font-semibold hover:bg-yellow-600 transition-colors text-sm flex items-center justify-center gap-1"
+                    >
+                      🔥 Flash Sale - 40% Off →
                     </a>
-                    <p className="text-news-muted text-xs mt-1">3,156 shares</p>
                   </div>
                 </div>
               </div>
@@ -517,89 +574,93 @@ const Index = () => {
 
         {/* Full Width Sections - Mobile Optimized */}
 
-        {/* Morning Night Section - Full Width */}
-        <section className="w-full py-12 bg-white">
+        {/* Morning Night Section - Constrained Width */}
+        <section className="w-full py-8 bg-white">
           <div className="mobile-container">
-            <h2 className="news-headline font-bold text-center mb-8">
-              Morning. Night. Even On Your Hands.
-            </h2>
-            
-            <div className="max-w-4xl mx-auto">
-              <p className="news-body text-center mb-8 max-w-[65ch] mx-auto">
-                Unlike other creams designed for one area of the face, iDrotherapy is an all-in-one solution:
-              </p>
-
-              <div className="space-y-6 mb-8">
-                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                  <span className="text-3xl sm:text-4xl flex-shrink-0">✨</span>
-                  <div className="min-w-0">
-                    <h3 className="font-bold news-subhead mb-2">Morning Routine</h3>
-                    <p className="news-body">Revitalizes skin for the day ahead, leaving a natural glow.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                  <span className="text-3xl sm:text-4xl flex-shrink-0">🌙</span>
-                  <div className="min-w-0">
-                    <h3 className="font-bold news-subhead mb-2">Night Routine</h3>
-                    <p className="news-body">Works while you sleep, delivering visible improvements in weeks.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                  <span className="text-3xl sm:text-4xl flex-shrink-0">💫</span>
-                  <div className="min-w-0">
-                    <h3 className="font-bold news-subhead mb-2">Body Care</h3>
-                    <p className="news-body">Targets age spots, crepey neck skin, and even dryness on arms or hands.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="text-center">
-                <p className="news-body mb-8 font-semibold max-w-[65ch] mx-auto">
-                  👉 That means no more cluttered bathroom shelves, no more 5-step routines. Just one cream that does it all.
+            <div className="max-w-5xl mx-auto">
+              <h2 className="news-headline font-bold text-center mb-6">
+                Morning. Night. Even On Your Hands.
+              </h2>
+              
+              <div className="max-w-4xl mx-auto">
+                <p className="news-body text-center mb-6 max-w-[65ch] mx-auto">
+                  Unlike other creams designed for one area of the face, iDrotherapy is an all-in-one solution:
                 </p>
 
-                <div className="scarcity-alert mb-8 max-w-md mx-auto">
-                  <p className="font-semibold mb-2">⏰ Limited Time: Special Editorial Pricing</p>
-                  <p className="text-sm">Our readers get exclusive access to discounted pricing - but only while supplies last.</p>
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                    <span className="text-3xl sm:text-4xl flex-shrink-0">✨</span>
+                    <div className="min-w-0">
+                      <h3 className="font-bold news-subhead mb-2">Morning Routine</h3>
+                      <p className="news-body">Revitalizes skin for the day ahead, leaving a natural glow.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                    <span className="text-3xl sm:text-4xl flex-shrink-0">🌙</span>
+                    <div className="min-w-0">
+                      <h3 className="font-bold news-subhead mb-2">Night Routine</h3>
+                      <p className="news-body">Works while you sleep, delivering visible improvements in weeks.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                    <span className="text-3xl sm:text-4xl flex-shrink-0">💫</span>
+                    <div className="min-w-0">
+                      <h3 className="font-bold news-subhead mb-2">Body Care</h3>
+                      <p className="news-body">Targets age spots, crepey neck skin, and even dryness on arms or hands.</p>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="mb-8">
-                  <a href="https://www.idrotherapylove.com" className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
-                    See Before & After Photos →
-                  </a>
+                <div className="text-center">
+                  <p className="news-body mb-6 font-semibold max-w-[65ch] mx-auto">
+                    👉 That means no more cluttered bathroom shelves, no more 5-step routines. Just one cream that does it all.
+                  </p>
+
+                  <div className="scarcity-alert mb-6 max-w-md mx-auto">
+                    <p className="font-semibold mb-2">⏰ Limited Time: Special Editorial Pricing</p>
+                    <p className="text-sm">Our readers get exclusive access to discounted pricing - but only while supplies last.</p>
+                  </div>
+
+                  <div className="mb-6">
+                    <a href="https://www.idrotherapylove.com" className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
+                      See Before & After Photos →
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Dramatic Results Section - Full Width */}
-        <section className="w-full py-12 bg-gradient-to-b from-red-50 to-white">
+        {/* Dramatic Results Section - Constrained Width */}
+        <section className="w-full py-8 bg-gradient-to-b from-red-50 to-white">
           <div className="mobile-container">
-            <h2 className="news-headline font-bold text-center text-red-600 mb-8">
-              Dramatic Results in Just 4 Weeks
-            </h2>
-            
-            <div className="comparison-box max-w-4xl mx-auto">
-              <div className="image-container text-center">
-                <a href="https://www.idrotherapylove.com">
-                  <img 
-                    src="/lovable-uploads/579730e5-27da-484a-8c7d-60a7043bf40c.png" 
-                    alt="Before and after comparison showing dramatic reduction in fine lines, wrinkles, and skin texture improvement" 
-                    className="w-full max-w-3xl mx-auto rounded-lg shadow-lg cursor-pointer hover:opacity-95 transition-opacity"
-                    loading="lazy"
-                    width="800"
-                    height="400"
-                  />
-                </a>
-                <p className="text-sm text-news-muted italic mt-4 max-w-2xl mx-auto">
-                  Real results: Dramatic improvement in fine lines and skin texture after 4 weeks of daily use
-                </p>
-              </div>
-              <div className="text-center mt-8">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
-                  ⚡ Limited Stock - Order Before It's Gone →
-                </a>
+            <div className="max-w-5xl mx-auto">
+              <h2 className="news-headline font-bold text-center text-red-600 mb-6">
+                Dramatic Results in Just 4 Weeks
+              </h2>
+              
+              <div className="comparison-box max-w-4xl mx-auto">
+                <div className="image-container text-center">
+                  <a href="https://www.idrotherapylove.com">
+                    <img 
+                      src="/lovable-uploads/579730e5-27da-484a-8c7d-60a7043bf40c.png" 
+                      alt="Before and after comparison showing dramatic reduction in fine lines, wrinkles, and skin texture improvement" 
+                      className="w-full max-w-3xl mx-auto rounded-lg shadow-lg cursor-pointer hover:opacity-95 transition-opacity"
+                      loading="lazy"
+                      width="800"
+                      height="400"
+                    />
+                  </a>
+                  <p className="text-sm text-news-muted italic mt-4 max-w-2xl mx-auto">
+                    Real results: Dramatic improvement in fine lines and skin texture after 4 weeks of daily use
+                  </p>
+                </div>
+                <div className="text-center mt-6">
+                  <a href="https://www.idrotherapylove.com" className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
+                    ⚡ Limited Stock - Order Before It's Gone →
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -822,7 +883,7 @@ const Index = () => {
         </section>
 
         {/* Disclaimer */}
-        <div className="mt-8 pt-8 border-t border-news-border mobile-container">
+        <div className="mt-4 pt-4 border-t border-news-border mobile-container">
           <p className="text-xs text-news-muted text-center max-w-[65ch] mx-auto">
             <strong>Editorial Disclaimer:</strong> This article is for informational purposes and represents the editorial opinion of Fox Lifestyle. Individual results may vary. This content has not been evaluated by the FDA. The product is not intended to diagnose, treat, cure, or prevent any disease. Always consult with a healthcare professional before starting any new skincare regimen.
           </p>
