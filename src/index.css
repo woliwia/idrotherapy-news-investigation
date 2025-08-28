@@ -169,7 +169,11 @@
   
   /* Consistent Spacing - Mobile Optimized */
   .content-section {
+
+    @apply mb-12 px-4 w-full max-w-6xl mx-auto;
+
     @apply mb-12 w-full;
+
   }
   
   .image-container {
