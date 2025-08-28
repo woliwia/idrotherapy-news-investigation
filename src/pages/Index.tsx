@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import heroImage from "@/assets/hero-clinical-lab.jpg";
 import dermatologistRealistic from "@/assets/dermatologist-realistic.jpg";
 
-const Index = () => {
+const Index = ({ destinationUrl }) => {
   const [orderCount, setOrderCount] = useState(137);
   const [currentTickerIndex, setCurrentTickerIndex] = useState(0);
 
@@ -59,7 +59,7 @@ const Index = () => {
             Fox Lifestyle – Special Investigation: Revolutionary peptide formula creating buzz across beauty forums for its ability to smooth wrinkles, fade dark circles, and deliver all-day hydration without harsh retinol
           </p>
           <div className="relative w-full max-w-4xl mx-auto">
-            <a href="https://www.idrotherapylove.com">
+            <a href={destinationUrl}>
               <img 
                 src={heroImage} 
                 alt="Clinical laboratory researchers examining breakthrough skincare formula" 
@@ -75,7 +75,7 @@ const Index = () => {
 
           {/* First CTA */}
           <div className="text-center mt-6">
-            <a href="https://www.idrotherapylove.com" className="editorial-cta-large block w-full min-h-[48px] py-3 md:inline-flex md:w-auto">
+            <a href={destinationUrl} className="editorial-cta-large block w-full min-h-[48px] py-3 md:inline-flex md:w-auto">
               🔥 Get Your Breakthrough Cream Now →
             </a>
           </div>
@@ -105,7 +105,7 @@ const Index = () => {
               </p>
 
               <div className="mb-6">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
+                <a href={destinationUrl} className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
                   Editor's Pick: Try iDrotherapy Cream Before It's Gone →
                 </a>
               </div>
@@ -130,7 +130,7 @@ const Index = () => {
 
             {/* Product Image with Caption */}
             <div className="image-container">
-              <a href="https://www.idrotherapylove.com">
+              <a href={destinationUrl}>
                 <img 
                   src="/lovable-uploads/671dac0b-4492-4be8-ae3b-884fde280fc9.png" 
                   alt="iDrotherapy Cream luxury jar with elegant black packaging showing Wrinkle Reducer formula" 
@@ -144,7 +144,7 @@ const Index = () => {
               
               {/* Inline CTA */}
               <div className="mt-6">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
+                <a href={destinationUrl} className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
                   Try Risk-Free Today →
                 </a>
               </div>
@@ -168,7 +168,7 @@ const Index = () => {
               </div>
 
               <div className="text-center mb-6">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
+                <a href={destinationUrl} className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
                   Readers Are Calling This 'Nature's Botox' →
                 </a>
               </div>
@@ -222,7 +222,7 @@ const Index = () => {
               </div>
 
               <div className="mb-6">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
+                <a href={destinationUrl} className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
                   See Before & After Photos →
                 </a>
               </div>
@@ -333,7 +333,7 @@ const Index = () => {
 
             {/* Dermatologist Image */}
             <div className="mb-8">
-            <a href="https://www.idrotherapylove.com">
+            <a href={destinationUrl}>
               <img
                 src={dermatologistRealistic}
                 alt="Professional dermatologist examining skincare products in clinical setting"
@@ -347,7 +347,7 @@ const Index = () => {
 
               {/* Mid-article CTA */}
               <div className="text-center mt-6 mb-8">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
+                <a href={destinationUrl} className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
                   ✅ Dermatologist Recommended - Order Now →
                 </a>
               </div>
@@ -370,7 +370,7 @@ const Index = () => {
                   <li><strong>No:</strong> Harsh retinol, parabens, sulfates</li>
                   <li><strong>Targets:</strong> Face, neck, hands</li>
                 </ul>
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-large mt-6 block text-center w-full min-h-[48px] py-3">
+                <a href={destinationUrl} className="editorial-cta-large mt-6 block text-center w-full min-h-[48px] py-3">
                   Order Now →
                 </a>
               </div>
@@ -405,7 +405,7 @@ const Index = () => {
                     New shipments delayed until next quarter.
                   </p>
                   <a 
-                    href="https://www.idrotherapylove.com" 
+                    href={destinationUrl} 
                     className="block w-full bg-red-600 text-white py-2 text-center rounded-lg font-semibold hover:bg-red-700 transition-colors text-sm"
                   >
                     Order Before It's Gone →
@@ -592,13 +592,13 @@ const Index = () => {
                       The breakthrough formula dermatologists recommend
                     </p>
                     <a 
-                      href="https://www.idrotherapylove.com"
+                      href={destinationUrl}
                       className="block w-full bg-red-600 text-white py-2 text-center rounded-lg font-semibold hover:bg-red-700 transition-colors text-sm mb-2"
                     >
                       Check Availability →
                     </a>
                     <a 
-                      href="https://www.idrotherapylove.com"
+                      href={destinationUrl}
                       className="block w-full bg-yellow-500 text-white py-2 text-center rounded-lg font-semibold hover:bg-yellow-600 transition-colors text-sm flex items-center justify-center gap-1"
                     >
                       🔥 Flash Sale - 40% Off →
@@ -623,7 +623,7 @@ const Index = () => {
               
               <div className="comparison-box max-w-4xl mx-auto">
                 <div className="image-container text-center">
-                  <a href="https://www.idrotherapylove.com">
+                  <a href={destinationUrl}>
                     <img 
                       src="/lovable-uploads/579730e5-27da-484a-8c7d-60a7043bf40c.png" 
                       alt="Before and after comparison showing dramatic reduction in fine lines, wrinkles, and skin texture improvement" 
@@ -638,7 +638,7 @@ const Index = () => {
                   </p>
                 </div>
                 <div className="text-center mt-6">
-                  <a href="https://www.idrotherapylove.com" className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
+                  <a href={destinationUrl} className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
                     ⚡ Limited Stock - Order Before It's Gone →
                   </a>
                 </div>
@@ -733,7 +733,7 @@ const Index = () => {
             </p>
             
             <div className="text-center mb-8">
-              <a href="https://www.idrotherapylove.com">
+              <a href={destinationUrl}>
                 <img
                   src="https://idro.vouue.com/lovable-uploads/8da99380-b785-4a85-961c-2b5f761d611e.png"
                   alt="Collage of women holding iDrotherapy cream"
@@ -771,7 +771,7 @@ const Index = () => {
 
             {/* Woman with Product Image */}
             <div className="text-center mt-12">
-              <a href="https://www.idrotherapylove.com">
+              <a href={destinationUrl}>
                 <img
                   src="/lovable-uploads/ca66e615-6b53-470a-b542-1020dc49a3d8.png"
                   alt="Happy woman proudly displaying her iDrotherapy Wrinkle Reducer cream with confident smile"
@@ -786,7 +786,7 @@ const Index = () => {
               </p>
               
               <div className="mt-8">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
+                <a href={destinationUrl} className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
                   🌟 Transform Your Skin Today →
                 </a>
               </div>
@@ -820,7 +820,7 @@ const Index = () => {
               </div>
 
               <div className="text-center mb-8">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
+                <a href={destinationUrl} className="editorial-cta-large block w-full min-h-[48px] py-3 text-center md:inline-flex md:w-auto">
                   Claim Flash Discount →
                 </a>
               </div>
@@ -899,7 +899,7 @@ const Index = () => {
 
         {/* Floating Order Button */}
         <a
-          href="https://www.idrotherapylove.com"
+          href={destinationUrl}
           className="fixed bottom-0 left-0 right-0 z-50 block w-full text-center text-white font-semibold py-3 bg-[#DC3636] min-h-[48px] flex items-center justify-center"
         >
           ORDER NOW - Up to 75% OFF + FREE Gua sha set! ($70 value)
