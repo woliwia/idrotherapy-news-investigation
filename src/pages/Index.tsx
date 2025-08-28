@@ -476,19 +476,19 @@ const Index = () => {
                 <h3 className="news-subhead text-xl font-bold mb-4">Trending Now</h3>
                 <div className="space-y-4 text-sm">
                   <div className="border-b pb-3">
-                    <a href="#" className="font-semibold hover:text-red-600">
+                    <a href="https://www.idrotherapylove.com" className="font-semibold hover:text-red-600">
                       "This Changed My Life" - Mom's $15 Anti-Aging Discovery
                     </a>
                     <p className="text-news-muted text-xs mt-1">2,847 shares</p>
                   </div>
                   <div className="border-b pb-3">
-                    <a href="#" className="font-semibold hover:text-red-600">
+                    <a href="https://www.idrotherapylove.com" className="font-semibold hover:text-red-600">
                       Beauty Editors Can't Stop Talking About This Cream
                     </a>
                     <p className="text-news-muted text-xs mt-1">1,923 shares</p>
                   </div>
                   <div>
-                    <a href="#" className="font-semibold hover:text-red-600">
+                    <a href="https://www.idrotherapylove.com" className="font-semibold hover:text-red-600">
                       Why Dermatologists Are Recommending Peptides Over Retinol
                     </a>
                     <p className="text-news-muted text-xs mt-1">3,156 shares</p>
