@@ -1,8 +1,6 @@
 var siteUrls = [
-  "https://www.idrotherapylove.com",
-  "idrotherapylove.com,"
-  "https://www.beverlyhillsscoops.com",
-  "https://www.beverlyhillsscoops.com/argan",
+  "idrotherapylove.com",
+  "beverlyhillsscoops.com",
 ];
 
 var DEFAULT_ORGANIC_AFFID = 38;
