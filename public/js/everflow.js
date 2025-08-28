@@ -1,8 +1,5 @@
 var siteUrls = [
   "https://www.idrotherapylove.com",
-  "https://idrotherapylove.com",
-  "idrotherapylove.com",
-  "www.idrotherapylove.com"
   "https://www.beverlyhillsscoops.com",
   "https://www.beverlyhillsscoops.com/argan",
 ];
