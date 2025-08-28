@@ -6,24 +6,18 @@ var siteUrls = [
 
 var DEFAULT_ORGANIC_AFFID = 38;
 
-// Helper function to get URL parameters
-function getUrlParameter(name) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(name);
-}
-
 window.onload = function () {
   var elems = document.body.getElementsByTagName("a");
 
-  const offer_id = getUrlParameter("oid") || "22";
-  const affiliate_id = getUrlParameter("affid") || DEFAULT_ORGANIC_AFFID;
-  const sub1 = getUrlParameter("sub1") || "";
-  const sub2 = getUrlParameter("sub2") || "";
-  const sub3 = getUrlParameter("sub3") || "";
-  const sub4 = getUrlParameter("sub4") || "";
-  const sub5 = getUrlParameter("sub5") || "";
-  const uid = getUrlParameter("uid") || "";
-  const source_id = getUrlParameter("source_id") || "idrotherapy-news-investigation-red-oli";
+  const offer_id = EF.urlParameter("oid") || "22";
+  const affiliate_id = EF.urlParameter("affid") || DEFAULT_ORGANIC_AFFID;
+  const sub1 = EF.urlParameter("sub1") || "";
+  const sub2 = EF.urlParameter("sub2") || "";
+  const sub3 = EF.urlParameter("sub3") || "";
+  const sub4 = EF.urlParameter("sub4") || "";
+  const sub5 = EF.urlParameter("sub5") || "";
+  const uid = EF.urlParameter("uid") || "";
+  const source_id = EF.urlParameter("source_id") || "idrotherapy-news-investigation-red-oli";
 
   if (offer_id) {
     for (var i = 0; i < elems.length; i++) {
