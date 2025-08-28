@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import heroImage from "@/assets/hero-clinical-lab.jpg";
 import dermatologistRealistic from "@/assets/dermatologist-realistic.jpg";
 
-const Index = () => {
+const Index = ({ destinationUrl }) => {
   const [orderCount, setOrderCount] = useState(137);
   const [currentTickerIndex, setCurrentTickerIndex] = useState(0);
 
@@ -899,7 +899,7 @@ const Index = () => {
 
         {/* Floating Order Button */}
         <a
-          href="https://www.idrotherapylove.com"
+          href={destinationUrl}
           className="fixed bottom-0 left-0 right-0 z-50 block w-full text-center text-white font-semibold py-3 bg-[#DC3636] min-h-[48px] flex items-center justify-center"
         >
           ORDER NOW - Up to 75% OFF + FREE Gua sha set! ($70 value)
