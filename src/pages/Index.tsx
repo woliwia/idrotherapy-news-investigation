@@ -663,31 +663,37 @@ const Index = () => {
                   name: "Sarah M.",
                   info: "Age 42 • California",
                   quote: "I've tried every cream on the market. iDrotherapy is the first that actually made my husband ask if I had 'work done.' My laugh lines are practically gone!",
+                  image: "https://idro.vouue.com/lovable-uploads/9530d609-ffde-4551-ae23-6229cc1d21f4.png"
                 },
                 {
                   name: "Jennifer R.",
                   info: "Age 38 • Texas",
                   quote: "Three weeks in and my co-workers keep asking what I'm using. My neck looks 10 years younger and my makeup goes on so much smoother now.",
+                  image: "https://idro.vouue.com/lovable-uploads/7a13f339-f5ca-4551-a35e-a8ece21151e7.png"
                 },
                 {
                   name: "Lisa K.",
                   info: "Age 45 • New York",
                   quote: "This cream replaced my entire nighttime routine. I use it morning and night, and it's like I have new skin. The peptides really work!",
+                  image: "https://idro.vouue.com/lovable-uploads/4d1b5466-0136-4052-9d86-4c4f902b9a11.png"
                 },
                 {
                   name: "Maria G.",
                   info: "Age 52 • Florida",
                   quote: "My dermatologist noticed the improvement immediately. She was shocked when I told her it wasn't prescription - she's now recommending it to patients!",
+                  image: "https://idro.vouue.com/lovable-uploads/fb2adcf7-d948-4a38-bf2c-83c5e14960f9.png"
                 },
                 {
                   name: "Amanda T.",
                   info: "Age 35 • Illinois",
                   quote: "I was skeptical about the 'one cream for everything' claim, but it really does work on my eye area, neck, and face. Best skincare investment I've made.",
+                  image: "https://idro.vouue.com/lovable-uploads/de927a92-871d-4d92-b61b-71f777c9bf6d.png"
                 },
                 {
                   name: "Rachel B.",
                   info: "Age 48 • Washington",
                   quote: "The texture is luxurious and it absorbs beautifully. After 6 weeks, my skin looks firmer and more radiant than it has in years. Already ordering my second jar!",
+                  image: "https://idro.vouue.com/lovable-uploads/043d2e7e-6d08-4240-9e73-ddd439d79c0d.png"
                 },
               ].map((review) => (
                 <div
@@ -695,10 +701,13 @@ const Index = () => {
                   className="border border-red-200 rounded-lg p-4 sm:p-6 bg-white shadow-sm flex flex-col h-full"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
-                      <span className="text-red-600 font-semibold text-lg">
-                        {review.name.charAt(0)}
-                      </span>
+                    <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                      <img
+                        src={review.image}
+                        alt={`${review.name} customer photo`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
                     </div>
                     <div>
                       <div className="font-semibold text-sm">{review.name}</div>
