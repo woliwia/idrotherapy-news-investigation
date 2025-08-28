@@ -819,7 +819,7 @@ const Index = () => {
               {/* Customer Testimonial Collage */}
               <div className="text-center mt-12">
                 <img
-                  src="/lovable-uploads/customer-testimonials-collage.png"
+                  src="/lovable-uploads/3e4a304c-08b1-466b-b683-fe5980f99c11.png"
                   alt="Happy customers displaying their iDrotherapy cream with radiant, youthful skin results"
                   className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
                   loading="lazy"
