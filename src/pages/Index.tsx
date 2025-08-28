@@ -140,7 +140,7 @@ const Index = () => {
               
               {/* Inline CTA */}
               <div className="mt-6">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
                   Try Risk-Free Today →
                 </a>
               </div>
@@ -164,7 +164,7 @@ const Index = () => {
               </div>
 
               <div className="text-center mb-6">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
                   Readers Are Calling This 'Nature's Botox' →
                 </a>
               </div>
@@ -291,7 +291,7 @@ const Index = () => {
 
               {/* Mid-article CTA */}
               <div className="text-center mt-6 mb-8">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-success">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
                   ✅ Dermatologist Recommended - Order Now →
                 </a>
               </div>
@@ -314,7 +314,7 @@ const Index = () => {
                   <li><strong>No:</strong> Harsh retinol, parabens, sulfates</li>
                   <li><strong>Targets:</strong> Face, neck, hands</li>
                 </ul>
-                <a href="https://www.idrotherapylove.com" className="editorial-cta mt-6 block text-center">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-large mt-6 block text-center">
                   Order Now →
                 </a>
               </div>
@@ -500,43 +500,9 @@ const Index = () => {
         </div>
 
         {/* Full Width Sections - Mobile Optimized */}
-        
-        {/* Why It's Different Section - Full Width */}
-        <section className="w-full px-4 py-12 bg-gradient-to-b from-gray-50 to-white">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="news-headline text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8">
-              Why It's Different From Everything Else
-            </h2>
-            
-            <div className="max-w-4xl mx-auto text-center">
-              <p className="news-body text-lg sm:text-xl mb-6">
-                Most beauty brands split their formulas: one for eyes, one for the neck, one for the face, one for spots.
-              </p>
-
-              <p className="news-body text-lg sm:text-xl mb-6">
-                <strong>iDrotherapy doesn't play that game.</strong>
-              </p>
-
-              <p className="news-body text-lg sm:text-xl mb-8">
-                Their breakthrough peptide complex works on a cellular level to address aging wherever it appears—whether that's crow's feet, forehead lines, or even the delicate skin on your hands.
-              </p>
-
-              <div className="scarcity-alert mb-8 max-w-md mx-auto">
-                <p className="font-semibold mb-2">🚨 Flash Sale Alert</p>
-                <p className="text-sm">Limited-time reader discount expires at midnight. Stock selling out fast.</p>
-              </div>
-
-              <div className="text-center mb-8">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-urgent">
-                  Claim Flash Discount →
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Morning Night Section - Full Width */}
-        <section className="w-full px-4 py-12 bg-white">
+        <section className="w-full px-4 sm:px-6 lg:px-8 py-12 bg-white">
           <div className="max-w-6xl mx-auto">
             <h2 className="news-headline text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8">
               Morning. Night. Even On Your Hands.
@@ -592,7 +558,7 @@ const Index = () => {
         </section>
 
         {/* Dramatic Results Section - Full Width */}
-        <section className="w-full px-4 py-12 bg-gradient-to-b from-red-50 to-white">
+        <section className="w-full px-4 sm:px-6 lg:px-8 py-12 bg-gradient-to-b from-red-50 to-white">
           <div className="max-w-6xl mx-auto">
             <h2 className="news-headline text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-red-600 mb-8">
               Dramatic Results in Just 4 Weeks
@@ -613,7 +579,7 @@ const Index = () => {
                 </p>
               </div>
               <div className="text-center mt-8">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-urgent">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
                   ⚡ Limited Stock - Order Before It's Gone →
                 </a>
               </div>
@@ -622,7 +588,7 @@ const Index = () => {
         </section>
 
         {/* Real Customer Reviews Section - Full Width */}
-        <section className="w-full px-4 py-12 bg-white">
+        <section className="w-full px-4 sm:px-6 lg:px-8 py-12 bg-white">
           <div className="max-w-6xl mx-auto">
             <h2 className="news-headline text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-black mb-4">
               Real Customer Reviews
@@ -688,7 +654,7 @@ const Index = () => {
         </section>
 
         {/* Join The Beauty Revolution Section - Full Width */}
-        <section className="w-full px-4 py-12 bg-gradient-to-b from-pink-50 to-white">
+        <section className="w-full px-4 sm:px-6 lg:px-8 py-12 bg-gradient-to-b from-pink-50 to-white">
           <div className="max-w-6xl mx-auto">
             <h2 className="news-headline text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8">
               Join The Beauty Revolution
@@ -749,6 +715,40 @@ const Index = () => {
               <div className="mt-8">
                 <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
                   🌟 Transform Your Skin Today →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why It's Different Section - Full Width */}
+        <section className="w-full px-4 sm:px-6 lg:px-8 py-12 bg-gradient-to-b from-gray-50 to-white">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="news-headline text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8">
+              Why It's Different From Everything Else
+            </h2>
+            
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="news-body text-lg sm:text-xl mb-6">
+                Most beauty brands split their formulas: one for eyes, one for the neck, one for the face, one for spots.
+              </p>
+
+              <p className="news-body text-lg sm:text-xl mb-6">
+                <strong>iDrotherapy doesn't play that game.</strong>
+              </p>
+
+              <p className="news-body text-lg sm:text-xl mb-8">
+                Their breakthrough peptide complex works on a cellular level to address aging wherever it appears—whether that's crow's feet, forehead lines, or even the delicate skin on your hands.
+              </p>
+
+              <div className="scarcity-alert mb-8 max-w-md mx-auto">
+                <p className="font-semibold mb-2">🚨 Flash Sale Alert</p>
+                <p className="text-sm">Limited-time reader discount expires at midnight. Stock selling out fast.</p>
+              </div>
+
+              <div className="text-center mb-8">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
+                  Claim Flash Discount →
                 </a>
               </div>
             </div>
