@@ -297,226 +297,6 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Morning Night Section */}
-            <div className="mb-8">
-              <h2 className="news-headline text-3xl font-bold mb-4">Morning. Night. Even On Your Hands.</h2>
-              
-              <p className="news-body text-lg mb-4">
-                Unlike other creams designed for one area of the face, iDrotherapy is an all-in-one solution:
-              </p>
-
-              <div className="space-y-4 mb-6">
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">✨</span>
-                  <div>
-                    <strong>Morning Routine</strong> – Revitalizes skin for the day ahead, leaving a natural glow.
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">🌙</span>
-                  <div>
-                    <strong>Night Routine</strong> – Works while you sleep, delivering visible improvements in weeks.
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">💫</span>
-                  <div>
-                    <strong>Body Care</strong> – Targets age spots, crepey neck skin, and even dryness on arms or hands.
-                  </div>
-                </div>
-              </div>
-
-              <p className="news-body text-lg mb-6 font-semibold">
-                👉 That means no more cluttered bathroom shelves, no more 5-step routines. Just one cream that does it all.
-              </p>
-
-              <div className="scarcity-alert mb-6">
-                <p className="font-semibold mb-2">⏰ Limited Time: Special Editorial Pricing</p>
-                <p className="text-sm">Our readers get exclusive access to discounted pricing - but only while supplies last.</p>
-              </div>
-
-              <div className="editorial-cta inline-block mb-6">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
-                  See Before & After Photos →
-                </a>
-              </div>
-            </div>
-
-            {/* Before After Image */}
-            <div className="comparison-box">
-              <h3 className="text-xl font-bold mb-6 text-center">Dramatic Results in Just 4 Weeks</h3>
-              <div className="image-container">
-                <img 
-                  src="/lovable-uploads/579730e5-27da-484a-8c7d-60a7043bf40c.png" 
-                  alt="Before and after comparison showing dramatic reduction in fine lines, wrinkles, and skin texture improvement" 
-                  className="image-responsive max-w-2xl"
-                  loading="lazy"
-                  width="800"
-                  height="400"
-                />
-                <p className="text-sm text-news-muted italic mt-3">Real results: Dramatic improvement in fine lines and skin texture after 4 weeks of daily use</p>
-              </div>
-              <div className="text-center mt-6">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-urgent">
-                  ⚡ Limited Stock - Order Before It's Gone →
-                </a>
-              </div>
-            </div>
-
-            {/* Customer Reviews Section */}
-            <section className="mt-16 mb-8">
-              <h2 className="news-headline text-3xl font-bold text-center text-black mb-2">
-                Real Customer Reviews
-              </h2>
-              <p className="text-center text-news-muted mb-6">
-                See what our verified customers are saying about their iDrotherapy experience
-              </p>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {[
-                  {
-                    name: "Sarah M.",
-                    info: "Age 42 • California",
-                    quote: "I've tried every cream on the market. iDrotherapy is the first that actually made my husband ask if I had 'work done.' My laugh lines are practically gone!",
-                  },
-                  {
-                    name: "Jennifer R.",
-                    info: "Age 38 • Texas",
-                    quote: "Three weeks in and my co-workers keep asking what I'm using. My neck looks 10 years younger and my makeup goes on so much smoother now.",
-                  },
-                  {
-                    name: "Lisa K.",
-                    info: "Age 45 • New York",
-                    quote: "This cream replaced my entire nighttime routine. I use it morning and night, and it's like I have new skin. The peptides really work!",
-                  },
-                  {
-                    name: "Maria G.",
-                    info: "Age 52 • Florida",
-                    quote: "My dermatologist noticed the improvement immediately. She was shocked when I told her it wasn't prescription - she's now recommending it to patients!",
-                  },
-                  {
-                    name: "Amanda T.",
-                    info: "Age 35 • Illinois",
-                    quote: "I was skeptical about the 'one cream for everything' claim, but it really does work on my eye area, neck, and face. Best skincare investment I've made.",
-                  },
-                  {
-                    name: "Rachel B.",
-                    info: "Age 48 • Washington",
-                    quote: "The texture is luxurious and it absorbs beautifully. After 6 weeks, my skin looks firmer and more radiant than it has in years. Already ordering my second jar!",
-                  },
-                ].map((review) => (
-                  <div
-                    key={review.name}
-                    className="border border-red-200 rounded-lg p-4 bg-white shadow-sm flex flex-col h-full"
-                  >
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
-                        <span className="text-red-600 font-semibold text-lg">
-                          {review.name.charAt(0)}
-                        </span>
-                      </div>
-                      <div>
-                        <div className="font-semibold text-sm">{review.name}</div>
-                        <div className="text-xs text-news-muted">{review.info}</div>
-                      </div>
-                    </div>
-                    <p className="text-sm flex-grow">{review.quote}</p>
-                    <div className="text-yellow-400 mt-4">★★★★★</div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Beauty Revolution Section */}
-            <section className="content-section">
-              <h2 className="news-headline text-3xl font-bold text-center mb-4">
-                Join The Beauty Revolution
-              </h2>
-              <p className="news-body text-lg text-center mb-6">
-                Thousands of women worldwide have discovered the transformative power of iDrotherapy's revolutionary formula. See the confidence in their faces.
-              </p>
-              <div className="image-container">
-                <img
-                  src="https://idro.vouue.com/lovable-uploads/8da99380-b785-4a85-961c-2b5f761d611e.png"
-                  alt="Collage of women holding iDrotherapy cream"
-                  className="image-responsive"
-                  loading="lazy"
-                  width="975"
-                  height="199"
-                />
-              </div>
-              <div className="p-6 rounded-lg bg-pink-100 text-center">
-                <h3 className="news-headline text-2xl mb-4">The Results Speak For Themselves</h3>
-                <p className="news-body text-lg mb-6">
-                  These women represent just a fraction of our 50,000+ satisfied customers who have experienced the life-changing benefits of RenuV8® and Renovage® technology.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div>
-                    <p className="text-4xl font-bold text-red-600 mb-2">94%</p>
-                    <p className="text-sm text-news-muted">Visible improvement in 2 weeks</p>
-                  </div>
-                  <div>
-                    <p className="text-4xl font-bold text-red-600 mb-2">98%</p>
-                    <p className="text-sm text-news-muted">Would recommend to friends</p>
-                  </div>
-                  <div>
-                    <p className="text-4xl font-bold text-red-600 mb-2">91%</p>
-                    <p className="text-sm text-news-muted">Plan to repurchase</p>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Woman with Product Image */}
-            <div className="content-section">
-              <div className="image-container">
-                <img
-                  src="/lovable-uploads/ca66e615-6b53-470a-b542-1020dc49a3d8.png"
-                  alt="Happy woman proudly displaying her iDrotherapy Wrinkle Reducer cream with confident smile"
-                  className="image-responsive max-w-lg"
-                  loading="lazy"
-                  width="600"
-                  height="700"
-                />
-                <p className="text-sm text-news-muted mt-3 italic">
-                  Sarah, 34, says iDrotherapy transformed her confidence and simplified her entire skincare routine
-                </p>
-              </div>
-              {/* Another CTA */}
-              <div className="text-center mt-8">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
-                  🌟 Transform Your Skin Today →
-                </a>
-              </div>
-            </div>
-
-            {/* Why It's Different */}
-            <div className="mb-8">
-              <h2 className="news-headline text-3xl font-bold mb-4">Why It's Different From Everything Else</h2>
-
-              <p className="news-body text-lg mb-4">
-                Most beauty brands split their formulas: one for eyes, one for the neck, one for the face, one for spots.
-              </p>
-
-              <p className="news-body text-lg mb-4">
-                <strong>iDrotherapy doesn't play that game.</strong>
-              </p>
-
-              <p className="news-body text-lg mb-4">
-                Their breakthrough peptide complex works on a cellular level to address aging wherever it appears—whether that's crow's feet, forehead lines, or even the delicate skin on your hands.
-              </p>
-
-              <div className="scarcity-alert mb-6">
-                <p className="font-semibold mb-2">🚨 Flash Sale Alert</p>
-                <p className="text-sm">Limited-time reader discount expires at midnight. Stock selling out fast.</p>
-              </div>
-
-              <div className="text-center mb-8">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-urgent">
-                  Claim Flash Discount →
-                </a>
-              </div>
-            </div>
-
           </div>
 
           {/* Sidebar */}
@@ -718,6 +498,262 @@ const Index = () => {
             </div>
           </div>
         </div>
+
+        {/* Full Width Sections - Mobile Optimized */}
+        
+        {/* Why It's Different Section - Full Width */}
+        <section className="w-full px-4 py-12 bg-gradient-to-b from-gray-50 to-white">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="news-headline text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8">
+              Why It's Different From Everything Else
+            </h2>
+            
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="news-body text-lg sm:text-xl mb-6">
+                Most beauty brands split their formulas: one for eyes, one for the neck, one for the face, one for spots.
+              </p>
+
+              <p className="news-body text-lg sm:text-xl mb-6">
+                <strong>iDrotherapy doesn't play that game.</strong>
+              </p>
+
+              <p className="news-body text-lg sm:text-xl mb-8">
+                Their breakthrough peptide complex works on a cellular level to address aging wherever it appears—whether that's crow's feet, forehead lines, or even the delicate skin on your hands.
+              </p>
+
+              <div className="scarcity-alert mb-8 max-w-md mx-auto">
+                <p className="font-semibold mb-2">🚨 Flash Sale Alert</p>
+                <p className="text-sm">Limited-time reader discount expires at midnight. Stock selling out fast.</p>
+              </div>
+
+              <div className="text-center mb-8">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-urgent">
+                  Claim Flash Discount →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Morning Night Section - Full Width */}
+        <section className="w-full px-4 py-12 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="news-headline text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8">
+              Morning. Night. Even On Your Hands.
+            </h2>
+            
+            <div className="max-w-4xl mx-auto">
+              <p className="news-body text-lg sm:text-xl text-center mb-8">
+                Unlike other creams designed for one area of the face, iDrotherapy is an all-in-one solution:
+              </p>
+
+              <div className="space-y-6 mb-8">
+                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                  <span className="text-3xl sm:text-4xl">✨</span>
+                  <div>
+                    <h3 className="font-bold text-lg sm:text-xl mb-2">Morning Routine</h3>
+                    <p className="text-base sm:text-lg">Revitalizes skin for the day ahead, leaving a natural glow.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                  <span className="text-3xl sm:text-4xl">🌙</span>
+                  <div>
+                    <h3 className="font-bold text-lg sm:text-xl mb-2">Night Routine</h3>
+                    <p className="text-base sm:text-lg">Works while you sleep, delivering visible improvements in weeks.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                  <span className="text-3xl sm:text-4xl">💫</span>
+                  <div>
+                    <h3 className="font-bold text-lg sm:text-xl mb-2">Body Care</h3>
+                    <p className="text-base sm:text-lg">Targets age spots, crepey neck skin, and even dryness on arms or hands.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <p className="news-body text-lg sm:text-xl mb-8 font-semibold">
+                  👉 That means no more cluttered bathroom shelves, no more 5-step routines. Just one cream that does it all.
+                </p>
+
+                <div className="scarcity-alert mb-8 max-w-md mx-auto">
+                  <p className="font-semibold mb-2">⏰ Limited Time: Special Editorial Pricing</p>
+                  <p className="text-sm">Our readers get exclusive access to discounted pricing - but only while supplies last.</p>
+                </div>
+
+                <div className="editorial-cta inline-block mb-8">
+                  <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
+                    See Before & After Photos →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Dramatic Results Section - Full Width */}
+        <section className="w-full px-4 py-12 bg-gradient-to-b from-red-50 to-white">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="news-headline text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-red-600 mb-8">
+              Dramatic Results in Just 4 Weeks
+            </h2>
+            
+            <div className="comparison-box max-w-4xl mx-auto">
+              <div className="image-container text-center">
+                <img 
+                  src="/lovable-uploads/579730e5-27da-484a-8c7d-60a7043bf40c.png" 
+                  alt="Before and after comparison showing dramatic reduction in fine lines, wrinkles, and skin texture improvement" 
+                  className="w-full max-w-3xl mx-auto rounded-lg shadow-lg"
+                  loading="lazy"
+                  width="800"
+                  height="400"
+                />
+                <p className="text-sm text-news-muted italic mt-4 max-w-2xl mx-auto">
+                  Real results: Dramatic improvement in fine lines and skin texture after 4 weeks of daily use
+                </p>
+              </div>
+              <div className="text-center mt-8">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-urgent">
+                  ⚡ Limited Stock - Order Before It's Gone →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Real Customer Reviews Section - Full Width */}
+        <section className="w-full px-4 py-12 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="news-headline text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-black mb-4">
+              Real Customer Reviews
+            </h2>
+            <p className="text-center text-news-muted mb-8 max-w-2xl mx-auto">
+              See what our verified customers are saying about their iDrotherapy experience
+            </p>
+            
+            <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  name: "Sarah M.",
+                  info: "Age 42 • California",
+                  quote: "I've tried every cream on the market. iDrotherapy is the first that actually made my husband ask if I had 'work done.' My laugh lines are practically gone!",
+                },
+                {
+                  name: "Jennifer R.",
+                  info: "Age 38 • Texas",
+                  quote: "Three weeks in and my co-workers keep asking what I'm using. My neck looks 10 years younger and my makeup goes on so much smoother now.",
+                },
+                {
+                  name: "Lisa K.",
+                  info: "Age 45 • New York",
+                  quote: "This cream replaced my entire nighttime routine. I use it morning and night, and it's like I have new skin. The peptides really work!",
+                },
+                {
+                  name: "Maria G.",
+                  info: "Age 52 • Florida",
+                  quote: "My dermatologist noticed the improvement immediately. She was shocked when I told her it wasn't prescription - she's now recommending it to patients!",
+                },
+                {
+                  name: "Amanda T.",
+                  info: "Age 35 • Illinois",
+                  quote: "I was skeptical about the 'one cream for everything' claim, but it really does work on my eye area, neck, and face. Best skincare investment I've made.",
+                },
+                {
+                  name: "Rachel B.",
+                  info: "Age 48 • Washington",
+                  quote: "The texture is luxurious and it absorbs beautifully. After 6 weeks, my skin looks firmer and more radiant than it has in years. Already ordering my second jar!",
+                },
+              ].map((review) => (
+                <div
+                  key={review.name}
+                  className="border border-red-200 rounded-lg p-4 sm:p-6 bg-white shadow-sm flex flex-col h-full"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
+                      <span className="text-red-600 font-semibold text-lg">
+                        {review.name.charAt(0)}
+                      </span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-sm">{review.name}</div>
+                      <div className="text-xs text-news-muted">{review.info}</div>
+                    </div>
+                  </div>
+                  <p className="text-sm sm:text-base flex-grow leading-relaxed">{review.quote}</p>
+                  <div className="text-yellow-400 mt-4">★★★★★</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Join The Beauty Revolution Section - Full Width */}
+        <section className="w-full px-4 py-12 bg-gradient-to-b from-pink-50 to-white">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="news-headline text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8">
+              Join The Beauty Revolution
+            </h2>
+            <p className="news-body text-lg sm:text-xl text-center mb-8 max-w-3xl mx-auto">
+              Thousands of women worldwide have discovered the transformative power of iDrotherapy's revolutionary formula. See the confidence in their faces.
+            </p>
+            
+            <div className="text-center mb-8">
+              <img
+                src="https://idro.vouue.com/lovable-uploads/8da99380-b785-4a85-961c-2b5f761d611e.png"
+                alt="Collage of women holding iDrotherapy cream"
+                className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
+                loading="lazy"
+                width="975"
+                height="199"
+              />
+            </div>
+            
+            {/* The Results Speak For Themselves - Nested Section */}
+            <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md max-w-4xl mx-auto">
+              <h3 className="news-headline text-xl sm:text-2xl lg:text-3xl font-bold text-center mb-6">
+                The Results Speak For Themselves
+              </h3>
+              <p className="news-body text-base sm:text-lg text-center mb-8">
+                These women represent just a fraction of our 50,000+ satisfied customers who have experienced the life-changing benefits of RenuV8® and Renovage® technology.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+                <div className="text-center p-4 bg-red-50 rounded-lg">
+                  <p className="text-3xl sm:text-4xl font-bold text-red-600 mb-2">94%</p>
+                  <p className="text-sm text-news-muted">Visible improvement in 2 weeks</p>
+                </div>
+                <div className="text-center p-4 bg-red-50 rounded-lg">
+                  <p className="text-3xl sm:text-4xl font-bold text-red-600 mb-2">98%</p>
+                  <p className="text-sm text-news-muted">Would recommend to friends</p>
+                </div>
+                <div className="text-center p-4 bg-red-50 rounded-lg">
+                  <p className="text-3xl sm:text-4xl font-bold text-red-600 mb-2">91%</p>
+                  <p className="text-sm text-news-muted">Plan to repurchase</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Woman with Product Image */}
+            <div className="text-center mt-12">
+              <img
+                src="/lovable-uploads/ca66e615-6b53-470a-b542-1020dc49a3d8.png"
+                alt="Happy woman proudly displaying her iDrotherapy Wrinkle Reducer cream with confident smile"
+                className="w-full max-w-lg mx-auto rounded-lg shadow-md"
+                loading="lazy"
+                width="600"
+                height="700"
+              />
+              <p className="text-sm text-news-muted mt-4 italic max-w-md mx-auto">
+                Sarah, 34, says iDrotherapy transformed her confidence and simplified her entire skincare routine
+              </p>
+              
+              <div className="mt-8">
+                <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
+                  🌟 Transform Your Skin Today →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Disclaimer */}
         <div className="mt-12 pt-8 border-t border-news-border">
