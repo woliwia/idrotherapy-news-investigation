@@ -177,7 +177,7 @@ const Index = () => {
             <section className="mb-8">
               <div className="max-w-2xl mx-auto text-center">
                 <img
-                  src="https://www.dropbox.com/scl/fi/cgx9mtxtk32oorvb3zmti/brag-bar.png?rlkey=xaemwoqabc4zuf8yint79h8v4&st=b2cq5bsi&dl=1"
+                  src="https://www.dropbox.com/scl/fi/cgx9mtxtk32oorvb3zmti/brag-bar.png?rlkey=xaemwoqabc4zuf8yint79h8v4&st=b2cq5bsi&raw=1"
                   alt="Vogue, Elle, InStyle, and OK! logos"
                   className="mx-auto"
                   loading="lazy"
