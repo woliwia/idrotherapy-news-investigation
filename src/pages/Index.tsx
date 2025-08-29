@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import heroImage from "@/assets/hero-clinical-lab.jpg";
 import dermatologistRealistic from "@/assets/dermatologist-realistic.jpg";
 
-const Index = () => {
+const Index = ( {destinationUrl}) => {
   const [orderCount, setOrderCount] = useState(137);
   const [currentTickerIndex, setCurrentTickerIndex] = useState(0);
 
@@ -526,7 +526,7 @@ const Index = () => {
                   className="block group"
                 >
                   <img
-                    src="https://beverlyhillsscoops.com/_next/image?url=%2FWR-Page%2Fb-a5.jpg&w=828&q=75"
+                    src="/lovable-uploads/579730e5-27da-484a-8c7d-60a7043bf40c.png"
                     alt="Amazing before after transformation"
                     className="w-full h-48 object-cover rounded-lg mb-3 shadow-sm"
                   />
