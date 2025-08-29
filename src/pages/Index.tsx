@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import heroImage from "@/assets/hero-clinical-lab.jpg";
 import dermatologistRealistic from "@/assets/dermatologist-realistic.jpg";
 
-const Index = ( {destinationUrl}) => {
+const Index = () => {
   const [orderCount, setOrderCount] = useState(137);
   const [currentTickerIndex, setCurrentTickerIndex] = useState(0);
 
@@ -73,7 +73,7 @@ const Index = ( {destinationUrl}) => {
 
           {/* First CTA */}
           <div className="text-center mt-6">
-            <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
+            <a href="destinationUrl" className="editorial-cta-large">
               🔥 Get Your Breakthrough Cream Now →
             </a>
           </div>
@@ -103,7 +103,7 @@ const Index = ( {destinationUrl}) => {
               </p>
 
               <div className="editorial-cta inline-block mb-6">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
+                <a href="destinationUrl" className="editorial-cta-large">
                   Editor's Pick: Try iDrotherapy Cream Before It's Gone →
                 </a>
               </div>
@@ -140,7 +140,7 @@ const Index = ( {destinationUrl}) => {
               
               {/* Inline CTA */}
               <div className="mt-6">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta">
+                <a href="destinationUrl" className="editorial-cta">
                   Try Risk-Free Today →
                 </a>
               </div>
@@ -164,7 +164,7 @@ const Index = ( {destinationUrl}) => {
               </div>
 
               <div className="text-center mb-6">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta">
+                <a href="destinationUrl" className="editorial-cta">
                   Readers Are Calling This 'Nature's Botox' →
                 </a>
               </div>
@@ -291,7 +291,7 @@ const Index = ( {destinationUrl}) => {
 
               {/* Mid-article CTA */}
               <div className="text-center mt-6 mb-8">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-success">
+                <a href="destinationUrl" className="editorial-cta-success">
                   ✅ Dermatologist Recommended - Order Now →
                 </a>
               </div>
@@ -336,7 +336,7 @@ const Index = ( {destinationUrl}) => {
               </div>
 
               <div className="editorial-cta inline-block mb-6">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
+                <a href="destinationUrl" className="editorial-cta-large">
                   See Before & After Photos →
                 </a>
               </div>
@@ -357,7 +357,7 @@ const Index = ( {destinationUrl}) => {
                 <p className="text-sm text-news-muted italic mt-3">Real results: Dramatic improvement in fine lines and skin texture after 4 weeks of daily use</p>
               </div>
               <div className="text-center mt-6">
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-urgent">
+                <a href="destinationUrl" className="editorial-cta-urgent">
                   ⚡ Limited Stock - Order Before It's Gone →
                 </a>
               </div>
@@ -403,10 +403,10 @@ const Index = ( {destinationUrl}) => {
                 />
                 <h4 className="font-bold mb-2">iDrotherapy Wrinkle Reducer</h4>
                 <p className="text-sm text-news-muted mb-4">The breakthrough formula dermatologists recommend</p>
-                <a href="https://www.idrotherapylove.com" className="editorial-cta w-full justify-center mb-3">
+                <a href="destinationUrl" className="editorial-cta w-full justify-center mb-3">
                   Check Availability →
                 </a>
-                <a href="https://www.idrotherapylove.com" className="editorial-cta-urgent w-full justify-center">
+                <a href="destinationUrl" className="editorial-cta-urgent w-full justify-center">
                   🔥 Flash Sale - 40% Off →
                 </a>
               </div>
@@ -435,7 +435,7 @@ const Index = ( {destinationUrl}) => {
                 <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">⚠️ Stock Alert</h3>
                 <div className="fomo-counter mb-3">⚡ {orderCount} orders today</div>
                 <p className="text-sm mb-4">Less than 200 units remaining for this month. New shipments delayed until next quarter.</p>
-                <a href="https://www.idrotherapylove.com" className="editorial-cta bg-red-600 hover:bg-red-700 w-full justify-center">
+                <a href="destinationUrl" className="editorial-cta bg-red-600 hover:bg-red-700 w-full justify-center">
                   Order Before It's Gone →
                 </a>
               </div>
@@ -580,7 +580,7 @@ const Index = ( {destinationUrl}) => {
               <div className="sidebar-widget bg-red-50 border-red-200">
                 <h3 className="news-subhead text-xl font-bold mb-4 text-red-700">⏰ 24-Hour Flash Sale</h3>
                 <p className="text-sm mb-4">Editorial readers get 40% off, but this deal expires at midnight!</p>
-                <a href="https://www.idrotherapylove.com" className="editorial-cta w-full justify-center">
+                <a href="destinationUrl" className="editorial-cta w-full justify-center">
                   Claim Flash Discount →
                 </a>
               </div>
@@ -729,7 +729,7 @@ const Index = ( {destinationUrl}) => {
             ))}
           </div>
           <div className="text-center mt-8">
-            <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
+            <a href="destinationUrl" className="editorial-cta-large">
               Join 10,000+ Happy Customers →
             </a>
           </div>
@@ -792,7 +792,7 @@ const Index = ( {destinationUrl}) => {
           </div>
           {/* Another CTA */}
           <div className="text-center mt-8">
-            <a href="https://www.idrotherapylove.com" className="editorial-cta-large">
+            <a href="destinationUrl" className="editorial-cta-large">
               🌟 Transform Your Skin Today →
             </a>
           </div>
@@ -843,7 +843,7 @@ const Index = ( {destinationUrl}) => {
           </div>
 
           <div className="text-center">
-            <a href="https://www.idrotherapylove.com" className="editorial-cta-large text-xl px-10 py-5">
+            <a href="destinationUrl" className="editorial-cta-large text-xl px-10 py-5">
               👉 Claim Your Exclusive Discount Now
             </a>
           </div>
@@ -872,10 +872,10 @@ const Index = ( {destinationUrl}) => {
             <h3 className="text-xl font-bold mb-2">iDrotherapy Wrinkle Reducer</h3>
             <p className="text-lg font-semibold text-red-600 mb-6">Special Editorial Price - 40% Off!</p>
             <div className="space-y-4">
-              <a href="https://www.idrotherapylove.com" className="editorial-cta-large text-xl px-8 py-4 w-full justify-center">
+              <a href="destinationUrl" className="editorial-cta-large text-xl px-8 py-4 w-full justify-center">
                 CLAIM YOUR JAR NOW →
               </a>
-              <a href="https://www.idrotherapylove.com" className="editorial-cta-urgent w-full justify-center">
+              <a href="destinationUrl" className="editorial-cta-urgent w-full justify-center">
                 ⚡ Only 2 Hours Left - Order Now! →
               </a>
             </div>
@@ -925,7 +925,7 @@ const Index = ( {destinationUrl}) => {
 
         {/* Floating Order Button */}
         <a
-          href="https://www.idrotherapylove.com"
+          href="destinationUrl"
           className="fixed bottom-0 left-0 right-0 z-50 block w-full text-center text-white font-semibold py-3 bg-[#DC3636]"
         >
           ORDER NOW - Up to 75% OFF + FREE Gua sha set! ($70 value)
