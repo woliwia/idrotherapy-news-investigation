@@ -684,7 +684,7 @@ const Index = () => {
               },
               {
                 name: "Lisa R.",
-                info: "Age 51 • Texas",
+                info: "Age 34 • Texas",
                 img: "https://idro.vouue.com/lovable-uploads/4d1b5466-0136-4052-9d86-4c4f902b9a11.png",
                 quote:
                   "Everyone's asking about my glowing, even skin now. This product is my secret weapon!",
@@ -787,7 +787,7 @@ const Index = () => {
               height="700"
             />
             <p className="text-sm text-news-muted mt-3 italic">
-              Sarah, 34, says iDrotherapy transformed her confidence and simplified her entire skincare routine
+              Lisa, 34, says iDrotherapy transformed her confidence and simplified her entire skincare routine
             </p>
           </div>
           {/* Another CTA */}
