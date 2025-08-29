@@ -177,7 +177,7 @@ const Index = () => {
             <section className="mb-8">
               <div className="max-w-2xl mx-auto text-center">
                 <img
-                  src="https://www.dropbox.com/scl/fi/cgx9mtxtk32oorvb3zmti/brag-bar.png?rlkey=xaemwoqabc4zuf8yint79h8v4&st=b2cq5bsi&raw=1"
+                  src="https://www.dropbox.com/scl/fi/cgx9mtxtk32oorvb3zmti/brag-bar.png?rlkey=xaemwoqabc4zuf8yint79h8v4&st=b2cq5bsi&dl=1"
                   alt="Vogue, Elle, InStyle, and OK! logos"
                   className="mx-auto"
                   loading="lazy"
@@ -347,7 +347,7 @@ const Index = () => {
               <h3 className="text-xl font-bold mb-6 text-center">Dramatic Results in Just 4 Weeks</h3>
               <div className="image-container">
                 <img 
-                  src="/lovable-uploads/579730e5-27da-484a-8c7d-60a7043bf40c.png" 
+                  src="https://beverlyhillsscoops.com/_next/image?url=%2FWR-Page%2Fb-a5.jpg&w=828&q=75" 
                   alt="Before and after comparison showing dramatic reduction in fine lines, wrinkles, and skin texture improvement" 
                   className="image-responsive max-w-2xl"
                   loading="lazy"
